@@ -9,7 +9,21 @@ set ignorecase
 autocmd VimEnter * :FloatermNew --autoclose=1 --title=Files ranger
 execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent"
 
+" Avoid split windows
+autocmd WinNew * :only
+
 " Maintain undo history between sessions
 set undofile 
 set undodir=~/.vim/undo
+
+" IndentLine plugin
+let g:indentLine_char = '⎸'
+let g:indentLine_color_term = 90
+
+" Shows hidden chars
+set lcs=tab:»_,trail:·,space:·
+set list
+
+" Colors / Color Schemes
+colorscheme pablo
 

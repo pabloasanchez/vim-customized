@@ -4,7 +4,7 @@
 set nocompatible
 
 " Leader key
-let g:mapleader=","
+let g:mapleader=";"
 
 " Vendor plugins
 call plug#begin('~/.vim/vendor')
@@ -21,7 +21,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " barbar - Tab bar
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
+
+" vem-tabline - tab bar 
+Plug 'pacha/vem-tabline'
 
 " floaterm - Floating Terminal for vim
 Plug 'voldikss/vim-floaterm'
@@ -37,6 +40,16 @@ Plug 'pangloss/vim-javascript'
 
 " t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 't9md/vim-textmanip'
+
+" svermeulen/vim-yoink - Yoink will automatically maintain a history of yanks that you can choose between when pasting
+Plug 'svermeulen/vim-yoink'
+
+" indentLine - This plugin is used for displaying tin vertical lines at each indentation level
+Plug 'Yggdroot/indentLine'
+
+" Icons 
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 

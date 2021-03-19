@@ -8,6 +8,9 @@ nnoremap <C-p> :Files<Enter>
 nnoremap <ESC> :hide <bar> :FloatermHide terminal<cr>
 nnoremap <SPACE> :History:<cr>
 
+" Open Tags ith F2
+nnoremap <F2> :BTags<cr>
+
 " CTRL + F - Find
 nnoremap <leader>fl :Lines<Enter>
 nnoremap <C-f> :BLines<Enter>
@@ -41,8 +44,8 @@ xmap <C-l> <Plug>(textmanip-move-right)
 
 nmap <C-down> <Plug>(textmanip-move-down)
 nmap <C-up> <Plug>(textmanip-move-up)
-nmap <C-left> <Plug>(textmanip-move-left)
-nmap <C-right> <Plug>(textmanip-move-right)
+" nmap <C-left> <Plug>(textmanip-move-left)
+" nmap <C-right> <Plug>(textmanip-move-right)
 
 xmap <C-down> <Plug>(textmanip-move-down)
 xmap <C-up> <Plug>(textmanip-move-up)
@@ -111,4 +114,17 @@ nnoremap <C-N> :only<cr>
 " toggle insert/replace with <F10>
 nmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <F10> <Plug>(textmanip-toggle-mode)
+
+" Yoink
+nmap <leader>p <plug>(YoinkRotateBack)
+nmap <leader>P <plug>(YoinkRotateForward)
+nmap <leader>l <plug>(YoinkRotateBack)
+nmap <leader>' <plug>(YoinkRotateForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+" Vem-tabine move through tabs
+nmap <C-left> <Plug>vem_prev_buffer-
+nmap <C-right> <Plug>vem_next_buffer-
 

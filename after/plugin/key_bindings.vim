@@ -5,8 +5,16 @@ nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger
 nnoremap <F12> :FloatermToggle terminal<cr>
 nnoremap <C-g> :FloatermNew --autoclose=1 --title=Git lazygit<cr>
 nnoremap <C-p> :Files<Enter>
-nnoremap <ESC> :hide <bar> :FloatermHide terminal<cr>
 nnoremap <SPACE> :History:<cr>
+
+" Cycle through terminals
+nmap <leader>l :FloatermPrev<cr>
+nmap <leader>' :FloatermNext<cr>
+
+" For exiting terminal mode on ESC
+tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
+tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
+nnoremap <ESC> :hide <bar> :FloatermHide terminal<cr>
 
 " Open Tags ith F2
 nnoremap <F2> :BTags<cr>
@@ -107,7 +115,7 @@ imap <C-s> :w<CR>
 map <C-q> :qa<CR>
 
 " Buffer operations
-nnoremap <C-W> :BufferClose<cr>
+nnoremap <C-W> :bwipeout<cr>
 nnoremap <C-N> :only<cr>
 
 " Textmanip
@@ -117,9 +125,7 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 
 " Yoink
 nmap <leader>p <plug>(YoinkRotateBack)
-nmap <leader>P <plug>(YoinkRotateForward)
-nmap <leader>l <plug>(YoinkRotateBack)
-nmap <leader>' <plug>(YoinkRotateForward)
+nmap <leader>[ <plug>(YoinkRotateForward)
 
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)

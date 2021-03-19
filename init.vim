@@ -51,5 +51,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" Color schemes
+Plug 'rafi/awesome-vim-colorschemes'
+
 call plug#end()
 

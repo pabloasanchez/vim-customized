@@ -47,12 +47,35 @@ Plug 'svermeulen/vim-yoink'
 " indentLine - This plugin is used for displaying tin vertical lines at each indentation level
 Plug 'Yggdroot/indentLine'
 
+" delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
+Plug 'raimondi/delimitmate'
+
 " Icons 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Color schemes
 Plug 'rafi/awesome-vim-colorschemes'
+
+" vim-prettier - JS Prettier 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+" vim-signature - Place, toggle, display marks
+Plug 'kshenoy/vim-signature'
+
+" surround.vim - Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+Plug 'tpope/vim-surround'
+
+" vim-gitgutter - Shows git diff sign in the sign column.
+Plug 'airblade/vim-gitgutter'
+
+" repeat.vim - remaps . in a way that plugins can tap into it
+Plug 'tpope/vim-repeat'
+
+" deoplete - async completion
+Plug 'shougo/deoplete.nvim'
 
 call plug#end()
 

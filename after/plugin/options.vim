@@ -3,6 +3,28 @@
 
 set ignorecase
 
+let g:startify_custom_header = [
+      \ '                             ',
+      \ '                             ',
+      \ '                             ',
+      \ '             ██▓             ', 
+      \ '                             ',
+      \ '    ██▒   █▓ ██▓ ███▄ ▄███▓  ', 
+      \ '   ▓██░   █▒▓██▒▓██▒▀█▀ ██▒  ',
+      \ '    ▓██  █▒░▒██▒▓██▒   ▓██░  ',
+      \ '    ▓██  █▒░▒██▒▓██░   ▓██░  ',
+      \ '    ▒██ █░░░██░▒ ██░   ▒██░  ',
+      \ '     ▒▀█░  ░██░▒ ██▒   ░██▒  ',
+      \ '     ░ ▐░  ░▓  ░ ▒░   ░  ▓   ',
+      \ '     ░ ░░   ▒  ░  ░      ░   ',
+      \ '       ░░   ▒  ░      ░      ',
+      \ '        ░   ░         ░      ',
+      \ '        ░                    ',
+      \ '                             ',
+      \ '                             ',
+      \ '                             ',
+      \ ]
+
 " For Floaterm, create a background terminal that can be toggled and
 " open :GitFiles on Vim Enter.
 " autocmd VimEnter * :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger " Automatically open ranger fullscreen on startup

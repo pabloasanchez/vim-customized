@@ -1,3 +1,7 @@
 vendor
 undo
 
+
+autoload/plug.vim
+node_modules/.yarn-integrity
+yarn.lock

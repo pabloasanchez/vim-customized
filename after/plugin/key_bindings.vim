@@ -2,29 +2,43 @@
 
 " Floating Terminal and fuzzy search mappings
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <F12> :FloatermToggle terminal<cr>
-nnoremap <C-g> :FloatermNew --autoclose=1 --title=Git lazygit<cr>
-nnoremap <C-p> :Files<Enter>
+nnoremap <leader>r    :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+                  
+nnoremap <F12>     :FloatermToggle terminal --title=Terminal<cr>
+nnoremap <leader>t :FloatermToggle terminal --title=Terminal<cr>
+
+nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git lazygit<cr>
+nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git lazygit<cr>
+
+" Ctrl+P and Command History
+nnoremap <C-p> :GitFiles<Enter>
 nnoremap <SPACE> :History:<cr>
 
 " Cycle through terminals
-nmap <leader>l :FloatermPrev<cr>
-nmap <leader>' :FloatermNext<cr>
+nmap } :FloatermPrev<cr>
+nmap { :FloatermNext<cr>
 
 " For exiting terminal mode on ESC
 tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
 tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-nnoremap <ESC> :hide <bar> :FloatermHide terminal<cr>
+" Moving terminals while on TERMINAL mode
+tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
+tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
+
+" Hide terminals and other buffers
+nnoremap <ESC> :hide <cr>
 
 " Open Tags ith F2
-nnoremap <F2> :BTags<cr>
+nnoremap <F2>      :BTags<cr>
+nnoremap <leader>b :BTags<cr>
 
-" CTRL + F - Find
-nnoremap <leader>fl :Lines<Enter>
+" CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
 nnoremap <C-f> :BLines<Enter>
+nnoremap <leader>fl :Lines<Enter>
 nnoremap <leader>f :Rg<Enter>
 
 " VSCode style mappings for duplicating current line up or down
+" C-S is compatible with Mac
 xmap <C-S-down> <Plug>(textmanip-duplicate-down)
 xmap <C-S-j> <Plug>(textmanip-duplicate-down)
 nmap <C-S-down> <Plug>(textmanip-duplicate-down)
@@ -34,16 +48,26 @@ xmap <C-S-up> <Plug>(textmanip-duplicate-up)
 xmap <C-S-k> <Plug>(textmanip-duplicate-up)
 nmap <C-S-up> <Plug>(textmanip-duplicate-up)
 nmap <C-S-k> <Plug>(textmanip-duplicate-up)
+
+xmap <C-A-down> <Plug>(textmanip-duplicate-down)
+xmap <C-A-j> <Plug>(textmanip-duplicate-down)
+nmap <C-A-down> <Plug>(textmanip-duplicate-down)
+nmap <C-A-j> <Plug>(textmanip-duplicate-down)
+
+xmap <C-A-up> <Plug>(textmanip-duplicate-up)
+xmap <C-A-k> <Plug>(textmanip-duplicate-up)
+nmap <C-A-up> <Plug>(textmanip-duplicate-up)
+nmap <C-A-k> <Plug>(textmanip-duplicate-up)
 " nnoremap <C-S-down> yyp
 " nnoremap <C-S-j> yyp
 " nnoremap <C-S-up> yypk
 " nnoremap <C-S-k> yypk
 
 " VSCode style mappings for moving current line up or down
-nmap <C-j> <Plug>(textmanip-move-down)
-nmap <C-k> <Plug>(textmanip-move-up)
-nmap <C-h> <Plug>(textmanip-move-left)
-nmap <C-l> <Plug>(textmanip-move-right)
+" nmap <C-j> <Plug>(textmanip-move-down)
+" nmap <C-k> <Plug>(textmanip-move-up)
+" nmap <C-h> <Plug>(textmanip-move-left)
+" nmap <C-l> <Plug>(textmanip-move-right)
 
 xmap <C-j> <Plug>(textmanip-move-down)
 xmap <C-k> <Plug>(textmanip-move-up)
@@ -100,8 +124,8 @@ nnoremap <S-down> 4<C-e>
 " nnoremap <S-j> 4<C-e>
 nnoremap <S-up> 4<C-y>
 nnoremap <S-k> 4<C-y>
-nnoremap <S-left> B
-nnoremap <S-h> B
+nnoremap <S-left> E
+nnoremap <S-h> E
 nnoremap <S-right> W
 nnoremap <S-l> W
 nnoremap <C-home> gg

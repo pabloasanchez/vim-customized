@@ -74,8 +74,15 @@ Plug 'airblade/vim-gitgutter'
 " repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-repeat'
 
-" deoplete - async completion
-Plug 'shougo/deoplete.nvim'
+" completion
+" Plug 'ajh17/vimcompletesme'
+Plug 'neoclide/coc.nvim'
+
+" vim-rooter - changes working dir to the project root
+Plug 'airblade/vim-rooter'
+
+" commentary.vim - comment stuff out
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 

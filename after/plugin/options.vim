@@ -36,7 +36,7 @@ autocmd User StartifyReady :IndentLinesDisable
 autocmd User StartifyAllBuffersOpened :IndentLinesEnable
 
 " Avoid split windows
-autocmd WinNew * :only
+" autocmd WinNew * :only
 
 " Maintain undo history between sessions
 set undofile 

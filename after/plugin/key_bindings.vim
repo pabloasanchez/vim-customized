@@ -2,7 +2,7 @@
 
 " Floating Terminal and fuzzy search mappings
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <leader>r    :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+nnoremap <leader>r    :FloatermNew --autoclose=1 --title=Files --position=right --wintype=vsplit --disposable --width=0.5 ranger<cr>
                   
 nnoremap <F12>     :FloatermToggle terminal --title=Terminal<cr>
 nnoremap <leader>t :FloatermToggle terminal --title=Terminal<cr>
@@ -15,8 +15,8 @@ nnoremap <C-p> :GitFiles<Enter>
 nnoremap <SPACE> :History:<cr>
 
 " Cycle through terminals
-nmap } :FloatermPrev<cr>
-nmap { :FloatermNext<cr>
+nmap <leader>[ :FloatermPrev<cr>
+nmap <leader>] :FloatermNext<cr>
 
 " For exiting terminal mode on ESC
 tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
@@ -31,10 +31,12 @@ nnoremap <ESC> :hide <cr>
 " Open Tags ith F2
 nnoremap <F2>      :BTags<cr>
 nnoremap <leader>b :BTags<cr>
+" Marks
+nnoremap <leader>m :Marks<cr>
 
 " CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
 nnoremap <C-f> :BLines<Enter>
-nnoremap <leader>fl :Lines<Enter>
+nnoremap <leader>l :Lines<Enter>
 nnoremap <leader>f :Rg<Enter>
 
 " VSCode style mappings for duplicating current line up or down

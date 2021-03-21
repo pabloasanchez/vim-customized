@@ -20,7 +20,21 @@
 " nnoremap <C-L> :execute ":call CycleReplace(expand('<cword>'), ['true', 'false', 'undefined', 'null'])" <CR> 
 
 " Multiple lists:
-nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [ ['let', 'const'], ['let', 'var'], ['true', 'false'], ['undefined', 'null'], ['width', 'height'], ['x', 'y', 'z'] ])" <CR>
+nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [ 
+      \ ['let', 'const'], 
+      \ ['let', 'var'], 
+      \ ['true', 'false'],
+      \ ['undefined', 'null'],
+      \ ['width', 'height'],
+      \ ['x', 'y', 'z'],
+      \ ['on', 'off'],
+      \ ['yes, no'],
+      \ ['enable', 'disable'],
+      \ ['enabled', 'disabled'],
+      \ ['active', 'inactive'],
+      \ ['up', 'down'],
+      \ ['left', 'right'],
+      \ ])"<cr>
 
 " <C-L> is the key mapping
 " Your provided list is the second argument, in this case, ['true', 'false', 'undefined', 'null']

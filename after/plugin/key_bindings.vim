@@ -2,13 +2,18 @@
 
 " Floating Terminal and fuzzy search mappings
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <leader>r    :FloatermNew --autoclose=1 --title=Files --position=right --wintype=vsplit --disposable --width=0.5 ranger<cr>
-                  
-nnoremap <F12>     :FloatermToggle terminal --title=Terminal<cr>
-nnoremap <leader>t :FloatermToggle terminal --title=Terminal<cr>
+nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+" nnoremap <leader>r    :FloatermNew --autoclose=1 --title=Files --position=left --wintype=vsplit --disposable --width=0.4 ranger<cr>
 
-nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git lazygit<cr>
-nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git lazygit<cr>
+" Spawn a new terminal and hide it, to be used as a pop up terminal with F12
+execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
+nnoremap <F12>     :FloatermToggle terminal<cr>
+
+" Left side terminal <leader>t
+nnoremap <leader>t    :FloatermNew --autoclose=0 --position=right --wintype=vsplit --width=0.3 fish<cr>
+
+nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 
 " Ctrl+P and Command History
 nnoremap <C-p> :GitFiles<Enter>

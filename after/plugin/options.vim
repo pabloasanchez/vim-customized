@@ -71,6 +71,7 @@ set list
 " colorscheme angr
 colorscheme orbital
 " colorscheme alduin
+" colorscheme afterglow
 
 " Animated logo requires chafa 
 :hi FloatermBorder guibg=black guifg=black

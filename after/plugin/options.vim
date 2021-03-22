@@ -38,10 +38,7 @@ let g:startify_custom_header = startify#center(g:ascii)
 " autocmd TermLeave term://* :set number number
 if has('nvim') 
   autocmd TermEnter term://* :IndentLinesDisable  
-endif
-
-if has('nvim') 
-  autocmd TermOpen term://* setlocal nonumber norelativenumber
+  autocmd TermEnter term://* setlocal nonumber norelativenumber
 endif
 
 " Disables indenting lines on startify

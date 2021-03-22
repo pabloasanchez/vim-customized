@@ -74,5 +74,6 @@ colorscheme orbital
 
 " Animated logo requires chafa 
 :hi FloatermBorder guibg=black guifg=black
-:FloatermNew --name=logo --autoclose=1 --title=\  --width=0.2 --height=0.4 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/animated-logo-2.gif -c 16 --clear --duration 6
+" Use 2 colors (-c 2) for non black backgrounds
+:FloatermNew --name=logo --autoclose=1 --title=\  --width=0.2 --height=0.4 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/animated-logo-2.gif -c 16 --clear --duration 2
 

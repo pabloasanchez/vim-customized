@@ -4,26 +4,42 @@
 set ignorecase
 set history=150                  "hi:    keep 50 lines of command line history
 
+      " \ '                               ',
+      " \ '                               ',
+      " \ '     ▄▄                        ',
+      " \ '   ▄████░ ▓█░ ▄█ ▓█            ',
+      " \ '  ▓▓█░▀███▀  ██▀               ',
+      " \ '   ░▓▄ ▒██  ▓█▒ ▀██▄ ▄ ▄▄ ▄▄   ',
+      " \ '    ░ ░▓██  ██▒ ░██░ █▐█████▒  ',
+      " \ '       ░▒▓█▐█░  ▓██░ ██░█▓░█▒  ',
+      " \ '        ░▒▓█▓░  ▓█▓░ ▓█ █ ░█▒  ',
+      " \ '         ░▓█░   ▓█▒░ ▓▒ ▓ ░▓▒  ',
+      " \ '         ░▒░░    ▓░░ ▒░ ▒ ░▓▒  ',
+      " \ '          ▒░     ▒░  ▒░ ▒ ░░▒  ',
+      " \ '          ░      ░   ░  ░  ░░  ',
+      " \ '                            ░  ',
+      " \ '                               ',
+      " \ '                               ',
+      " \ '                               ',
+      " \ '                               ',
+      " \ '                               ',
+
+
 let g:ascii = [
-      \ '                               ',
-      \ '                               ',
-      \ '     ▄▄                        ',
-      \ '   ▄████░ ▓█░ ▄█ ▓█            ',
-      \ '  ▓▓█░▀███▀  ██▀               ',
-      \ '   ░▓▄ ▒██  ▓█▒ ▀██▄ ▄ ▄▄ ▄▄   ',
-      \ '    ░ ░▓██  ██▒ ░██░ █▐█████▒  ',
-      \ '       ░▒▓█▐█░  ▓██░ ██░█▓░█▒  ',
-      \ '        ░▒▓█▓░  ▓█▓░ ▓█ █ ░█▒  ',
-      \ '         ░▓█░   ▓█▒░ ▓▒ ▓ ░▓▒  ',
-      \ '         ░▒░░    ▓░░ ▒░ ▒ ░▓▒  ',
-      \ '          ▒░     ▒░  ▒░ ▒ ░░▒  ',
-      \ '          ░      ░   ░  ░  ░░  ',
-      \ '                            ░  ',
-      \ '                               ',
-      \ '                               ',
-      \ '                               ',
-      \ '                               ',
-      \ '                               ',
+      \ '    ▄▄                        ',
+      \ '  ▄████▄ ▄█▀ ▄█ ██            ',
+      \ '  ██ ▀███▀  ██▀               ',
+      \ '   █▄  ██  ███ ▀██▄ ▄ ▄▄ ▄▄   ',
+      \ '      ███  ███ ████ █▐██▌██▄  ',
+      \ '       ███▐██  ████ ████████  ',
+      \ '       ██████  ████ ██ █ ███  ',
+      \ '        ████   ████ ██ █ ███  ',
+      \ '        ████    ██▀ ██ █ ███  ',
+      \ '         ██     ██  ██ █ ███  ',
+      \ '         █      █   █  █  ██  ',
+      \ '                           █  ',
+      \ '                              ',
+      \ '                              ',
       \ ]
 
 let g:startify_custom_header = startify#center(g:ascii)
@@ -56,7 +72,7 @@ set undodir=~/.vim/undo
 
 " IndentLine plugin
 " ¦, ┆, │, ⎸, or ▏
-let g:indentLine_char = '┆'
+let g:indentLine_char = '⎸'
 let g:indentLine_defaultGroup = 'SpecialKey'
 " let g:indentLine_color_term = 110
 
@@ -66,15 +82,18 @@ set list
 
 " Colors / Color Schemes
 " colorscheme angr
-colorscheme orbital
+" colorscheme orbital
 " colorscheme alduin
 " colorscheme afterglow
+" colorscheme 256_noir
+" colorscheme abstract
+colorscheme desert
 
 " Animated intro gif requires chafa. Use 2 colors (-c 2) for non black backgrounds
 :hi FloatermBorder guibg=black guifg=black
-:hi FloatermNC ctermfg=223 ctermbg=16 guifg=#ffd7af guibg=bg
-:FloatermNew --name=logo --autoclose=2 --title=\  --width=0.17 --height=0.4 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --fg=white --clear --duration 2
+:hi link FloatermNC Title
 
-" TODO fix attempt -  Exit insert mode after opening terminal on Startify
-" autocmd User StartifyReady :normal <ESC>
+let g:floaterm_autoinsert=v:false
+:FloatermNew --name=logo --autoclose=2 --title=\  --width=0.15 --height=0.3 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --clear --duration 2
+let g:floaterm_autoinsert=v:true
 

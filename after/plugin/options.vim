@@ -26,6 +26,7 @@ set history=150                  "hi:    keep 50 lines of command line history
 
 
 let g:ascii = [
+      \ '                              ',
       \ '    ▄▄                        ',
       \ '  ▄████▄ ▄█▀ ▄█ ██            ',
       \ '  ██ ▀███▀  ██▀               ',
@@ -34,7 +35,6 @@ let g:ascii = [
       \ '       ███▐██  ████ ████████  ',
       \ '       ██████  ████ ██ █ ███  ',
       \ '        ████   ████ ██ █ ███  ',
-      \ '        ████    ██▀ ██ █ ███  ',
       \ '         ██     ██  ██ █ ███  ',
       \ '         █      █   █  █  ██  ',
       \ '                           █  ',
@@ -56,6 +56,7 @@ if has('nvim')
   autocmd TermEnter term://* :IndentLinesDisable  
   autocmd TermEnter term://* setlocal nonumber norelativenumber
 endif
+" autocmd TermLeave term://* :set number number
 
 " Disables indenting lines on startify
 if exists(':IndentLinesEnable')
@@ -87,13 +88,16 @@ set list
 " colorscheme afterglow
 " colorscheme 256_noir
 " colorscheme abstract
-colorscheme desert
+ " colorscheme desert
+" colorscheme one
+" colorscheme ron
+colorscheme elflord
 
 " Animated intro gif requires chafa. Use 2 colors (-c 2) for non black backgrounds
 :hi FloatermBorder guibg=black guifg=black
 :hi link FloatermNC Title
 
 let g:floaterm_autoinsert=v:false
-:FloatermNew --name=logo --autoclose=2 --title=\  --width=0.15 --height=0.3 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --clear --duration 2
+:FloatermNew --name=logo --autoclose=2 --title=\  --width=0.15 --height=0.3 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --clear --duration 3
 let g:floaterm_autoinsert=v:true
 

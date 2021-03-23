@@ -5,25 +5,25 @@ set ignorecase
 set history=150                  "hi:    keep 50 lines of command line history
 
 let g:ascii = [
-      \ '                             ',
-      \ '                             ',
-      \ '                             ',
-      \ '             ██▓             ', 
-      \ '                             ',
-      \ '    ██▒   █▓ ██▓ ███▄ ▄███▓  ', 
-      \ '   ▓██░   █▒▓██▒▓██▒▀█▀ ██▒  ',
-      \ '    ▓██  █▒░▒██▒▓██▒   ▓██░  ',
-      \ '    ▓██  █▒░▒██▒▓██░   ▓██░  ',
-      \ '    ▒██ █░░░██░▒ ██░   ▒██░  ',
-      \ '     ▒▀█░  ░██░▒ ██▒   ░██▒  ',
-      \ '     ░ ▐░  ░▓  ░ ▒░   ░  ▓   ',
-      \ '     ░ ░░   ▒  ░  ░      ░   ',
-      \ '       ░░   ▒  ░      ░      ',
-      \ '        ░   ░         ░      ',
-      \ '        ░                    ',
-      \ '                             ',
-      \ '                             ',
-      \ '                             ',
+      \ '                               ',
+      \ '                               ',
+      \ '     ▄▄                        ',
+      \ '   ▄████░ ▓█░ ▄█ ▓█            ',
+      \ '  ▓▓█░▀███▀  ██▀               ',
+      \ '   ░▓▄ ▒██  ▓█▒ ▀██▄ ▄ ▄▄ ▄▄   ',
+      \ '    ░ ░▓██  ██▒ ░██░ █▐█████▒  ',
+      \ '       ░▒▓█▐█░  ▓██░ ██░█▓░█▒  ',
+      \ '        ░▒▓█▓░  ▓█▓░ ▓█ █ ░█▒  ',
+      \ '         ░▓█░   ▓█▒░ ▓▒ ▓ ░▓▒  ',
+      \ '         ░▒░░    ▓░░ ▒░ ▒ ░▓▒  ',
+      \ '          ▒░     ▒░  ▒░ ▒ ░░▒  ',
+      \ '          ░      ░   ░  ░  ░░  ',
+      \ '                            ░  ',
+      \ '                               ',
+      \ '                               ',
+      \ '                               ',
+      \ '                               ',
+      \ '                               ',
       \ ]
 
 let g:startify_custom_header = startify#center(g:ascii)
@@ -70,8 +70,11 @@ colorscheme orbital
 " colorscheme alduin
 " colorscheme afterglow
 
-" Animated logo requires chafa 
+" Animated intro gif requires chafa. Use 2 colors (-c 2) for non black backgrounds
 :hi FloatermBorder guibg=black guifg=black
-" Use 2 colors (-c 2) for non black backgrounds
-:FloatermNew --name=logo --autoclose=1 --title=\  --width=0.2 --height=0.4 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/animated-logo-2.gif -c 16 --clear --duration 2
+:hi FloatermNC ctermfg=223 ctermbg=16 guifg=#ffd7af guibg=bg
+:FloatermNew --name=logo --autoclose=2 --title=\  --width=0.17 --height=0.4 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --fg=white --clear --duration 2
+
+" TODO fix attempt -  Exit insert mode after opening terminal on Startify
+" autocmd User StartifyReady :normal <ESC>
 

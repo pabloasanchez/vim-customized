@@ -85,7 +85,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-commentary'
 
 " Ternjs - Code analysis JS 
-" Note: After PLugInstall you need to run `npm i` under vendor
+" Note: After PlugInstall you need to run `npm i` under vendor/tern_for_vim
 Plug 'ternjs/tern_for_vim'
 
 call plug#end()

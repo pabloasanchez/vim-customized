@@ -35,8 +35,8 @@ tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
 tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 
-" Hide terminals and other buffers and clears search matches
-nnoremap <ESC> :set hls!<bar>:hide<cr> 
+" Hide locationlist, terminals and other buffers and clears search matches
+nnoremap <ESC> :lclose<bar>:set hls!<bar>:hide<cr>
 
 " Open Tags ith F2
 nnoremap <F2>      :BTags<cr>

@@ -87,16 +87,16 @@ set list
 
 " Colors / Color Schemes
 " colorscheme angr
-" colorscheme orbital
+colorscheme orbital
 " colorscheme alduin
 " colorscheme afterglow
 " colorscheme 256_noir
 " colorscheme abstract
- " colorscheme desert
+" colorscheme desert
 " colorscheme one
 " colorscheme ron
 " colorscheme elflord
-colorscheme anderson
+" colorscheme anderson
 
 " Animated intro gif requires chafa. Use 2 colors (-c 2) for non black backgrounds
 :hi FloatermBorder guibg=black guifg=black

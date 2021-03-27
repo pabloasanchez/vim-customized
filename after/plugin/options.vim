@@ -62,10 +62,14 @@ endif
 if exists(':IndentLinesEnable')
   autocmd User StartifyReady :IndentLinesDisable
   autocmd User StartifyAllBuffersOpened :IndentLinesEnable
+  
+  " Disable IndentLines for json
+  autocmd FileType json :IndentLinesDisable
 endif
 
 " Avoid split windows
 " autocmd WinNew * :only
+
 
 " Maintain undo history between sessions
 set undofile 
@@ -91,7 +95,8 @@ set list
  " colorscheme desert
 " colorscheme one
 " colorscheme ron
-colorscheme elflord
+" colorscheme elflord
+colorscheme anderson
 
 " Animated intro gif requires chafa. Use 2 colors (-c 2) for non black backgrounds
 :hi FloatermBorder guibg=black guifg=black

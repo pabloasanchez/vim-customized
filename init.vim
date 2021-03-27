@@ -36,7 +36,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'mhinz/vim-startify'
 
 " vim-javascript - JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 
 " t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 't9md/vim-textmanip'

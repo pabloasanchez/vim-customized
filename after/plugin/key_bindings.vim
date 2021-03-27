@@ -35,8 +35,8 @@ tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
 tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 
-" Hide terminals and other buffers
-nnoremap <ESC> :hide <cr>
+" Hide terminals and other buffers and clears search matches
+nnoremap <ESC> :set hls!<bar>:hide<cr> 
 
 " Open Tags ith F2
 nnoremap <F2>      :BTags<cr>
@@ -181,3 +181,4 @@ nmap <C-left> <Plug>vem_prev_buffer-
 nmap <C-right> <Plug>vem_next_buffer-
 nmap <C-h>     <Plug>vem_prev_buffer-
 nmap <C-l>     <Plug>vem_next_buffer-
+

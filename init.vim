@@ -13,15 +13,17 @@ call plug#begin('~/.vim/vendor')
 " Think of sensible.vim as one step above 'nocompatible' mode: a universal set of defaults that (hopefully) everyone can agree on.
 if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
 
+" Plug 'ternjs/tern_for_vim'          " Using coc instead
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
 " vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
 Plug 'rstacruz/vim-opinion'
 
 " fzf - Multi use Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" barbar - Tab bar
-" Plug 'romgrk/barbar.nvim'
 
 " vem-tabline - tab bar 
 Plug 'pacha/vem-tabline'
@@ -34,9 +36,6 @@ Plug 'rhysd/clever-f.vim'
 
 " vim-startify - This plugin provides a start screen for Vim and Neovim.
 Plug 'mhinz/vim-startify'
-
-" vim-javascript - JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-" Plug 'pangloss/vim-javascript'
 
 " t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 't9md/vim-textmanip'
@@ -57,11 +56,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Color schemes
 Plug 'rafi/awesome-vim-colorschemes'
 
-" vim-prettier - JS Prettier 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
 " vim-signature - Place, toggle, display marks
 Plug 'kshenoy/vim-signature'
 
@@ -74,19 +68,18 @@ Plug 'airblade/vim-gitgutter'
 " repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-repeat'
 
-" completion
-" Plug 'ajh17/vimcompletesme'
-Plug 'neoclide/coc.nvim'
-
 " vim-rooter - changes working dir to the project root
 Plug 'airblade/vim-rooter'
 
 " commentary.vim - comment stuff out
 Plug 'tpope/vim-commentary'
 
-" Ternjs - Code analysis JS 
-" Note: After PlugInstall you need to run `npm i` under vendor/tern_for_vim
-Plug 'ternjs/tern_for_vim'
+" NERDTree - The NERDTree is a file system explorer for the Vim editor.
+Plug 'preservim/nerdtree'
+
+" LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call plug#end()
 

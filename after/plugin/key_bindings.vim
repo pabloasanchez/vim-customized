@@ -3,26 +3,24 @@
 " Faster :
 nnoremap <leader><SPACE> :
 
+" Ctrl+P and Command History
+nnoremap <C-p> :GitFiles<Enter>
+nnoremap <SPACE> :History:<cr>
+
+" Terminals
+
 " Ranger through Floaterm 
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 
-" Terminals
-" Spawn a new terminal and hide it, to be used as a pop up terminal with F12
-execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
-nnoremap <F12>         :FloatermToggle terminal<cr>
-nnoremap <leader>t     :FloatermToggle terminal<cr>
-
-" Left side terminal <leader>t
-" execute ":FloatermNew --title=Terminal --name=aside --position=right --wintype=vsplit --width=0.3  --autoclose=0 --silent fish"
-" nnoremap <leader>t    :FloatermToggle aside<cr>
-
+" Lazygit
 nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 
-" Ctrl+P and Command History
-nnoremap <C-p> :GitFiles<Enter>
-nnoremap <SPACE> :History:<cr>
+" Spawn a new terminal and hide it, to be used as a pop up terminal with F12
+execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
+nnoremap <leader>t     :FloatermToggle terminal<cr>
+nnoremap <F12>         :FloatermNew --title=Terminal --autoclose=2 --silent fish<cr>
 
 " Cycle through terminals
 nmap <leader>[ :FloatermPrev<cr>
@@ -31,6 +29,7 @@ nmap <leader>] :FloatermNext<cr>
 " For exiting terminal mode on ESC
 tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
 tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
+
 " Moving terminals while on TERMINAL mode
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
 tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
@@ -39,8 +38,12 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 nnoremap <ESC> :lclose<bar>:set hls!<bar>:hide<cr>
 
 " Open Tags ith F2
-nnoremap <F2>      :BTags<cr>
-nnoremap <leader>b :BTags<cr>
+" nnoremap <F2>      :BTags<cr>
+" nnoremap <leader>b :BTags<cr>
+
+" Open NERDTree with F3
+nnoremap <F3>      :NERDTreeFind<cr>
+
 " Marks
 nnoremap <leader>m :Marks<cr>
 

@@ -80,6 +80,8 @@ Plug 'preservim/nerdtree'
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" vim-fugitive - Git Plugin
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

@@ -182,6 +182,6 @@ nmap P <plug>(YoinkPaste_P)
 " Vem-tabine move through tabs
 nmap <C-left> <Plug>vem_prev_buffer-
 nmap <C-right> <Plug>vem_next_buffer-
-nmap <C-h>     <Plug>vem_prev_buffer-
-nmap <C-l>     <Plug>vem_next_buffer-
+" nmap <C-h>     <Plug>vem_prev_buffer-
+" nmap <C-l>     <Plug>vem_next_buffer-
 

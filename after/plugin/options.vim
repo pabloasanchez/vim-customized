@@ -49,6 +49,10 @@ colorscheme alduin
 " colorscheme elflord
 " colorscheme anderson
 
+" Custom highlights
+" for 'one' colorscheme
+" highlight CursorLine ctermbg=234
+
 " NERDTree 
 let g:NERDTreeWinPos = "right"
 :let g:NERDTreeWinSize=60

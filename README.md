@@ -29,11 +29,11 @@ My custom Vim configuration
 * [chafa](https://github.com/hpjansson/chafa)
 
 ## Features
-* <SPACE> to bring up the command history
-* <C-p> To fuzzy search Git files
-* <C-f> To fuzzy search within the buffer
-* <C-S-f> To fuzzy search across buffers
-* <Leader-f> To fuzzy search within Git files
+* `<SPACE>` to bring up the command history
+* `<C-p>` To fuzzy search Git files
+* `<C-f>` To fuzzy search within the buffer
+* `<C-S-f>` To fuzzy search across buffers
+* `<Leader-f>` To fuzzy search within Git files
 * Git support using lazygit and vim-fugitive
 * Autocomplete and LSP using CoC
 * Finds root folder using rooter

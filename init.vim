@@ -41,7 +41,8 @@ Plug 'mhinz/vim-startify'
 Plug 't9md/vim-textmanip'
 
 " svermeulen/vim-yoink - Yoink will automatically maintain a history of yanks that you can choose between when pasting
-Plug 'svermeulen/vim-yoink'
+" Replaced with :CocInstall coc-yank
+" Plug 'svermeulen/vim-yoink'
 
 " indentLine - This plugin is used for displaying tin vertical lines at each indentation level
 Plug 'Yggdroot/indentLine'

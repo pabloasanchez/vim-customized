@@ -21,10 +21,10 @@
 
 " Multiple lists:
 nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [ 
-      \ ['let', 'const'], 
-      \ ['let', 'var'], 
+      \ ['let', 'const', 'var'], 
       \ ['true', 'false'],
       \ ['undefined', 'null'],
+      \ ['find', 'search'],
       \ ['width', 'height'],
       \ ['x', 'y', 'z'],
       \ ['on', 'off'],
@@ -34,7 +34,7 @@ nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [
       \ ['active', 'inactive'],
       \ ['up', 'down'],
       \ ['left', 'right'],
-      \ ])"<cr>
+      \ ])"<cr><cr>
 
 " <C-L> is the key mapping
 " Your provided list is the second argument, in this case, ['true', 'false', 'undefined', 'null']

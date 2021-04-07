@@ -20,11 +20,16 @@ nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=G
 " Spawn a new terminal and hide it, to be used as a pop up terminal with F12
 execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
 nnoremap <leader>t     :FloatermToggle terminal<cr>
-nnoremap <F12>         :FloatermNew --title=Terminal --autoclose=2 --silent fish<cr>
+nnoremap <F12>         :FloatermNew --autoclose=2 fish<cr>
 
 " Cycle through terminals
-nmap <leader>[ :FloatermPrev<cr>
-nmap <leader>] :FloatermNext<cr>
+nmap <leader>[ :CocList -A --normal floaterm<cr>
+nmap <leader>] :CocList -A --normal floaterm<cr>
+" nmap <leader>] :FloatermNext<cr>
+
+" Hide locationlist, terminals and other buffers and clears search matches
+" nnoremap <ESC> :lclose<bar>:set hls!<bar>:hide<cr>
+nnoremap <ESC> :set hls! <CR>
 
 " For exiting terminal mode on ESC
 tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
@@ -33,9 +38,6 @@ tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 " Moving terminals while on TERMINAL mode
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
 tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
-
-" Hide locationlist, terminals and other buffers and clears search matches
-nnoremap <ESC> :lclose<bar>:set hls!<bar>:hide<cr>
 
 " Open Tags ith F2
 " nnoremap <F2>      :BTags<cr>
@@ -172,9 +174,10 @@ nnoremap <C-N> :only<cr>
 nmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <F10> <Plug>(textmanip-toggle-mode)
 
-" Yoink
-nmap <leader>p <plug>(YoinkRotateBack)
-nmap <leader>[ <plug>(YoinkRotateForward)
+" coc-yank
+nmap <leader>p :CocList -A --normal yank<CR>
+" nmap <leader>p <plug>(YoinkRotateBack)
+" nmap <leader>[ <plug>(YoinkRotateForward)
 
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
@@ -182,6 +185,7 @@ nmap P <plug>(YoinkPaste_P)
 " Vem-tabine move through tabs
 nmap <C-left> <Plug>vem_prev_buffer-
 nmap <C-right> <Plug>vem_next_buffer-
-" nmap <C-h>     <Plug>vem_prev_buffer-
-" nmap <C-l>     <Plug>vem_next_buffer-
+nmap <A-h>     <Plug>vem_prev_buffer-
+nmap <A-l>     <Plug>vem_next_buffer-
 
+" TODO C-backspace CocList location

@@ -3,19 +3,24 @@
 " Faster :
 nnoremap <leader><SPACE> :
 
+" Faster / with fzf
+" nnoremap / :BLines<Enter>
+
 " Ctrl+P and Command History
 nnoremap <C-p> :GitFiles<Enter>
 nnoremap <SPACE> :History:<cr>
+nnoremap <leader>h :History<cr>
 
 " Terminals
 
 " Ranger through Floaterm 
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+" nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 
 " Lazygit
 nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
-nnoremap <leader>g :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 
 " Spawn a new terminal and hide it, to be used as a pop up terminal with F12
 execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
@@ -32,8 +37,8 @@ nmap <leader>] :CocList -A --normal floaterm<cr>
 nnoremap <ESC> :set hls! <CR>
 
 " For exiting terminal mode on ESC
-tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
 tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
+tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
 
 " Moving terminals while on TERMINAL mode
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
@@ -44,7 +49,7 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 " nnoremap <leader>b :BTags<cr>
 
 " Open NERDTree with F3
-nnoremap <F3>      :NERDTreeFind<cr>
+" nnoremap <F3> :NERDTreeTabsOpen<cr> <bar> :NERDTreeTabsFind<cr>
 
 " Marks
 nnoremap <leader>m :Marks<cr>
@@ -176,16 +181,18 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 
 " coc-yank
 nmap <leader>p :CocList -A --normal yank<CR>
-" nmap <leader>p <plug>(YoinkRotateBack)
-" nmap <leader>[ <plug>(YoinkRotateForward)
-
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
 
 " Vem-tabine move through tabs
 nmap <C-left> <Plug>vem_prev_buffer-
 nmap <C-right> <Plug>vem_next_buffer-
 nmap <A-h>     <Plug>vem_prev_buffer-
 nmap <A-l>     <Plug>vem_next_buffer-
+nmap <C-S-left> <Plug>vem_move_buffer_left-
+nmap <C-S-right> <Plug>vem_move_buffer_right-
+" Regular buffers
+" nmap <C-left> :bnext<CR>
+" nmap <C-right> :bprev<CR>
+" nmap <A-h>     :bnext<CR>
+" nmap <A-l>     :bprev<CR>
 
 " TODO C-backspace CocList location

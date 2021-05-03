@@ -25,8 +25,14 @@ Plug 'rstacruz/vim-opinion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" vem-tabline - tab bar 
+" Buffer/Tabs (tabline) management
 Plug 'pacha/vem-tabline'
+" Plug 'bagrat/vim-buffet'
+" Plug 'fholgado/minibufexpl.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='simple'
 
 " floaterm - Floating Terminal for vim
 Plug 'voldikss/vim-floaterm'
@@ -75,11 +81,15 @@ Plug 'airblade/vim-rooter'
 " commentary.vim - comment stuff out
 Plug 'tpope/vim-commentary'
 
+" File Tree
 " NERDTree - The NERDTree is a file system explorer for the Vim editor.
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+" Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'codota/tabnine-vim'
 
 " vim-fugitive - Git Plugin
 Plug 'tpope/vim-fugitive'

@@ -28,6 +28,15 @@ My custom Vim configuration
 * lazygit
 * [chafa](https://github.com/hpjansson/chafa)
 
+### CoC Required Plugins
+* coc-yank
+* coc-prettier (for JS development)
+* coc-lists 
+* coc-floaterm 
+* coc-tsserver (for JS development)
+* coc-json 
+* coc-flow (for JS development)
+
 ## Features
 * `<SPACE>` to bring up the command history
 * `<C-p>` To fuzzy search Git files

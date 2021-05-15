@@ -6,6 +6,11 @@ nnoremap <leader><SPACE> :
 " Faster / with fzf
 " nnoremap / :BLines<Enter>
 
+" Move between buffers with Tab
+" nnoremap <Tab> :bnext<CR>
+nnoremap <Tab> :wincmd w<CR>
+nnoremap <S-Tab> :wincmd =<CR>
+
 " Ctrl+P and Command History
 nnoremap <C-p> :GitFiles<Enter>
 nnoremap <SPACE> :History:<cr>
@@ -38,7 +43,8 @@ nnoremap <ESC> :set hls! <CR>
 
 " For exiting terminal mode on ESC
 tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
+tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
+" tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
 
 " Moving terminals while on TERMINAL mode
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
@@ -172,6 +178,7 @@ map <C-q> :qa<CR>
 
 " Buffer operations
 nnoremap <C-W> :bwipeout<cr>
+" nnoremap <C-W> :hide<cr>
 nnoremap <C-N> :only<cr>
 
 " Textmanip

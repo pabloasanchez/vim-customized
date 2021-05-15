@@ -2,6 +2,8 @@
 " Based on https://github.com/rstacruz/vim-from-scratch
 
 set nocompatible
+set splitbelow
+set splitright
 
 " Leader key
 let g:mapleader=";"

@@ -15,6 +15,8 @@ nnoremap <S-Tab> :wincmd =<CR>
 nnoremap <C-p> :GitFiles<Enter>
 nnoremap <SPACE> :History:<cr>
 nnoremap <leader>h :History<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader><TAB> :Buffers<cr>
 
 " Terminals
 

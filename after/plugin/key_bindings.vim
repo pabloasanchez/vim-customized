@@ -7,9 +7,17 @@ nnoremap <leader><SPACE> :
 " nnoremap / :BLines<Enter>
 
 " Move between buffers with Tab
-" nnoremap <Tab> :bnext<CR>
-nnoremap <Tab> :wincmd w<CR>
-nnoremap <S-Tab> :wincmd =<CR>
+nnoremap <A-Tab> :wincmd w<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
+
+" Remember session (splits)
+nnoremap <C-N> :mksession! .session <bar> :only<cr>
+nnoremap <C-A-N> :source .session<CR>
+
+" Close and hide buffers
+nnoremap <C-W> :hide<cr>
+nnoremap <leader>q :bwipeout<CR>
 
 " Ctrl+P and Command History
 nnoremap <C-p> :GitFiles<Enter>
@@ -178,11 +186,6 @@ imap <C-s> :w<CR>
 " Fast quit
 map <C-q> :qa<CR>
 
-" Buffer operations
-nnoremap <C-W> :bwipeout<cr>
-" nnoremap <C-W> :hide<cr>
-nnoremap <C-N> :only<cr>
-
 " Textmanip
 " toggle insert/replace with <F10>
 nmap <F10> <Plug>(textmanip-toggle-mode)
@@ -205,3 +208,13 @@ nmap <C-S-right> <Plug>vem_move_buffer_right-
 " nmap <A-l>     :bprev<CR>
 
 " TODO C-backspace CocList location
+
+" JS Debugger
+" nnoremap <F4> :NodeInspectStart<cr>
+" nnoremap <F6> :NodeInspectConnect("127.0.0.1:9229")<cr>
+" nnoremap <F5> :NodeInspectRun<cr>
+" nnoremap <F7> :NodeInspectStepInto<cr>
+" nnoremap <F8> :NodeInspectStepOver<cr>
+" nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
+" nnoremap <F10> :NodeInspectStop<cr>
+

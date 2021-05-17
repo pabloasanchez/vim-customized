@@ -15,10 +15,15 @@ call plug#begin('~/.vim/vendor')
 " Think of sensible.vim as one step above 'nocompatible' mode: a universal set of defaults that (hopefully) everyone can agree on.
 if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
 
-" Plug 'ternjs/tern_for_vim'          " Using coc instead
+" JS Plugins
+" Plug 'ternjs/tern_for_vim'          " Using coc instead, see lsp.vim
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'eliba2/vim-node-inspect'
+" Plug 'puremourning/vimspector'
+" let g:vimspector_enable_mappings = 'HUMAN'
+" packadd! vimspector
 
 " vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
 Plug 'rstacruz/vim-opinion'

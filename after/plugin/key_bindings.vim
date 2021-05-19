@@ -8,8 +8,23 @@ nnoremap <leader><SPACE> :
 
 " Move between buffers with Tab
 nnoremap <A-Tab> :wincmd w<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprev<CR>
+nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
+nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
+" nnoremap <S-Tab> :bprev<CR>
+
+function! s:next_visible_buffer(forward)
+  let operation = "bnext"
+
+  if (a:forward == 0)
+    let operation = "bprev"
+  endif
+
+  execute operation
+
+  if (len(win_findbuf(bufnr('%'))) > 1)
+    execute operation
+  endif
+endfunction
 
 " Remember session (splits)
 nnoremap <C-N> :mksession! .session <bar> :only<cr>
@@ -17,7 +32,8 @@ nnoremap <C-A-N> :source .session<CR>
 
 " Close and hide buffers
 nnoremap <C-W> :hide<cr>
-nnoremap <leader>q :bwipeout<CR>
+" nnoremap <leader>q :bwipeout<CR>
+nnoremap <leader>q :bp<BAR>bd #<CR> 
 
 " Ctrl+P and Command History
 nnoremap <C-p> :GitFiles<Enter>

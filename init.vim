@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 
 " Buffer/Tabs (tabline) management
 Plug 'pacha/vem-tabline'
+let g:vem_tabline_multiwindow_mode=1
 " Plug 'bagrat/vim-buffet'
 " Plug 'fholgado/minibufexpl.vim'
 " Plug 'vim-airline/vim-airline'

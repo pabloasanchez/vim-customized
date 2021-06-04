@@ -28,7 +28,7 @@ set undofile
 set undodir=~/.vim/undo
 
 " IndentLine plugin      ¦, ┆, │, ⎸, or ▏
-let g:indentLine_char = '│'
+let g:indentLine_char = '┆'
 let g:indentLine_defaultGroup = 'SpecialKey'
 " let g:indentLine_color_term = 110
 
@@ -38,8 +38,8 @@ set list
 
 " Colors / Color Schemes
 " colorscheme angr
-colorscheme orbital
-" colorscheme alduin
+" colorscheme orbital
+colorscheme alduin
 " colorscheme afterglow
 " colorscheme 256_noir
 " colorscheme abstract

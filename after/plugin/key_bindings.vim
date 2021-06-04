@@ -32,7 +32,7 @@ nnoremap <C-A-N> :source .session<CR>
 
 " Close and hide buffers
 nnoremap <C-W> :hide<cr>
-" nnoremap <leader>q :bwipeout<CR>
+nnoremap <leader>qq :bwipeout<CR>
 nnoremap <leader>q :bp<BAR>bd #<CR> 
 
 " Ctrl+P and Command History

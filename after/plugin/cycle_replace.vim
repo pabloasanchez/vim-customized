@@ -33,7 +33,7 @@ nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [
       \ ['enabled', 'disabled'],
       \ ['active', 'inactive'],
       \ ['up', 'down'],
-      \ ['left', 'right'],
+      \ ['left', 'right', 'center'],
       \ ['top', 'bottom'],
       \ ['light', 'dark'],
       \ ])"<cr><cr>

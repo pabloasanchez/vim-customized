@@ -102,5 +102,8 @@ Plug 'codota/tabnine-vim'
 " vim-fugitive - Git Plugin
 Plug 'tpope/vim-fugitive'
 
+" limelight, hyperfocusing in vim
+Plug 'junegunn/limelight.vim'
+
 call plug#end()
 

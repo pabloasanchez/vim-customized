@@ -32,11 +32,12 @@ nnoremap <C-A-N> :source .session<CR>
 
 " Close and hide buffers
 nnoremap <C-W> :hide<cr>
-nnoremap <leader>qq :bwipeout<CR>
-nnoremap <leader>q :bp<BAR>bd #<CR> 
+nnoremap <leader>q :bwipeout<CR>
+nnoremap <leader>qq :bp<BAR>bd #<CR> 
 
 " Ctrl+P and Command History
-nnoremap <C-p> :GitFiles<Enter>
+" nnoremap <C-p> :GitFiles<Enter>
+nnoremap <C-p> :Broot<Enter>
 nnoremap <SPACE> :History:<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader>b :Buffers<cr>
@@ -45,7 +46,9 @@ nnoremap <leader><TAB> :Buffers<cr>
 " Terminals
 
 " Ranger through Floaterm 
-nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+" command! Broot 
+nnoremap <silent><F4> :FloatermNew --width=0.4 --height=0.9 --wintype=vsplit broot<cr>
+" nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 " nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 

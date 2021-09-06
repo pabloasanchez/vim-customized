@@ -32,6 +32,9 @@ Plug 'rstacruz/vim-opinion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Far - Find and replace
+Plug 'brooth/far.vim'
+
 " Buffer/Tabs (tabline) management
 Plug 'pacha/vem-tabline'
 " Plug 'bagrat/vim-buffet'
@@ -61,7 +64,7 @@ Plug 't9md/vim-textmanip'
 Plug 'Yggdroot/indentLine'
 
 " delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'raimondi/delimitmate'
+" Plug 'raimondi/delimitmate'
 
 " Icons 
 Plug 'ryanoasis/vim-devicons'
@@ -99,7 +102,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'codota/tabnine-vim'
 
 " vim-fugitive - Git Plugin
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

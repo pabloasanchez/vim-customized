@@ -37,6 +37,7 @@ Plug 'brooth/far.vim'
 
 " Buffer/Tabs (tabline) management
 Plug 'pacha/vem-tabline'
+let g:vem_tabline_multiwindow_mode=1
 " Plug 'bagrat/vim-buffet'
 " Plug 'fholgado/minibufexpl.vim'
 " Plug 'vim-airline/vim-airline'
@@ -103,6 +104,9 @@ Plug 'codota/tabnine-vim'
 
 " vim-fugitive - Git Plugin
 " Plug 'tpope/vim-fugitive'
+
+" limelight, hyperfocusing in vim
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 

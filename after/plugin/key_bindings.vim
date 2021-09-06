@@ -3,6 +3,9 @@
 " Faster :
 nnoremap <leader><SPACE> :
 
+" Better visual yank/paste
+vnoremap p "0p
+
 " Faster / with fzf
 " nnoremap / :BLines<Enter>
 
@@ -171,6 +174,11 @@ imap <C-S-k> <ESC><Plug>(textmanip-duplicate-up)i
 imap :w <ESC>:w
 imap <C-Z> <C-W> 
 imap <C-D> <ESC>ddi
+imap <C-H> <C-O>h
+imap <C-J> <C-O>j
+imap <C-K> <C-O>k
+imap <C-L> <C-O>l
+imap <C-V> <C-O>p
 
 " Scrolling and movement
 nnoremap <A-up> 4k

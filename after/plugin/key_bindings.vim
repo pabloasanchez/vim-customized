@@ -2,6 +2,7 @@
 
 " Faster :
 nnoremap <leader><SPACE> :
+nnoremap <c-SPACE> :
 
 " Better visual yank/paste
 vnoremap p "0p
@@ -10,10 +11,15 @@ vnoremap p "0p
 " nnoremap / :BLines<Enter>
 
 " Move between buffers with Tab
-nnoremap <A-Tab> :wincmd w<CR>
-nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
-" nnoremap <S-Tab> :bprev<CR>
+" nnoremap <A-Tab> :wincmd w<CR>
+" nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
+" nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
+nnoremap <Tab> :wincmd w<CR>
+nnoremap <A-Tab> :call <SID>next_visible_buffer(1)<CR>
+nnoremap <A-S-Tab> :call <SID>next_visible_buffer(0)<CR>
+
+" Buffer list
+map <leader><Tab> :Buffers<CR>
 
 function! s:next_visible_buffer(forward)
   let operation = "bnext"
@@ -29,18 +35,24 @@ function! s:next_visible_buffer(forward)
   endif
 endfunction
 
+" vsplit shortcut
+nnoremap <A-Enter> :vsplit<CR>
+
 " Remember session (splits)
 nnoremap <C-N> :mksession! .session <bar> :only<cr>
-nnoremap <C-A-N> :source .session<CR>
+nnoremap <leader>n :source .session<CR>
 
 " Close and hide buffers
 nnoremap <C-W> :hide<cr>
-nnoremap <leader>q :bwipeout<CR>
-nnoremap <leader>qq :bp<BAR>bd #<CR> 
+" nnoremap <leader>q :bwipeout<CR>
+" nnoremap <leader>qq :bp<BAR>bd #<CR> 
+nnoremap <leader>q :bp<BAR>bd #<CR> 
+nnoremap <leader>d :bp<BAR>bd #<CR> 
 
 " Ctrl+P and Command History
-" nnoremap <C-p> :GitFiles<Enter>
-nnoremap <C-p> :Broot<Enter>
+nnoremap <A-p> :Files<Enter>
+nnoremap <C-p> :GitFiles<Enter>
+nnoremap <C-h> :History<cr>
 nnoremap <SPACE> :History:<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader>b :Buffers<cr>
@@ -50,8 +62,8 @@ nnoremap <leader><TAB> :Buffers<cr>
 
 " Ranger through Floaterm 
 " command! Broot 
-nnoremap <silent><F4> :FloatermNew --width=0.4 --height=0.9 --wintype=vsplit broot<cr>
-" nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+" nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --wintype=vsplit --position=left --title=\  --borderchars=\ \ \ \ \ \ \ \  broot -c ":select_last;:open_preview"<cr>
+nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 " nnoremap <leader>r :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 
@@ -77,6 +89,9 @@ nnoremap <ESC> :set hls! <CR>
 tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
 " tnoremap <Esc> <C-\><C-n> <bar> :hide <cr>
+
+" For being ebale to al-tab from term windows
+tnoremap <A-Tab> <C-\><C-n> <bar> :wincmd w<CR>
 
 " Moving terminals while on TERMINAL mode
 tnoremap <leader>[ <C-\><C-n> <bar> :FloatermPrev <cr>
@@ -160,6 +175,7 @@ imap <C-S-down> <ESC><Plug>(textmanip-duplicate-up)i
 imap <C-S-j> <ESC><Plug>(textmanip-duplicate-up)i
 imap <C-S-up> <ESC><Plug>(textmanip-duplicate-up)i
 imap <C-S-k> <ESC><Plug>(textmanip-duplicate-up)i
+imap <A-BS> <Del>
 " imap <C-left> <ESC><Plug>(textmanip-move-left)i
 " imap <C-right> <ESC><Plug>(textmanip-move-right)i
 " imap <C-S-down> <ESC>yypi
@@ -186,15 +202,15 @@ imap <C-V> <C-O>p
 " Scrolling and movement
 nnoremap <A-up> 4k
 nnoremap <A-down> 4j
-nnoremap <A-k> 4k
-nnoremap <A-j> 4j
+nnoremap <A-S-k> 4k
+nnoremap <A-S-j> 4j
 
 nnoremap <S-down> 4<C-e>
-nnoremap <A-S-j> 4<C-e>
+nnoremap <A-j> 4<C-e>
 " nnoremap <S-j> 4<C-e>
 
 nnoremap <S-up> 4<C-y>
-nnoremap <A-S-k> 4<C-y>
+nnoremap <A-k> 4<C-y>
 nnoremap <S-k> 4<C-y>
 
 nnoremap <S-left> E

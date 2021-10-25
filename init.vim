@@ -16,14 +16,10 @@ call plug#begin('~/.vim/vendor')
 if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
 
 " JS Plugins
-" Plug 'ternjs/tern_for_vim'          " Using coc instead, see lsp.vim
-Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'othree/yajs.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'eliba2/vim-node-inspect'
-" Plug 'puremourning/vimspector'
-" let g:vimspector_enable_mappings = 'HUMAN'
-" packadd! vimspector
 
 " vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
 Plug 'rstacruz/vim-opinion'
@@ -32,12 +28,16 @@ Plug 'rstacruz/vim-opinion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Far - Find and replace
+" Far - Find and replace TODO broken
 Plug 'brooth/far.vim'
 
 " Buffer/Tabs (tabline) management
+" Plug 'hoob3rt/lualine.nvim'
+" :execute ":lua require('lualine').setup()"
+" Plug 'romgrk/barbar.nvim'
 Plug 'pacha/vem-tabline'
 let g:vem_tabline_multiwindow_mode=1
+set laststatus=0
 " Plug 'bagrat/vim-buffet'
 " Plug 'fholgado/minibufexpl.vim'
 " Plug 'vim-airline/vim-airline'
@@ -62,10 +62,10 @@ Plug 't9md/vim-textmanip'
 " Plug 'svermeulen/vim-yoink'
 
 " indentLine - This plugin is used for displaying tin vertical lines at each indentation level
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 " delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
-" Plug 'raimondi/delimitmate'
+Plug 'raimondi/delimitmate'
 
 " Icons 
 Plug 'ryanoasis/vim-devicons'
@@ -100,13 +100,22 @@ Plug 'tpope/vim-commentary'
 
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'codota/tabnine-vim'
+" Plug 'codota/tabnine-vim'
 
 " vim-fugitive - Git Plugin
 " Plug 'tpope/vim-fugitive'
 
 " limelight, hyperfocusing in vim
 Plug 'junegunn/limelight.vim'
+
+" Distraction-free plugins
+" Plug 'bilalq/lite-dfm'
+Plug 'junegunn/goyo.vim'
+" Plug 'mikewest/vimroom'
+
+" Focus windows
+" Plug 'beauwilliams/focus.nvim'
+" :execute ":lua require('focus').setup()"
 
 call plug#end()
 

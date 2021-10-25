@@ -6,9 +6,13 @@ set history=150                  "hi:    keep 50 lines of command line history
 
 " Disables indenting and numbers on Terminal mode and limelight
 if has('nvim') 
-  autocmd TermEnter term://* :IndentLinesDisable  
+  
+  if exists(':IndentLinesEnable')
+    autocmd TermEnter term://* :IndentLinesDisable  
+  endif
+  
   autocmd TermEnter term://* :Limelight!
-  autocmd TermLeave  term://* :Limelight
+  " autocmd TermLeave  term://* :Limelight
   autocmd TermEnter term://* setlocal nonumber norelativenumber
 endif
 
@@ -34,18 +38,24 @@ let g:indentLine_char = '⎸'
 let g:indentLine_defaultGroup = 'SpecialKey'
 " let g:indentLine_color_term = 110
 
+" fzf overrides
+" command! -bang -nargs=? -complete=dir GFiles call fzf#vim#gitfiles("-m")
+
 " floaterm options
 let g:floaterm_opener = 'edit'
-" command! Broot FloatermNew --width=0.4 --height=0.9 --wintype=vsplit broot
-command! Broot FloatermNew broot
+command! Broot :FloatermNew --autoclose=1 --width=0.5 --height=0.4 --wintype=float --title=\  --borderchars=\ \ \ \ \ \ \ \  broot
 
-" Shows hidden chars
-set lcs=tab:»_,trail:·,space:·
+" Shows hidden chars TODO broken when using Goyo
+" set lcs=tab:··,trail:·,space:·
 set list
 
+" Fold column (margin)
+set foldcolumn=2
+
 " Colors / Color Schemes
+colorscheme rdark-terminal2
+" colorscheme orbital
 " colorscheme angr
-colorscheme orbital
 " colorscheme alduin
 " colorscheme darkblue
 " colorscheme afterglow
@@ -57,24 +67,44 @@ colorscheme orbital
 " colorscheme elflord
 " colorscheme anderson
 
+" Goyo and Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 " Custom highlights
-" for 'one' colorscheme
-highlight CursorLine ctermbg=234
-" highlight TabLine ctermbg=234
-"
-" for 'darkblue'
-hi StatusLine ctermbg=234 ctermfg=white
-hi TabLine ctermbg=234 
-" hi Comment ctermfg=DarkBlue
+function CustomHighlights()
+  " for 'one' colorscheme
+  " highlight CursorLine ctermbg=234
 
-" NERDTree 
-" let g:NERDTreeWinPos = "right"
-" let g:NERDTreeWinSize=60
-" let g:nerdtree_tabs_autofind=1
-" let g:nerdtree_tabs_focus_on_files=1
-" autocmd BufRead * NERDTreeFind | NERDTreeMirror | wincmd p
-" autocmd BufWinLeave * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  " for 'darkblue'
+  " hi StatusLine ctermbg=234 ctermfg=white
+  " hi TabLine ctermbg=234 
+  " hi Comment ctermfg=DarkBlue
 
-" Turn on limelight
-:Limelight
+  highlight TabLine ctermbg=black ctermfg=234
+  highlight TabLineFill ctermbg=black ctermfg=234
+  highlight TabLineFill ctermbg=black ctermfg=234
+  " highlight TabLineSel ctermbg=215 ctermfg=black
+  highlight TabLineSel ctermbg=234 ctermfg=yellow
+  " hi StatusLine ctermbg=black ctermfg=215
+  " hi StatusLineNC ctermbg=black ctermfg=234
+  hi StatusLine ctermfg=yellow ctermbg=234
+  hi StatusLineNC ctermbg=black ctermfg=234
+
+  let g:limelight_conceal_ctermfg = 'gray'
+  let g:limelight_conceal_ctermfg = 240
+
+  " Color name (:help gui-colors) or RGB color
+  let g:limelight_conceal_guifg = 'DarkGray'
+  let g:limelight_conceal_guifg = '#777777'
+endfunction
+
+" Sort of hack to prevent plugins and themes overriding these preferences
+command! CustomHighlights :execute ":call CustomHighlights()"
+
+autocmd! User GoyoEnter CustomHighlights
+autocmd! User GoyoLeave CustomHighlights 
+autocmd! WinNew * CustomHighlights 
+
+:execute ":call CustomHighlights()"
 

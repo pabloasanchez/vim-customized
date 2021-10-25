@@ -1,6 +1,8 @@
 " lsp.vim - LSP configuration
 " Note: Move Plugins to init.vim, they are here only for reference
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP Using TernJS
 " Ternjs - Code analysis JS 
 
@@ -10,6 +12,7 @@
 " On CTRL LeftMouse, highlight all occurrences and run TernDef
 " nnoremap <C-LeftMouse> <LeftMouse>:<C-U>:TernDef<cr>
 " nnoremap <3-LeftMouse> :TernRefs<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP Using ALE and Deoplete
@@ -21,6 +24,7 @@
 "   Plug 'roxma/vim-hug-neovim-rpc'
 " endif
 " let g:deoplete#enable_at_startup = 1
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP using LanguageClient
@@ -47,6 +51,7 @@
 
 " nnoremap <3-LeftMouse> :call LanguageClient_textDocument_hover()<cr>
 " nnoremap <C-LeftMouse> <LeftMouse>:<C-U>:call LanguageClient_textDocument_definition()<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP using coc.nvim

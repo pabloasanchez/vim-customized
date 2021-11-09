@@ -4,42 +4,13 @@
 set ignorecase
 set history=150                  "hi:    keep 50 lines of command line history
 
-" Disables indenting and numbers on Terminal mode and limelight
-if has('nvim') 
-  
-  if exists(':IndentLinesEnable')
-    autocmd TermEnter term://* :IndentLinesDisable  
-  endif
-  
-  autocmd TermEnter term://* :Limelight!
-  " autocmd TermLeave  term://* :Limelight
-  autocmd TermEnter term://* setlocal nonumber norelativenumber
-endif
-
-" Disables indenting lines on startify
-if exists(':IndentLinesEnable')
-  " Disable Startify
-  autocmd User StartifyReady :IndentLinesDisable
-  autocmd User StartifyAllBuffersOpened :IndentLinesEnable
-  
-  " Disable IndentLines for json
-  autocmd FileType json :IndentLinesDisable
-endif
-
-" Avoid split windows
-" autocmd WinNew * :only
+" Disables numbers on Terminal mode and limelight
+autocmd TermEnter term://* :Limelight!
+autocmd TermEnter term://* setlocal nonumber norelativenumber
 
 " Maintain undo history between sessions
 set undofile 
 set undodir=~/.vim/undo
-
-" IndentLine plugin      ¦, ┆, │, ⎸, or ▏
-let g:indentLine_char = '⎸'
-let g:indentLine_defaultGroup = 'SpecialKey'
-" let g:indentLine_color_term = 110
-
-" fzf overrides
-" command! -bang -nargs=? -complete=dir GFiles call fzf#vim#gitfiles("-m")
 
 " floaterm options
 let g:floaterm_opener = 'edit'
@@ -54,18 +25,6 @@ set foldcolumn=2
 
 " Colors / Color Schemes
 colorscheme rdark-terminal2
-" colorscheme orbital
-" colorscheme angr
-" colorscheme alduin
-" colorscheme darkblue
-" colorscheme afterglow
-" colorscheme 256_noir
-" colorscheme abstract
-" colorscheme desert
-" colorscheme one
-" colorscheme ron
-" colorscheme elflord
-" colorscheme anderson
 
 " Goyo and Limelight
 autocmd! User GoyoEnter Limelight
@@ -73,23 +32,12 @@ autocmd! User GoyoLeave Limelight!
 
 " Custom highlights
 function CustomHighlights()
-  " for 'one' colorscheme
-  " highlight CursorLine ctermbg=234
-
-  " for 'darkblue'
-  " hi StatusLine ctermbg=234 ctermfg=white
-  " hi TabLine ctermbg=234 
-  " hi Comment ctermfg=DarkBlue
-
   highlight TabLine ctermbg=black ctermfg=234
   highlight TabLineFill ctermbg=black ctermfg=234
   highlight TabLineFill ctermbg=black ctermfg=234
-  " highlight TabLineSel ctermbg=215 ctermfg=black
   highlight TabLineSel ctermbg=234 ctermfg=yellow
-  " hi StatusLine ctermbg=black ctermfg=215
-  " hi StatusLineNC ctermbg=black ctermfg=234
-  hi StatusLine ctermfg=yellow ctermbg=234
-  hi StatusLineNC ctermbg=black ctermfg=234
+  hi StatusLine ctermfg=yellow ctermbg=235 cterm=bold
+  hi StatusLineNC ctermbg=233 ctermfg=215
 
   let g:limelight_conceal_ctermfg = 'gray'
   let g:limelight_conceal_ctermfg = 240

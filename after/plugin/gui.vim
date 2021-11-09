@@ -5,7 +5,7 @@ call quickui#menu#reset()
 function! SaveAs()
   let curline = getline('.')
   call inputsave()
-  let name = input('Enter name: ')
+  let name = input("Save as: ", "", "file")
   call inputrestore()
   execute ":saveas " . name
 endfunction

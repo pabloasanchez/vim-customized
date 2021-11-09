@@ -3,7 +3,6 @@ call quickui#menu#reset()
 
 " Save as
 function! SaveAs()
-  let curline = getline('.')
   call inputsave()
   let name = input("Save as: ", "", "file")
   call inputrestore()
@@ -18,28 +17,29 @@ let g:quickui_color_scheme = 'system'
 
 " install a 'File' menu, use [text, command] to represent an item.
 call quickui#menu#install('&File', [
-            \ [ "&New File\tCtrl+n", 'enew', 'Create an empty buffer in same window' ],
-            \ [ "&Open File\t(F3)", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger' ],
-            \ [ "&Close", 'bd' ],
+            \ [ "&New File\t:enew", 'enew', 'Create an empty buffer in same window' ],
+            \ [ "&Open File\tCtrl+l", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger', 'Open a file with Ranger' ],
+            \ [ "&Close\tAlt+w", 'bd', 'Close current buffer' ],
             \ [ "--", '' ],
-            \ [ "&Save\tCtrl+s", 'w'],
-            \ [ "Save &As", 'call SaveAs()' ],
+            \ [ "&Save\tCtrl+s", 'w', 'Save current buffer'],
+            \ [ "Save &As...", 'call SaveAs()', 'Save buffer as...' ],
             \ [ "--", '' ],
-            \ [ "E&xit\tAlt+x", 'q' ],
+            \ [ "E&xit\tCtrl+q", 'qa' ],
             \ ])
 
 " items containing tips, tips will display in the cmdline
 call quickui#menu#install('&Edit', [
-            \ [ '&Copy', 'echo 1', 'help 1' ],
-            \ [ '&Paste', 'echo 2', 'help 2' ],
-            \ [ '&Find', 'echo 3', 'help 3' ],
+            \ [ "&Copy\tyy", 'norm yy', 'Copy line' ],
+            \ [ "&Paste\tp", 'norm p', 'Paste' ],
+            \ [ "--", '' ],
+            \ [ "Cl&ipboard\t;p", 'norm ;p', 'Clipboard with recent yanks' ],
             \ ])
 
 " script inside %{...} will be evaluated and expanded in the string
 call quickui#menu#install("&Option", [
 			\ ['Set &Spell %{&spell? "Off":"On"}', 'set spell!'],
 			\ ['Set &Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
-			\ ['Set &Paste %{&paste? "Off":"On"}', 'set paste!'],
+			\ ['Set &Wrap %{&wrap? "Off":"On"}', 'set wrap!'],
 			\ ])
 
 " register HELP menu with weight 10000

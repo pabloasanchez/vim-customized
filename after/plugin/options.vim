@@ -4,6 +4,9 @@
 set ignorecase
 set history=150                  "hi:    keep 50 lines of command line history
 
+" Enables OS clipboard integration
+set clipboard+=unnamedplus
+
 " Disables numbers on Terminal mode and limelight
 autocmd TermEnter term://* :Limelight!
 autocmd TermEnter term://* setlocal nonumber norelativenumber

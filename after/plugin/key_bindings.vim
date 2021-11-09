@@ -45,8 +45,8 @@ nnoremap <leader>n :source .session<CR>
 " Close and hide buffers
 "
 nnoremap <C-W> :hide<cr>
-" nnoremap <A-w> :bd<cr>
-nnoremap <A-w> :bp<BAR>bd #<CR> 
+nnoremap <A-w> :bd<cr>
+" nnoremap <A-w> :bp<BAR>bd #<CR> 
 
 
 "

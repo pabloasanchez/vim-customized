@@ -7,6 +7,7 @@ set nocompatible
 set splitbelow
 set splitright
 set wrap
+set cursorline
 
 "
 " Vendor plugins

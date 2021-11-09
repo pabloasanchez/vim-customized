@@ -4,13 +4,14 @@
 nnoremap <leader><SPACE> :
 nnoremap <c-SPACE> :
 
+
 " 
 " Command line remaps (hjkl instead of arrows)
 "
-:cnoremap <C-h> <Left>
-:cnoremap <C-j> <Down>
-:cnoremap <C-k> <Up>
-:cnoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
 
 
 "
@@ -44,8 +45,8 @@ nnoremap <leader>n :source .session<CR>
 " Close and hide buffers
 "
 nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :bd<cr>
-nnoremap <leader>q :bp<BAR>bd #<CR> 
+" nnoremap <A-w> :bd<cr>
+nnoremap <A-w> :bp<BAR>bd #<CR> 
 
 
 "

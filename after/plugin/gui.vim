@@ -1,6 +1,15 @@
 " clear all the menus
 call quickui#menu#reset()
 
+" Save as
+function! SaveAs()
+  let curline = getline('.')
+  call inputsave()
+  let name = input('Enter name: ')
+  call inputrestore()
+  execute ":saveas " . name
+endfunction
+
 " border style
 let g:quickui_border_style = 3
 
@@ -14,7 +23,7 @@ call quickui#menu#install('&File', [
             \ [ "&Close", 'bd' ],
             \ [ "--", '' ],
             \ [ "&Save\tCtrl+s", 'w'],
-            \ [ "Save &As", 'norm :saveas' ],
+            \ [ "Save &As", 'call SaveAs()' ],
             \ [ "--", '' ],
             \ [ "E&xit\tAlt+x", 'q' ],
             \ ])

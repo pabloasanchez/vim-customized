@@ -29,7 +29,7 @@ My custom Vim configuration
 * [chafa](https://github.com/hpjansson/chafa)
 
 ## Changes (TODO)
-* Replace fzf with Telescope
+* ~~Replace fzf with Telescope~~
 * vim-quickui: Menu, context menus, etc.
 * <SPACE> brings up command history and other relevant lists (commands, history)
 * Smart splits (focus)

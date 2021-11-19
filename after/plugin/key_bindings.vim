@@ -5,6 +5,11 @@ nnoremap <leader><SPACE> :
 nnoremap <c-SPACE> :
 
 
+"
+" Quick UI Menu
+"
+nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
+
 " 
 " Command line remaps (hjkl instead of arrows)
 "
@@ -40,12 +45,17 @@ nnoremap <A-Enter> :vsplit<CR>
 nnoremap <C-N> :mksession! .session <bar> :only<cr>
 nnoremap <leader>n :source .session<CR>
 
+"
+" Split resizing
+"
+nnoremap <A-r> :WinResizerStartResize<ENTER>
+
 
 "
 " Close and hide buffers
 "
 nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :bd<cr>
+nnoremap <A-w> :confirm bd<cr>
 " nnoremap <A-w> :bp<BAR>bd #<CR> 
 
 
@@ -78,6 +88,15 @@ endfunction
 
 
 "
+" CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
+"
+nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
+nnoremap <leader>l :Lines<Enter>
+nnoremap <leader>f :Rg<Enter>
+nnoremap <leader>ff :Telescope resume<Enter>
+
+
+"
 " Terminals
 "
 nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
@@ -93,11 +112,9 @@ nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=G
 
 
 "
-" Spawn a new terminal and hide it, to be used as a pop up terminal with F12
+" Spawn a new terminal with ;t
 "
-execute ":FloatermNew --title=Terminal --name=terminal --autoclose=2 --silent fish"
 nnoremap <leader>t     :FloatermToggle terminal<cr>
-nnoremap <F12>         :FloatermNew --autoclose=2 fish<cr>
 
 
 "
@@ -122,7 +139,7 @@ tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
 
 
 "
-" For being ebale to al-tab from term windows
+" For being able to alt-tab from term windows
 "
 tnoremap <A-Tab> <C-\><C-n> <bar> :wincmd w<CR>
 
@@ -138,14 +155,6 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 " Marks
 "
 nnoremap <leader>m :Marks<cr>
-
-
-"
-" CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
-"
-nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
-nnoremap <leader>l :Lines<Enter>
-nnoremap <leader>f :Telescope live_grep<Enter>
 
 
 "
@@ -253,7 +262,7 @@ imap <C-s> :w<CR>
 "
 " Fast quit
 "
-map <C-q> :qa<CR>
+map <C-q> :confirm qa<CR>
 
 
 "

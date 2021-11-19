@@ -19,7 +19,11 @@ let g:quickui_color_scheme = 'system'
 call quickui#menu#install('&File', [
             \ [ "&New File\t:enew", 'enew', 'Create an empty buffer in same window' ],
             \ [ "&Open File\tCtrl+l", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger', 'Open a file with Ranger' ],
-            \ [ "&Close\tAlt+w", 'bd', 'Close current buffer' ],
+            \ [ "&Browse Files...", 'Telescope file_browser', 'File browser' ],
+            \ [ "&Close\tAlt+w", 'confirm bd', 'Close current buffer' ],
+            \ [ "Close All", 'confirm %bd', 'Close current buffer' ],
+            \ [ "--", '' ],
+            \ [ "&Recent Files", 'Startify', 'Recent files'],
             \ [ "--", '' ],
             \ [ "&Save\tCtrl+s", 'w', 'Save current buffer'],
             \ [ "Save &As...", 'call SaveAs()', 'Save buffer as...' ],
@@ -39,13 +43,13 @@ call quickui#menu#install('&Edit', [
 
 " install a 'File' menu, use [text, command] to represent an item.
 call quickui#menu#install('Fi&nd', [
-            \ [ "&Resume Last Find", 'Telescope resume', 'Lists the results incl. multi-selections of the previous picker' ],
+            \ [ "&Resume Last Find\t;ff", 'Telescope resume', 'Lists the results incl. multi-selections of the previous picker' ],
             \ [ "--", '' ],
-            \ [ "&Buffer", 'Telescope current_buffer_fuzzy_find', 'Live fuzzy search inside of the currently open buffer' ],
-            \ [ "&Files\t;f", 'Telescope find_files', 'Lists files in your current working directory, respects .gitignore' ],
-            \ [ "&Git Files\tCtrl+l", 'Telescope git_files', 'Fuzzy search through the output of git ls-files command, respects .gitignore' ],
-            \ [ "Gr&ep String\tAlt+w", 'Telescope grep_string', 'Searches for the string under your cursor in your current working directory' ],
-            \ [ "&Live Grep\tAlt+w", 'Telescope live_grep', 'Search for a string in your current working directory and get results live as you type (respecting .gitignore)' ],
+            \ [ "In this &Buffer\tCtrl+f", 'Telescope current_buffer_fuzzy_find', 'Live fuzzy search inside of the currently open buffer' ],
+            \ [ "&In Files (Ripgrep)\t;f", 'Rg', 'Search inside files in your current working directory, respects .gitignore' ],
+            \ [ "&Files (Live Grep)", 'Telescope find_files', 'Search files in your current working directory, respects .gitignore' ],
+            \ [ "&Git Files", 'Telescope git_files', 'Fuzzy search through the output of git ls-files command, respects .gitignore' ],
+            \ [ "Gr&ep String", 'Telescope grep_string', 'Searches for the string under your cursor in your current working directory' ],
             \ [ "--", '' ],
             \ [ "Buffers\t;Tab", 'Telescope buffers', 'Lists buffers' ],
             \ [ "Old Files\tCtrl+Backspace", 'Telescope old_files', 'Lists previously opened files' ],
@@ -72,6 +76,8 @@ call quickui#menu#install("&Options", [
 
 
 call quickui#menu#install("&Tools", [
+			\ ['Welcome', 'Startify'],
+			\ ['--',''],
       \ [ "&File browser", 'Telescope file_browser'],
       \ [ "&Ranger", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger'],
             \ [ "&Open File\tCtrl+l", '', 'Open a file with Ranger' ],
@@ -82,8 +88,6 @@ call quickui#menu#install("&Tools", [
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
 			\ ["&Cheatsheet", 'help index', ''],
-			\ ['T&ips', 'help tips', ''],
-			\ ['--',''],
 			\ ["&Tutorial", 'help tutor', ''],
 			\ ['&Quick Reference', 'help quickref', ''],
 			\ ['&Summary', 'help summary', ''],

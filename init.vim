@@ -29,8 +29,12 @@ Plug 'airblade/vim-rooter'            "vim-rooter - changes working dir to the p
 
 "
 " Window splits
-Plug 'beauwilliams/focus.nvim'                     "Focus windows
-:lua require('focus').setup()
+"
+" Plug 'camspiers/animate.vim'                      "Window animations
+Plug 'camspiers/lens.vim'                           "Window resizing
+Plug 'vimlab/split-term.vim'                        "Better terminal splits
+Plug 'simeji/winresizer'                            "Resize splits with hjkl, using :WinResizerStartResize
+
 
 "
 " GUI
@@ -65,17 +69,21 @@ Plug 'brooth/far.vim'                                                       " Fa
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+
 "
 " Edit tools
 "
-Plug 't9md/vim-textmanip'                             " t9md/vim-textmanip - Move/duplicate text intuitively
-Plug 'raimondi/delimitmate'                           " delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'kshenoy/vim-signature'                          " vim-signature - Place, toggle, display marks
-Plug 'tpope/vim-surround'                             " surround.vim - Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-Plug 'airblade/vim-gitgutter'                         " vim-gitgutter - Shows git diff sign in the sign column.
-Plug 'tpope/vim-repeat'                               " repeat.vim - remaps . in a way that plugins can tap into it
-Plug 'tpope/vim-commentary'                           " commentary.vim - comment stuff out
-
+Plug 't9md/vim-textmanip'                                     " t9md/vim-textmanip - Move/duplicate text intuitively
+Plug 'raimondi/delimitmate'                                   " delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
+Plug 'kshenoy/vim-signature'                                  " vim-signature - Place, toggle, display marks
+Plug 'tpope/vim-surround'                                     " surround.vim - Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+Plug 'airblade/vim-gitgutter'                                 " vim-gitgutter - Shows git diff sign in the sign column.
+Plug 'tpope/vim-repeat'                                       " repeat.vim - remaps . in a way that plugins can tap into it
+Plug 'tpope/vim-commentary'                                   " commentary.vim - comment stuff out      
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " treesitter - syntax highlight parsers. We recommend updating the parsers on update
+lua <<EOF
+require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+EOF
 
 "
 " Terminal

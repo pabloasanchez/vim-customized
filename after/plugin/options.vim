@@ -38,9 +38,9 @@ function CustomHighlights()
   highlight TabLine ctermbg=black ctermfg=234
   highlight TabLineFill ctermbg=black ctermfg=234
   highlight TabLineFill ctermbg=black ctermfg=234
-  highlight TabLineSel ctermbg=234 ctermfg=yellow
-  hi StatusLine ctermfg=yellow ctermbg=235 cterm=bold
-  hi StatusLineNC ctermbg=233 ctermfg=215
+  highlight TabLineSel ctermbg=234 ctermfg=yellow cterm=bold
+  hi StatusLine ctermfg=74 ctermbg=235 cterm=bold
+  hi StatusLineNC ctermbg=233 ctermfg=130
 
   let g:limelight_conceal_ctermfg = 'gray'
   let g:limelight_conceal_ctermfg = 240
@@ -48,6 +48,9 @@ function CustomHighlights()
   " Color name (:help gui-colors) or RGB color
   let g:limelight_conceal_guifg = 'DarkGray'
   let g:limelight_conceal_guifg = '#777777'
+
+  " Sneak setting cursorline
+  set cursorline
 endfunction
 
 " Sort of hack to prevent plugins and themes overriding these preferences

@@ -6,8 +6,9 @@ let g:mapleader=";"
 set nocompatible
 set splitbelow
 set splitright
-set wrap
-" set cursorline
+setglobal wrap
+setglobal cursorline
+setglobal mousefocus
 
 "
 " Vendor plugins
@@ -31,7 +32,7 @@ Plug 'airblade/vim-rooter'            "vim-rooter - changes working dir to the p
 " Window splits
 "
 " Plug 'camspiers/animate.vim'                      "Window animations
-Plug 'camspiers/lens.vim'                           "Window resizing
+" Plug 'camspiers/lens.vim'                           "Window resizing
 Plug 'vimlab/split-term.vim'                        "Better terminal splits
 Plug 'simeji/winresizer'                            "Resize splits with hjkl, using :WinResizerStartResize
 
@@ -44,7 +45,7 @@ Plug 'Yohannfra/Nvim-Switch-Buffer'                 "Buffer switcher
 nnoremap S :SwitchBuffer <cr>
 set switchbuf=usetab
 set laststatus=0
-" let g:switch_buffer_hide_numbers = 1
+let g:switch_buffer_hide_numbers = 0
 
 
 " Tab and status bar
@@ -55,7 +56,7 @@ Plug 'pacha/vem-tabline'                            "Tabline
 "
 " Language-specific
 "
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'eliba2/vim-node-inspect'
 
 
@@ -81,9 +82,7 @@ Plug 'airblade/vim-gitgutter'                                 " vim-gitgutter - 
 Plug 'tpope/vim-repeat'                                       " repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   " commentary.vim - comment stuff out      
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " treesitter - syntax highlight parsers. We recommend updating the parsers on update
-lua <<EOF
-require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-EOF
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 "
 " Terminal

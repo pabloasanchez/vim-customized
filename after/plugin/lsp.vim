@@ -3,57 +3,6 @@
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LSP Using TernJS
-" Ternjs - Code analysis JS 
-
-" Note: After PlugInstall you need to run `npm i` under vendor/tern_for_vim
-" Plug 'ternjs/tern_for_vim'
-
-" On CTRL LeftMouse, highlight all occurrences and run TernDef
-" nnoremap <C-LeftMouse> <LeftMouse>:<C-U>:TernDef<cr>
-" nnoremap <3-LeftMouse> :TernRefs<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LSP Using ALE and Deoplete
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" let g:deoplete#enable_at_startup = 1
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LSP using LanguageClient
-" Plug 'autozimu/LanguageClient-neovim', {
-"       \ 'branch': 'next',
-"       \ 'do': 'bash install.sh && npm install -g flow-bin',
-"       \ }
-
-" let g:LanguageClient_serverCommands = {
-"     " \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"       \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-"     " \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-"     " \ 'python': ['/usr/local/bin/pyls'],
-"     " \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-"       \ }
-
-" let g:LanguageClient_rootMarkers = {
-"       \   'javascript': ['.flowconfig', 'package.json']
-"       \ }
-" let g:LanguageClient_serverCommands={
-"       \   'javascript': ['flow', 'lsp'],
-"       \   'javascript.jsx': ['flow', 'lsp']
-"       \}
-
-" nnoremap <3-LeftMouse> :call LanguageClient_textDocument_hover()<cr>
-" nnoremap <C-LeftMouse> <LeftMouse>:<C-U>:call LanguageClient_textDocument_definition()<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP using coc.nvim
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -100,11 +49,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -138,8 +83,11 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
+" Symbol renaming
 nmap <F2> <Plug>(coc-rename)
+
+" Diagnostics
+nnoremap <silent><F3> :CocList diagnostics<cr>
 
 " Formatting selected code.
 xmap gf  <Plug>(coc-format-selected)
@@ -202,8 +150,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 command! QuickFix :call CocAction('runCommand', 'tsserver.executeAutofix')
 
 " Clock
-command! ClockOn :call CocAction('runCommand', 'clock.enable')
-command! ClockOff :call CocAction('runCommand', 'clock.disable')
+command! ClockOn :call CocAction('runCommand', 'clock.enable') | let g:clock=1 | echom Clock on
+command! ClockOff :call CocAction('runCommand', 'clock.disable') | let g:clock=0 | echom Clock off
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that

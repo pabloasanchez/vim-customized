@@ -10,6 +10,7 @@ nnoremap <c-SPACE> :
 "
 nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
 
+
 " 
 " Command line remaps (hjkl instead of arrows)
 "
@@ -28,9 +29,9 @@ vnoremap p "0p
 "
 " Move between buffers with Tab
 "
-nnoremap <Tab> :wincmd w<CR>
-nnoremap <A-Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <A-S-Tab> :call <SID>next_visible_buffer(0)<CR>
+nnoremap <A-Tab> :wincmd w<CR>
+nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
+nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
 
 
 "
@@ -55,8 +56,8 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 " Close and hide buffers
 "
 nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :confirm bd<cr>
-" nnoremap <A-w> :bp<BAR>bd #<CR> 
+" nnoremap <A-w> :confirm bd<cr>
+nnoremap <A-w> :bp<BAR>confirm<BAR>bd #<CR> 
 
 
 "
@@ -99,7 +100,7 @@ nnoremap <leader>ff :Telescope resume<Enter>
 "
 " Terminals
 "
-nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
+" nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
 nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:only<cr>
 
@@ -134,8 +135,8 @@ nnoremap <ESC> :set hls! <CR>
 "
 " For exiting terminal mode 
 "
-tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
+" tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
+" tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
 
 
 "
@@ -301,6 +302,11 @@ nmap <C-S-right> <Plug>vem_move_buffer_right-
 
 "
 " TODO C-backspace CocList location
+"
+
+"
+" CoC
+" See lsp.vim for coc keybindings
 "
 
 

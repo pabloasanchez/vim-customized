@@ -48,9 +48,6 @@ function CustomHighlights()
   " Color name (:help gui-colors) or RGB color
   let g:limelight_conceal_guifg = 'DarkGray'
   let g:limelight_conceal_guifg = '#777777'
-
-  " Sneak setting cursorline
-  set cursorline
 endfunction
 
 " Sort of hack to prevent plugins and themes overriding these preferences

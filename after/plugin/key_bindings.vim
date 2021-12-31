@@ -9,7 +9,8 @@ nnoremap <c-SPACE> :
 " Quick UI Menu
 "
 nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
-
+noremap <A-f> :call quickui#menu#open()<cr>
+noremap <leader><leader> :call quickui#menu#open()<cr>
 
 " 
 " Command line remaps (hjkl instead of arrows)

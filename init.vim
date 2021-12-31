@@ -10,6 +10,7 @@ setglobal wrap
 setglobal cursorline
 setglobal mousefocus
 
+
 "
 " Vendor plugins
 "

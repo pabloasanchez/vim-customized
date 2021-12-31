@@ -113,5 +113,3 @@ call quickui#menu#install('H&elp', [
 " enable to display tips in the cmdline
 let g:quickui_show_tip = 1
 
-" hit space twice to open menu
-noremap <A-f> :call quickui#menu#open()<cr>

@@ -35,17 +35,21 @@ autocmd! User GoyoLeave Limelight!
 
 " Custom highlights
 function CustomHighlights()
-  highlight TabLine ctermbg=black ctermfg=234
-  highlight TabLineFill ctermbg=black ctermfg=234
-  highlight TabLineFill ctermbg=black ctermfg=234
-  highlight TabLineSel ctermbg=234 ctermfg=yellow cterm=bold
-  hi StatusLine ctermfg=74 ctermbg=235 cterm=bold
+  hi TabLine ctermbg=black ctermfg=234
+  hi TabLineFill ctermbg=black ctermfg=234
+  hi TabLineFill ctermbg=black ctermfg=234
+  hi TabLineSel ctermbg=black ctermfg=yellow
+  hi StatusLine ctermfg=yellow ctermbg=235
   hi StatusLineNC ctermbg=233 ctermfg=130
+  hi Cursor ctermbg=233 ctermfg=130
+  hi CursorColumn ctermbg=black ctermfg=130 cterm=bold
+  hi CursorLine ctermbg=233
+  hi LineNr ctermbg=black
+  hi CursorLineNR ctermbg=233 ctermfg=130 cterm=inverse
+  
 
   let g:limelight_conceal_ctermfg = 'gray'
   let g:limelight_conceal_ctermfg = 240
-
-  " Color name (:help gui-colors) or RGB color
   let g:limelight_conceal_guifg = 'DarkGray'
   let g:limelight_conceal_guifg = '#777777'
 endfunction

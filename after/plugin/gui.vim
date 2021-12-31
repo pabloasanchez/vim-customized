@@ -18,8 +18,7 @@ let g:quickui_color_scheme = 'system'
 " install a 'File' menu, use [text, command] to represent an item.
 call quickui#menu#install('&File', [
             \ [ "&New File\t:enew", 'enew', 'Create an empty buffer in same window' ],
-            \ [ "&Open File\tCtrl+l", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger', 'Open a file with Ranger' ],
-            \ [ "&Browse Files...", 'Telescope file_browser', 'File browser' ],
+            \ [ "&Open...\tCtrl+l", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger', 'Open a file with Ranger' ],
             \ [ "&Close\tAlt+w", 'confirm bd', 'Close current buffer' ],
             \ [ "Close All", 'confirm %bd', 'Close current buffer' ],
             \ [ "--", '' ],
@@ -28,7 +27,7 @@ call quickui#menu#install('&File', [
             \ [ "&Save\tCtrl+s", 'w', 'Save current buffer'],
             \ [ "Save &As...", 'call SaveAs()', 'Save buffer as...' ],
             \ [ "--", '' ],
-            \ [ "E&xit\tCtrl+q", 'qa' ],
+            \ [ "E&xit\tCtrl+q", 'confirm qa' ],
             \ ])
 
 
@@ -75,10 +74,27 @@ call quickui#menu#install("&Options", [
 			\ ])
 
 
+call quickui#menu#install("&Code", [
+			\ ["&Format code\t:Format", 'Format', 'Format code'],
+			\ ["--",''],
+			\ ["&Definition \t;gd", '<Plug>(coc-definition)', 'Definition under cursor'],
+			\ ["&Type Definition\t;gt", '<Plug>(coc-type-definition)', 'Type definition under cursor'],
+			\ ["&Implementation\t;gi", '<Plug>(coc-implementation)', 'Implementation under cursor'],
+			\ ["&References\t;gr", '<Plug>(coc-references)', 'References under cursor'],
+			\ ['--',''],
+			\ ['&QuickFix', 'QuickFix'],
+			\ ['--',''],
+			\ ["Symbol Rename\tF2", '<Plug>(coc-rename)', 'Rename symbol under cursor'],
+			\ ['Dia&gnostics', 'CocList diagnostics'],
+			\ ['&Outline', 'CocList outline'],
+			\ ['&Symbols', 'CocList symbols'],
+			\ ])
+
+
 call quickui#menu#install("&Tools", [
 			\ ['Welcome', 'Startify'],
+			\ ['Clock', 'ClockOn'],
 			\ ['--',''],
-      \ [ "&File browser", 'Telescope file_browser'],
       \ [ "&Ranger", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger'],
             \ [ "&Open File\tCtrl+l", '', 'Open a file with Ranger' ],
       \ [ "&Terminal", 'FloatermNew'],

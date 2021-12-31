@@ -301,6 +301,13 @@ nmap <C-S-right> <Plug>vem_move_buffer_right-
 " nmap <A-l>     :bprev<CR>
 
 
+" 
+" Goyo
+"
+nnoremap <silent><C-\> :Goyo<ENTER>
+nnoremap <A-\> :Limelight<ENTER>
+nnoremap <C-A-\> :Limelight!<ENTER>
+
 "
 " TODO C-backspace CocList location
 "

@@ -9,12 +9,6 @@ function! SaveAs()
   execute ":saveas " . name
 endfunction
 
-" border style
-let g:quickui_border_style = 3
-
-" color scheme
-let g:quickui_color_scheme = 'system'
-
 " install a 'File' menu, use [text, command] to represent an item.
 call quickui#menu#install('&File', [
             \ [ "&New File\t:enew", 'enew', 'Create an empty buffer in same window' ],
@@ -92,12 +86,13 @@ call quickui#menu#install("&Code", [
 
 
 call quickui#menu#install("&Tools", [
-			\ ['Welcome', 'Startify'],
-			\ ['Clock', 'ClockOn'],
+			\ ['&Welcome', 'Startify'],
+			\ ['&Clock', 'ClockOn'],
 			\ ['--',''],
-      \ [ "&Ranger", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger'],
-            \ [ "&Open File\tCtrl+l", '', 'Open a file with Ranger' ],
-      \ [ "&Terminal", 'FloatermNew'],
+      \ [ "&Ranger\t;r", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger'],
+      \ [ "&Terminal\t;t", 'FloatermNew'],
+			\ ['--',''],
+      \ [ "C&ycle replace\tCtrl+Alt+l", '', 'Ctrl+Alt+l'],
       \ ])
 
 
@@ -112,4 +107,11 @@ call quickui#menu#install('H&elp', [
 
 " enable to display tips in the cmdline
 let g:quickui_show_tip = 1
+
+" border style
+let g:quickui_border_style = 2
+let quickui_border_style = 2
+
+" color scheme
+let g:quickui_color_scheme = 'system'
 

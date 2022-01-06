@@ -78,7 +78,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 't9md/vim-textmanip'                                     " t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 'raimondi/delimitmate'                                   " delimitmate - This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'kshenoy/vim-signature'                                  " vim-signature - Place, toggle, display marks
-Plug 'tpope/vim-surround'                                     " surround.vim - Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+Plug 'machakann/vim-sandwich'                                 " sandwich.vim is a set of operator and textobject plugins to add/delete/replace surroundings of a sandwiched textobject, like (foo)
 Plug 'airblade/vim-gitgutter'                                 " vim-gitgutter - Shows git diff sign in the sign column.
 Plug 'tpope/vim-repeat'                                       " repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   " commentary.vim - comment stuff out      

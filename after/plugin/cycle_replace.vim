@@ -36,6 +36,8 @@ nnoremap <C-A-L> :execute ":call CycleReplaceMany(expand('<cword>'), [
       \ ['left', 'right', 'center'],
       \ ['top', 'bottom'],
       \ ['light', 'dark'],
+      \ ['extends', 'implements'],
+      \ ['class', 'interace', 'abstract'],
       \ ])"<cr><cr>
 
 " <C-L> is the key mapping

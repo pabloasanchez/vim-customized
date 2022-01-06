@@ -58,7 +58,7 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 "
 nnoremap <C-W> :hide<cr>
 " nnoremap <A-w> :confirm bd<cr>
-nnoremap <A-w> :bp<BAR>confirm<BAR>bd #<CR> 
+nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
 
 
 "
@@ -137,7 +137,7 @@ nnoremap <ESC> :set hls! <CR>
 " For exiting terminal mode 
 "
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-" tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
+tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
 
 
 "
@@ -220,12 +220,12 @@ imap <C-A-k> <ESC><Plug>(textmanip-duplicate-up)i
 "
 imap <A-BS> <ESC>hxi 
 imap :w <ESC>:w
-imap <C-Z> <C-W> 
+imap <C-Z> <ESC>:undo<Return>
 imap <C-D> <ESC>ddi
-imap <C-H> <C-O>h
-imap <C-J> <C-O>j
-imap <C-K> <C-O>k
-imap <C-L> <C-O>l
+imap <C-H> <Left>
+imap <C-J> <Down>
+imap <C-K> <Up>
+imap <C-L> <Right>
 imap <C-V> <C-O>p
 
 

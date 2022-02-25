@@ -39,6 +39,7 @@ call quickui#menu#install('Fi&nd', [
             \ [ "&Resume Last Find\t;ff", 'Telescope resume', 'Lists the results incl. multi-selections of the previous picker' ],
             \ [ "--", '' ],
             \ [ "In this &Buffer\tCtrl+f", 'Telescope current_buffer_fuzzy_find', 'Live fuzzy search inside of the currently open buffer' ],
+            \ [ "In &Open Buffers\t;l", 'Lines', 'Search inside open buffers' ],
             \ [ "&In Files (Ripgrep)\t;f", 'Rg', 'Search inside files in your current working directory, respects .gitignore' ],
             \ [ "&Files (Live Grep)", 'Telescope find_files', 'Search files in your current working directory, respects .gitignore' ],
             \ [ "&Git Files", 'Telescope git_files', 'Fuzzy search through the output of git ls-files command, respects .gitignore' ],

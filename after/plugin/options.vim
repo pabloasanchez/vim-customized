@@ -39,7 +39,7 @@ function CustomHighlights()
   hi TabLineFill ctermbg=black ctermfg=234
   hi TabLineFill ctermbg=black ctermfg=234
   hi TabLineSel ctermbg=black ctermfg=yellow
-  hi StatusLine ctermfg=yellow ctermbg=235
+  hi StatusLine ctermbg=130 ctermfg=233 cterm=bold
   hi StatusLineNC ctermbg=233 ctermfg=130
   hi Cursor ctermbg=233 ctermfg=130
   hi CursorColumn ctermbg=black ctermfg=130 cterm=bold

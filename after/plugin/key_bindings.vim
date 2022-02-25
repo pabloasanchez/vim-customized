@@ -27,12 +27,25 @@ cnoremap <C-l> <Right>
 vnoremap p "0p
 
 
+" 
+" Yode
+"
+nnoremap <C-A> :norm 0ggVG<Enter>
+vnoremap <A-Enter> :'<,'>YodeCreateSeditorFloating<Enter>
+
+
 "
 " Move between buffers with Tab
 "
 nnoremap <A-Tab> :wincmd w<CR>
-nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
+" nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
+nnoremap <Tab> :Telescope buffers<CR>
+" nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
+nnoremap <S-Tab> :Lines<CR>
+" nnoremap <leader><TAB> :Telescope buffers<cr>
+" map <leader><Tab> :Telescope buffers<CR>
+nnoremap <leader><TAB>:call <SID>next_visible_buffer(1)<CR>
+map <leader><Tab> :call <SID>next_visible_buffer(1)<CR>
 
 
 "
@@ -57,9 +70,42 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 " Close and hide buffers
 "
 nnoremap <C-W> :hide<cr>
+nnoremap <A-w> :call DeleteCurBufferNotCloseWindow()<cr>
 " nnoremap <A-w> :confirm bd<cr>
-nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
+" nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
 
+func! DeleteCurBufferNotCloseWindow() abort
+    if &modified
+        echohl ErrorMsg
+        echom "E89: no write since last change"
+        echohl None
+    elseif winnr('$') == 1
+        bd
+    else  " multiple window
+        let oldbuf = bufnr('%')
+        let oldwin = winnr()
+        while 1   " all windows that display oldbuf will remain open
+            if buflisted(bufnr('#'))
+                b#
+            else
+                bn
+                let curbuf = bufnr('%')
+                if curbuf == oldbuf
+                    enew    " oldbuf is the only buffer, create one
+                endif
+            endif
+            let win = bufwinnr(oldbuf)
+            if win == -1
+                break
+            else        " there are other window that display oldbuf
+                exec win 'wincmd w'
+            endif
+        endwhile
+        " delete oldbuf and restore window to oldwin
+        exec oldbuf 'bd'
+        exec oldwin 'wincmd w'
+    endif
+endfunc
 
 "
 " Ctrl+P and Command History
@@ -71,8 +117,6 @@ nnoremap <C-h> :Telescope oldfiles<cr>
 nnoremap <SPACE> :Telescope command_history<cr>
 nnoremap <leader>h :Telescope oldfiles<cr>
 nnoremap <leader>b :Telescope buffers<cr>
-nnoremap <leader><TAB> :Telescope buffers<cr>
-map <leader><Tab> :Telescope buffers<CR>
 
 function! s:next_visible_buffer(forward)
   let operation = "bnext"
@@ -218,7 +262,7 @@ imap <C-A-k> <ESC><Plug>(textmanip-duplicate-up)i
 "
 " Insert mode misc shortcuts
 "
-imap <A-BS> <ESC>hxi 
+imap <A-BS> <Delete>
 imap :w <ESC>:w
 imap <C-Z> <ESC>:undo<Return>
 imap <C-D> <ESC>ddi

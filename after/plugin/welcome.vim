@@ -25,7 +25,7 @@ let g:startify_custom_header = startify#center(g:ascii)
 :hi link FloatermNC StartifyHeader
 
 let g:floaterm_autoinsert=v:false
-:if winwidth(0) >= 213
+:if winwidth(0) >= 180
   :FloatermNew --name=logo --autoclose=2 --title=\  --width=0.16 --height=0.3 --disposable --position=top --borderchars=\ \ \ \ \ \ \ \  chafa ~/.vim/vim.gif -c 2 --clear --duration 0.67
 :endif 
 let g:floaterm_autoinsert=v:true

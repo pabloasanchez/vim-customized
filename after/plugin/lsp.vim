@@ -90,8 +90,8 @@ nmap <F2> <Plug>(coc-rename)
 nnoremap <silent><F3> :CocList diagnostics<cr>
 
 " Formatting selected code.
-xmap gf  <Plug>(coc-format-selected)
-nmap gf  <Plug>(coc-format-selected)
+" xmap gf  <Plug>(coc-format-selected)
+" nmap gf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!

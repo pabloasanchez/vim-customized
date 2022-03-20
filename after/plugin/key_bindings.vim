@@ -28,30 +28,30 @@ vnoremap p "0p
 
 
 " 
-" Yode
+" Ctrl+A and Yode
 "
 nnoremap <C-A> :norm 0ggVG<Enter>
-vnoremap <A-Enter> :'<,'>YodeCreateSeditorFloating<Enter>
+" vnoremap <A-Enter> :'<,'>YodeCreateSeditorFloating<Enter>
 
 
 "
 " Move between buffers with Tab
 "
 nnoremap <A-Tab> :wincmd w<CR>
-" nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <Tab> :Telescope buffers<CR>
-" nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
-nnoremap <S-Tab> :Lines<CR>
+nnoremap <leader><TAB> :Lines<CR>
+map <leader><TAB> :Lines<CR>
+nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
+nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
+" nnoremap <Tab> :Telescope buffers<CR>
 " nnoremap <leader><TAB> :Telescope buffers<cr>
 " map <leader><Tab> :Telescope buffers<CR>
-nnoremap <leader><TAB>:call <SID>next_visible_buffer(1)<CR>
-map <leader><Tab> :call <SID>next_visible_buffer(1)<CR>
 
 
 "
 " vsplit shortcut
 "
 nnoremap <A-Enter> :vsplit<CR>
+nnoremap <A-BS> :split<CR>
 
 
 "
@@ -69,10 +69,11 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 "
 " Close and hide buffers
 "
-nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :call DeleteCurBufferNotCloseWindow()<cr>
+" nnoremap <A-w> :call DeleteCurBufferNotCloseWindow()<cr>
 " nnoremap <A-w> :confirm bd<cr>
 " nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
+nnoremap <C-W> :hide<cr>
+nnoremap <A-w> :Sayonara!<cr>
 
 func! DeleteCurBufferNotCloseWindow() abort
     if &modified

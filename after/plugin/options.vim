@@ -28,6 +28,8 @@ set foldcolumn=2
 
 " Colors / Color Schemes
 colorscheme rdark-terminal2
+" colorscheme orbital
+" colorscheme one
 
 " Goyo and Limelight
 autocmd! User GoyoEnter Limelight

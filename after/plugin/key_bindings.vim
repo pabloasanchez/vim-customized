@@ -38,13 +38,13 @@ nnoremap <C-A> :norm 0ggVG<Enter>
 " Move between buffers with Tab
 "
 nnoremap <A-Tab> :wincmd w<CR>
-nnoremap <leader><TAB> :Lines<CR>
-map <leader><TAB> :Lines<CR>
+" nnoremap <leader><TAB> :Lines<CR>
+" map <leader><TAB> :Lines<CR>
 nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
 nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
 " nnoremap <Tab> :Telescope buffers<CR>
-" nnoremap <leader><TAB> :Telescope buffers<cr>
-" map <leader><Tab> :Telescope buffers<CR>
+nnoremap <leader><TAB> :Telescope buffers<cr>
+map <leader><Tab> :Telescope buffers<CR>
 
 
 "
@@ -271,7 +271,7 @@ imap <C-H> <Left>
 imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
-imap <C-V> <C-O>p
+imap <C-V> <C-O>h<C-O>p
 
 
 "

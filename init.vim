@@ -3,12 +3,19 @@
 "
 let g:mapleader=";"
 
-set nocompatible
-set splitbelow
-set splitright
 setglobal wrap
 setglobal cursorline
 setglobal mousefocus
+
+set nocompatible
+set splitbelow
+set splitright
+set ignorecase
+set history=150
+set clipboard+=unnamedplus
+set undofile 
+set undodir=~/.vim/undo
+set list
 
 
 "
@@ -37,8 +44,7 @@ let g:zettelkasten = '/home/unknown/notes/zk/'
 Plug 'vimlab/split-term.vim'                        "Better terminal splits
 Plug 'simeji/winresizer'                            "Resize splits with hjkl, using :WinResizerStartResize
 Plug 'mhinz/vim-sayonara'                           "Closes buffers
-" Plug 'b0o/incline.nvim'
-" require('incline').setup()
+
 
 " GUI
 "
@@ -46,10 +52,12 @@ Plug 'skywind3000/vim-quickui'
 
 
 "
-" Tab and status bar
+" Bars
 "
-Plug 'pacha/vem-tabline'                            "Tabline
+" Plug 'pacha/vem-tabline'                            "Tabline
 " let g:vem_tabline_multiwindow_mode=1
+"
+" WinBar see winbar.vim
 
 
 "

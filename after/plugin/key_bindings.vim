@@ -183,6 +183,7 @@ nnoremap <ESC> :set hls! <CR>
 "
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
+tnoremap <ESC><ESC>  <C-\><C-n> <bar> :FloatermKill <cr>
 
 
 "

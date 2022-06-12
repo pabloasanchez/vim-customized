@@ -54,9 +54,6 @@ Plug 'skywind3000/vim-quickui'
 "
 " Bars
 "
-" Plug 'pacha/vem-tabline'                            "Tabline
-" let g:vem_tabline_multiwindow_mode=1
-"
 " WinBar see winbar.vim
 
 
@@ -90,7 +87,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " treesitter - syn
 " lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 Plug 'alvan/vim-closetag'                                     " Automatically closes x/html tags
 Plug 'jiangmiao/auto-pairs'                                   " Insert or delete brackets, parens, quotes in pair
-
 
 
 " Gutter

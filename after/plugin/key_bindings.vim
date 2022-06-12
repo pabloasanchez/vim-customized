@@ -367,11 +367,11 @@ nnoremap <C-A-\> :Limelight!<ENTER>
 "
 " JS Debugger
 "
-" nnoremap <F4> :NodeInspectStart<cr>
-" nnoremap <F6> :NodeInspectConnect("127.0.0.1:9229")<cr>
-" nnoremap <F5> :NodeInspectRun<cr>
+nnoremap <F4> :NodeInspectStart<cr>
+nnoremap <F5> :NodeInspectConnect("127.0.0.1:9229")<cr>
+nnoremap <F6> :NodeInspectRun<cr>
+nnoremap <F7> :NodeInspectStop<cr>
+nnoremap <F8> :NodeInspectStepOver<cr>
+nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
 " nnoremap <F7> :NodeInspectStepInto<cr>
-" nnoremap <F8> :NodeInspectStepOver<cr>
-" nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
-" nnoremap <F10> :NodeInspectStop<cr>
 

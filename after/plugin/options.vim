@@ -14,10 +14,11 @@ colorscheme one
 autocmd! User GoyoEnter CustomHighlights
 autocmd! User GoyoLeave CustomHighlights 
 autocmd! WinNew * CustomHighlights 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 autocmd TermEnter term://* :Limelight!
 autocmd TermEnter term://* setlocal nonumber norelativenumber
+autocmd BufAdd * set numberwidth=1 
 
 
 " Custom highlights
@@ -60,7 +61,10 @@ function CustomHighlights()
 
    hi WinBar ctermfg=173 ctermbg=0 cterm=bold
    hi WinBarNC ctermbg=black ctermfg=234 cterm=bold
-  
+
+   hi NodeInspectBreakpoint ctermfg=130 ctermbg=red
+   hi NodeInspectSign ctermfg=red ctermbg=0 cterm=bold
+
    let g:limelight_conceal_ctermfg = 'gray'
    let g:limelight_conceal_ctermfg = 240
    let g:limelight_conceal_guifg = 'DarkGray'
@@ -70,7 +74,7 @@ endfunction
 
 " Commands
 command! CustomHighlights :execute ":call CustomHighlights()"
-command! Broot :FloatermNew --autoclose=1 --width=0.5 --height=0.4 --wintype=float --title=\  --borderchars=\ \ \ \ \ \ \ \  broot
+" command! Broot :FloatermNew --autoclose=1 --width=0.5 --height=0.4 --wintype=float --title=\  --borderchars=\ \ \ \ \ \ \ \  broot
 
 :execute ":call CustomHighlights()"
 

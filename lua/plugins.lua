@@ -39,7 +39,6 @@ Plug 'rhysd/clever-f.vim'                                                   --  
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope
 Plug 'nvim-telescope/telescope.nvim'
 
-
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
@@ -66,6 +65,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 
 --  LSP
 Plug 'neovim/nvim-lspconfig'
+Plug ('glepnir/lspsaga.nvim', { branch = 'main' })
 Plug 'williamboman/nvim-lsp-installer'
 require('nvim-lsp-installer').setup({
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -78,15 +78,15 @@ require('nvim-lsp-installer').setup({
     }
 })
 
+-- Snips
+Plug 'L3MON4D3/LuaSnip'
+
 -- Completion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-
--- Snips
-Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 --  Distraction free

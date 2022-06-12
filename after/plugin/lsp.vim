@@ -66,6 +66,8 @@ nmap gd <Plug>(coc-definition)
 nmap gt <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
+nmap go :<C-u>CocList outline<cr>
+
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -150,8 +152,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 command! QuickFix :call CocAction('runCommand', 'tsserver.executeAutofix')
 
 " Clock
-command! ClockOn :call CocAction('runCommand', 'clock.enable') | let g:clock=1 | echom Clock on
-command! ClockOff :call CocAction('runCommand', 'clock.disable') | let g:clock=0 | echom Clock off
+command! ClockOn :call CocAction('runCommand', 'clock.enable') | let g:clock=1 | echom "Clock on"
+command! ClockOff :call CocAction('runCommand', 'clock.disable') | let g:clock=0 | echom "Clock off"
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that

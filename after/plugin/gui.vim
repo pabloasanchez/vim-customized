@@ -40,7 +40,7 @@ call quickui#menu#install('Fi&nd', [
             \ [ "--", '' ],
             \ [ "In this &Buffer\tCtrl+f", 'Telescope current_buffer_fuzzy_find', 'Live fuzzy search inside of the currently open buffer' ],
             \ [ "In &Open Buffers\t;l", 'Lines', 'Search inside open buffers' ],
-            \ [ "&In Files (Ripgrep)\t;f", 'Rg', 'Search inside files in your current working directory, respects .gitignore' ],
+            \ [ "&In Files (Ripgrep)\t;f, Ctrl+Alt+p", 'Rg', 'Search inside files in your current working directory, respects .gitignore' ],
             \ [ "&Files (Live Grep)", 'Telescope find_files', 'Search files in your current working directory, respects .gitignore' ],
             \ [ "&Git Files", 'Telescope git_files', 'Fuzzy search through the output of git ls-files command, respects .gitignore' ],
             \ [ "Gr&ep String", 'Telescope grep_string', 'Searches for the string under your cursor in your current working directory' ],
@@ -66,6 +66,7 @@ call quickui#menu#install("&Options", [
 			\ ['Set &Spell %{&spell? "Off":"On"}', 'set spell!'],
 			\ ['Set &Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
 			\ ['Set &Wrap %{&wrap? "Off":"On"}', 'set wrap!'],
+			\ ['Toggle &AutoPairs', 'CocList outline'],
 			\ ])
 
 
@@ -81,7 +82,7 @@ call quickui#menu#install("&Code", [
 			\ ['--',''],
 			\ ["Symbol Rename\tF2", '<Plug>(coc-rename)', 'Rename symbol under cursor'],
 			\ ['Dia&gnostics', 'CocList diagnostics'],
-			\ ['&Outline', 'CocList outline'],
+			\ ['&Outline/tgo', 'CocList outline'],
 			\ ['&Symbols', 'CocList symbols'],
 			\ ])
 

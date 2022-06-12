@@ -66,7 +66,7 @@ call quickui#menu#install("&Options", [
 			\ ['Set &Spell %{&spell? "Off":"On"}', 'set spell!'],
 			\ ['Set &Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
 			\ ['Set &Wrap %{&wrap? "Off":"On"}', 'set wrap!'],
-			\ ['Toggle &AutoPairs', 'CocList outline'],
+			\ ['Toggle &AutoPairs', 'call AutoPairsToggle()'],
 			\ ])
 
 

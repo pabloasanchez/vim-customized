@@ -45,6 +45,7 @@ nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
 " nnoremap <Tab> :Telescope buffers<CR>
 nnoremap <leader><TAB> :Telescope buffers<cr>
 map <leader><Tab> :Telescope buffers<CR>
+map <C-b> :Telescope buffers<CR>
 
 
 "
@@ -167,8 +168,9 @@ nnoremap <leader>t     :FloatermToggle terminal<cr>
 "
 " Cycle through terminals
 "
-nmap <leader>[ :CocList -A --normal floaterm<cr>
-nmap <leader>] :CocList -A --normal floaterm<cr>
+" TODO
+" nmap <leader>[ :CocList -A --normal floaterm<cr>
+" nmap <leader>] :CocList -A --normal floaterm<cr>
 
 
 "
@@ -324,7 +326,8 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 "
 " coc-yank
 "
-nmap <leader>p :CocList -A --normal yank<CR>
+" TODO
+" nmap <leader>p :CocList -A --normal yank<CR>
 
 
 "
@@ -354,15 +357,6 @@ nnoremap <silent><C-\> :Goyo<ENTER>
 nnoremap <A-\> :Limelight<ENTER>
 nnoremap <C-A-\> :Limelight!<ENTER>
 
-"
-" TODO C-backspace CocList location
-"
-
-"
-" CoC
-" See lsp.vim for coc keybindings
-"
-
 
 "
 " JS Debugger
@@ -373,5 +367,5 @@ nnoremap <F6> :NodeInspectRun<cr>
 nnoremap <F7> :NodeInspectStop<cr>
 nnoremap <F8> :NodeInspectStepOver<cr>
 nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
-" nnoremap <F7> :NodeInspectStepInto<cr>
+" nnoremap <F10> :NodeInspectStepInto<cr>
 

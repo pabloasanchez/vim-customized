@@ -17,12 +17,12 @@ Plug 'Aarleks/zettel.vim'
 vim.g.zettelkasten = HOME .. '/notes/zk/'
 
 --  Window splits
-Plug 'vimlab/split-term.vim'                        -- Better terminal splits
-Plug 'simeji/winresizer'                            -- Resize splits with hjkl, using :WinResizerStartResize
-Plug 'mhinz/vim-sayonara'                           -- Closes buffers
+Plug 'vimlab/split-term.vim'        -- Better terminal splits
+Plug 'simeji/winresizer'            -- Resize splits with hjkl, using :WinResizerStartResize
+Plug 'mhinz/vim-sayonara'           -- Closes buffers
 
 --  GUI
-Plug 'skywind3000/vim-quickui'
+Plug 'skywind3000/vim-quickui'      -- Top Menu
 
 --  Bars - WinBar see winbar.vim
 
@@ -48,7 +48,7 @@ Plug 'jiangmiao/auto-pairs'                                   --  Insert or dele
 
 --  Gutter
 Plug 'kshenoy/vim-signature'                                  --  vim-signature - Place, toggle, display marks
-Plug 'airblade/vim-gitgutter'                                 --  vim-gitgutter - Shows git diff sign in the sign column.
+Plug 'lewis6991/gitsigns.nvim'                                --  Super fast git decorations implemented purely in lua/teal.
 
 --  Terminal
 Plug 'voldikss/vim-floaterm'                          --  floaterm - Floating Terminal for vim
@@ -94,3 +94,4 @@ vim.call('plug#end')
 require('nvim-cmp-config')
 require('nvim-lsp-installer-config')
 require('lspsaga-config')
+require('gitsigns-config')

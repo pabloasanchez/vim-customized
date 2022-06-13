@@ -11,21 +11,55 @@ cmp.setup({
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
   },
+
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
+
+  mapping = {
+    -- ... Your other mappings ...
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+    },
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip and luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip and luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    -- ... Your other mappings ...
+  },
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
+    -- { name = 'nvim_lua' },
+    { name = 'buffer' },
+    { name = 'path' },
+    -- { name = 'calc' },
+    -- { name = 'digraphs' },
+    { name = 'omni' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'nvim-lsp-document-symbol' },
     { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
@@ -61,22 +95,22 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 require('lspconfig')['tsserver'].setup { capabilities = capabilities }
 require('lspconfig')['gopls'].setup { capabilities = capabilities }
--- require('lspconfig')['rust_analyzer'].setup { capabilities = capabilities }
--- require('lspconfig')['arduino_language_server'].setup { capabilities = capabilities }
+require('lspconfig')['rust_analyzer'].setup { capabilities = capabilities }
+require('lspconfig')['arduino_language_server'].setup { capabilities = capabilities }
 -- require('lspconfig')['asm_lsp'].setup { capabilities = capabilities }
--- require('lspconfig')['bashls'].setup { capabilities = capabilities }
--- require('lspconfig')['clangd'].setup { capabilities = capabilities }
--- require('lspconfig')['cmake'].setup { capabilities = capabilities }
--- require('lspconfig')['marksman'].setup { capabilities = capabilities }
--- require('lspconfig')['cssls'].setup { capabilities = capabilities }
--- require('lspconfig')['serve_d'].setup { capabilities = capabilities }
--- require('lspconfig')['jsonls'].setup { capabilities = capabilities }
+require('lspconfig')['bashls'].setup { capabilities = capabilities }
+require('lspconfig')['clangd'].setup { capabilities = capabilities }
+require('lspconfig')['cmake'].setup { capabilities = capabilities }
+require('lspconfig')['marksman'].setup { capabilities = capabilities }
+require('lspconfig')['cssls'].setup { capabilities = capabilities }
+require('lspconfig')['serve_d'].setup { capabilities = capabilities }
+require('lspconfig')['jsonls'].setup { capabilities = capabilities }
 -- require('lspconfig')['nimls'].setup { capabilities = capabilities }
--- require('lspconfig')['jdtls'].setup { capabilities = capabilities }
--- require('lspconfig')['html'].setup { capabilities = capabilities }
+require('lspconfig')['jdtls'].setup { capabilities = capabilities }
+require('lspconfig')['html'].setup { capabilities = capabilities }
 -- require('lspconfig')['summenko_lua'].setup { capabilities = capabilities }
 -- require('lspconfig')['pyright'].setup { capabilities = capabilities }

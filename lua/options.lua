@@ -8,7 +8,11 @@ vim.opt_global.wrap = true
 vim.opt_global.cursorline = true
 vim.opt_global.mousefocus = true
 
-him.opt.history = 200
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.history = 200
 vim.opt.undofile = true
 vim.opt.list = true
 vim.opt.splitbelow = true

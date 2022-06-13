@@ -32,19 +32,19 @@ Plug 'skywind3000/vim-quickui'
 Plug 'eliba2/vim-node-inspect'
 
 --  Search
---  Plug 'brooth/far.vim'                                                     " Far - Find and replace TODO broken
-Plug ('junegunn/fzf', {dir = '~/.fzf', do = './install --all' })           --  fzf - Multi use Fuzzy Finder
+Plug ('junegunn/fzf', {dir = '~/.fzf', ['do'] = './install --all' })        --  fzf - Multi use Fuzzy Finder
 Plug 'junegunn/fzf.vim'                                                     --  fzf - Multi use Fuzzy Finder
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope
 Plug 'nvim-telescope/telescope.nvim'
+--  Plug 'brooth/far.vim'                                                     " Far - Find and replace TODO broken
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
 Plug 'tpope/vim-repeat'                                       --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
-Plug ('nvim-treesitter/nvim-treesitter', {do = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
+Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
 Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
 Plug 'jiangmiao/auto-pairs'                                   --  Insert or delete brackets, parens, quotes in pair
 
@@ -65,29 +65,25 @@ Plug 'rafi/awesome-vim-colorschemes'
 
 --  LSP
 Plug 'neovim/nvim-lspconfig'
-Plug ('glepnir/lspsaga.nvim', { branch = 'main' })
 Plug 'williamboman/nvim-lsp-installer'
-require('nvim-lsp-installer').setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
-        icons = {
-            server_installed = '✓',
-            server_pending = '➜',
-            server_uninstalled = '✗'
-        }
-    }
-})
+Plug 'tami5/lspsaga.nvim'
 
 -- Snips
 Plug 'L3MON4D3/LuaSnip'
 
 -- Completion
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+-- Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+-- Plug 'hrsh7th/cmp-calc'
+-- Plug 'dmitmel/cmp-digraphs'
+Plug 'hrsh7th/cmp-omni'
+
 
 --  Distraction free
 Plug 'junegunn/limelight.vim'                         --  limelight, hyperfocusing in vim
@@ -98,3 +94,36 @@ vim.g.goyo_linenr = 1
 
 vim.call('plug#end')
 
+require('nvim-lsp-installer').setup({
+    automatic_installation = true,
+    ui = {
+        border = 'double',
+        icons = {
+            server_installed = '✓',
+            server_pending = '➜',
+            server_uninstalled = '✗'
+        }
+    }
+})
+
+require('lspsaga').setup { 
+  max_preview_lines = 15,
+  finder_action_keys = {
+    open = '<Enter>',
+    vsplit = 's',
+    split = 'i',
+    quit = '<Esc>',
+    -- scroll_down = "<C-j>",
+    -- scroll_up = "<C-k>",
+  },
+  code_action_keys = {
+    quit = '<Esc>',
+    exec = '<CR>',
+  },
+  rename_action_keys = {
+    quit = '<Esc>',
+    exec = '<CR>',
+  },
+  border_style = 'double',
+  highlight_prefix = true,
+}

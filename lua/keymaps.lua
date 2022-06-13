@@ -1,20 +1,15 @@
 local map = vim.api.nvim_set_keymap
+-- local map = vim.api.nvim_buf_set_keymap
 
--- nnoremap <silent> gh :Lspsaga lsp_finder<CR>
--- nnoremap <silent><leader>ca :Lspsaga code_action<CR>
--- vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
--- nnoremap <silent>K :Lspsaga hover_doc<CR>
--- nnoremap <silent> gs :Lspsaga signature_help<CR>
--- nnoremap <silent>gr :Lspsaga rename<CR>
--- nnoremap <F2> :Lspsaga rename<CR>
--- nnoremap <silent> gd :Lspsaga preview_definition<CR>
+-- map('n', '<leader>p', ':bprev<cr>', options)
 
 options = { noremap = true }
-map('n', 'gh', ':Lspsaga lsp_finder<ENTER>', options)
-map('n', '<leader>ca', ':Lspsaga code_action<ENTER>', options)
-map('v', '<leader>ca', ':Lspsaga range_code_action<ENTER>', options)
-map('n', 'K', ':Lspsaga hover_doc<ENTER>', options)
-map('n', 'gs', ':Lspsaga signature_help<ENTER>', options)
-map('n', 'gs', ':Lspsaga rename<ENTER>', options)
-map('n', 'gd', ':Lspsaga preview_definition<ENTER>', options)
--- map('n', '<leader>p', ':bprev<cr>', options)
+map('n', '<F2>', "<cmd>Lspsaga rename<cr>", options)
+map('n', 'gx',   "<cmd>Lspsaga code_action<cr>", options)
+map('x', 'gx',   ":<c-u>Lspsaga range_code_action<cr>", options)
+map('n', '<F3>', "<cmd>Lspsaga hover_doc<cr>", options)
+map('n', 'go',   "<cmd>Lspsaga show_line_diagnostics<cr>", options)
+map('n', 'gj',   "<cmd>Lspsaga diagnostic_jump_next<cr>", options)
+map('n', 'gk',   "<cmd>Lspsaga diagnostic_jump_prev<cr>", options)
+map('n', '<C-u>',"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+map('n', '<C-d>',"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})

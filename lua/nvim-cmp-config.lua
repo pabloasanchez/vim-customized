@@ -1,5 +1,7 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local lspkind = require'lspkind'
+
 
 cmp.setup({
   snippet = {
@@ -44,8 +46,17 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+  },
 
-    -- ... Your other mappings ...
+  formatting = {
+    format = lspkind.cmp_format {
+      with_text = true,
+      menu = {
+        buffer   = "[buf]",
+        nvim_lsp = "[LSP]",
+        path     = "[path]",
+      },
+    },
   },
 
   sources = cmp.config.sources({

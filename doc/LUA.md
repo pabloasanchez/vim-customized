@@ -180,6 +180,15 @@ map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
 ```
 
+# LSP
+- |vim.lsp.buf.hover()|
+- |vim.lsp.buf.format()|
+- |vim.lsp.buf.references()|
+- |vim.lsp.buf.implementation()|
+- |vim.lsp.buf.code_action()|
+
+` :lua =vim.lsp.buf.implementation() `
+
 
 # Resources
 https://www.notonlycode.org/neovim-lua-config/

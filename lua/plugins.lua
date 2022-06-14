@@ -66,6 +66,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'tami5/lspsaga.nvim'
 Plug 'onsails/lspkind.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 
 -- Snips
 Plug 'L3MON4D3/LuaSnip'
@@ -92,6 +93,7 @@ vim.call('plug#end')
 
 -- Require configurations
 require('nvim-cmp-config')
+require('nvim-treesitter-config')
 require('nvim-lsp-installer-config')
 require('lspsaga-config')
 require('gitsigns-config')

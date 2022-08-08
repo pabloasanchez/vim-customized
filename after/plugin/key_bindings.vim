@@ -45,7 +45,7 @@ nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
 " nnoremap <Tab> :Telescope buffers<CR>
 nnoremap <leader><TAB> :Telescope buffers<cr>
 map <leader><Tab> :Telescope buffers<CR>
-map <C-b> :Telescope buffers<CR>
+nnoremap <C-b> :Telescope buffers<CR>
 
 
 "

@@ -24,8 +24,8 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
     ["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = true,
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
     },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -79,7 +79,7 @@ cmp.setup({
 })
 
 -- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
+
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
@@ -107,7 +107,6 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig.
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 require('lspconfig')['tsserver'].setup { capabilities = capabilities }
 require('lspconfig')['gopls'].setup { capabilities = capabilities }
 require('lspconfig')['rust_analyzer'].setup { capabilities = capabilities }
@@ -125,3 +124,5 @@ require('lspconfig')['jdtls'].setup { capabilities = capabilities }
 require('lspconfig')['html'].setup { capabilities = capabilities }
 -- require('lspconfig')['summenko_lua'].setup { capabilities = capabilities }
 -- require('lspconfig')['pyright'].setup { capabilities = capabilities }
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

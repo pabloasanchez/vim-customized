@@ -77,12 +77,16 @@ call quickui#menu#install("&Code", [
 			\ ["--",''],
 			\ ["&Format code\tF3", 'lua =vim.lsp.buf.format()', 'Format code'],
 			\ ["--",''],
-			\ ['Code &Action', 'Lspsaga code_action', 'Code Action'],
-			\ ["&Definition \tgd", 'Lspsaga lsp_finder', 'Definition under cursor'],
-			\ ["&Hover Documentation tgd", 'Lspsaga hover_doc', 'Documentation'],
+			\ ["Code &Action\tga", 'Lspsaga code_action', 'Code Action'],
+			\ ["&Definition\tgd", 'Lspsaga lsp_finder', 'Definition under cursor'],
+			\ ["LS&P Finder\tgf", 'Lspsaga lsp_finder', 'LSP finder'],
+			\ ["&Hover Documentation\tgh", 'Lspsaga hover_doc', 'Documentation'],
 			\ ["&Implementation\tgi", 'lua =vim.lsp.buf.implementation()', 'Implementation under cursor'],
 			\ ["&References\tgr", 'Telescope lsp_references', 'References under cursor'],
-      \ ['Pre&view Definition\tgv', 'Lspsaga preview_definition'],
+      \ ["Pre&view Definition\tgv", 'Lspsaga preview_definition', ''],
+			\ ["--",''],
+      \ ["Telescope References\tgr", ''],
+      \ ["Telescope Symbols\tgs", ''],
 			\ ])
 
 

@@ -1,6 +1,7 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
-local lspkind = require'lspkind'
+local cmp = require 'cmp'
+local lspkind = require 'lspkind'
+local luasnip = require 'luasnip'
 
 
 cmp.setup({
@@ -8,7 +9,7 @@ cmp.setup({
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
@@ -24,8 +25,8 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
     ["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
     },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -78,8 +79,13 @@ cmp.setup({
   })
 })
 
+-- Additional mapping for luasnip next choice
+vim.api.nvim_set_keymap("i", "<A-Tab>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<A-Tab>", "<Plug>luasnip-next-choice", {})
+
 -- Set configuration for specific filetype.
 
+cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
@@ -106,11 +112,15 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['tsserver'].setup { capabilities = capabilities }
 require('lspconfig')['gopls'].setup { capabilities = capabilities }
 require('lspconfig')['rust_analyzer'].setup { capabilities = capabilities }
 require('lspconfig')['arduino_language_server'].setup { capabilities = capabilities }
+
 -- require('lspconfig')['asm_lsp'].setup { capabilities = capabilities }
 require('lspconfig')['bashls'].setup { capabilities = capabilities }
 require('lspconfig')['clangd'].setup { capabilities = capabilities }
@@ -119,10 +129,10 @@ require('lspconfig')['marksman'].setup { capabilities = capabilities }
 require('lspconfig')['cssls'].setup { capabilities = capabilities }
 require('lspconfig')['serve_d'].setup { capabilities = capabilities }
 require('lspconfig')['jsonls'].setup { capabilities = capabilities }
+
 -- require('lspconfig')['nimls'].setup { capabilities = capabilities }
 require('lspconfig')['jdtls'].setup { capabilities = capabilities }
 require('lspconfig')['html'].setup { capabilities = capabilities }
--- require('lspconfig')['summenko_lua'].setup { capabilities = capabilities }
+require('lspconfig')['sumneko_lua'].setup { capabilities = capabilities }
 -- require('lspconfig')['pyright'].setup { capabilities = capabilities }
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

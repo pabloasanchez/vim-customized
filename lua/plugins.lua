@@ -9,7 +9,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', PLUGINS)
 
 --  Initial options and defaults
-Plug 'rstacruz/vim-opinion'           -- vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
+-- Plug 'rstacruz/vim-opinion'           -- vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
 Plug 'airblade/vim-rooter'            -- vim-rooter - changes working dir to the project root
 
 --  Note-taking (Zettelkasten Method)
@@ -35,7 +35,7 @@ Plug 'junegunn/fzf.vim'                                                     --  
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope
 Plug 'nvim-telescope/telescope.nvim'
---  Plug 'brooth/far.vim'                                                     " Far - Find and replace TODO broken
+-- Plug 'brooth/far.vim'                                                       --  Far - Find and replace TODO broken
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
@@ -68,9 +68,6 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'onsails/lspkind.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
--- Snips
-Plug 'L3MON4D3/LuaSnip'
-
 -- Completion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -81,19 +78,27 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 Plug 'hrsh7th/cmp-omni'
 
+-- Snips
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+
 --  Distraction free
 Plug 'junegunn/limelight.vim'                         --  limelight, hyperfocusing in vim
 Plug 'junegunn/goyo.vim'                              --  Distraction-free plugins
-vim.g.goyo_width = '100%'
-vim.g.goyo_height = '100%'
-vim.g.goyo_linenr = 1
+
+-- Clipboard
+-- TODO
 
 vim.call('plug#end')
 
 
 -- Require configurations
-require('nvim-cmp-config')
 require('nvim-treesitter-config')
 require('nvim-lsp-installer-config')
 require('lspsaga-config')
 require('gitsigns-config')
+require('nvim-cmp-config')
+
+
+-- Luasnip: Activates friendly-snippets
+require('luasnip.loaders.from_vscode').lazy_load()

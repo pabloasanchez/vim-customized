@@ -20,6 +20,9 @@ vim.g.zettelkasten = HOME .. '/notes/zk/'
 Plug 'vimlab/split-term.vim'        -- Better terminal splits
 Plug 'simeji/winresizer'            -- Resize splits with hjkl, using :WinResizerStartResize
 Plug 'mhinz/vim-sayonara'           -- Closes buffers
+Plug 'anuvyklack/middleclass'
+Plug 'anuvyklack/animation.nvim'
+Plug 'anuvyklack/windows.nvim'
 
 --  GUI
 Plug 'skywind3000/vim-quickui'      -- Top Menu
@@ -98,6 +101,7 @@ require('nvim-lsp-installer-config')
 require('lspsaga-config')
 require('gitsigns-config')
 require('nvim-cmp-config')
+require('windows-config')
 
 
 -- Luasnip: Activates friendly-snippets

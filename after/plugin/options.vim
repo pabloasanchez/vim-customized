@@ -65,7 +65,7 @@ function CustomHighlights()
    hi NodeInspectBreakpoint ctermfg=130 ctermbg=red
    hi NodeInspectSign ctermfg=red ctermbg=0 cterm=bold
    
-   let g:limelight_paragraph_span = 1
+   let g:limelight_paragraph_span = 4
    let g:limelight_conceal_ctermfg = 'gray'
    let g:limelight_conceal_ctermfg = 240
    let g:limelight_conceal_guifg = 'DarkGray'

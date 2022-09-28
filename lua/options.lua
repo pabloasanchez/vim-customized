@@ -4,7 +4,7 @@
 
 vim.g.mapleader = ';'     -- let g:mapleader=";"
 
-vim.opt_global.wrap = true
+vim.opt_global.wrap = false
 vim.opt_global.cursorline = true
 vim.opt_global.mousefocus = true
 

@@ -58,8 +58,11 @@ nnoremap <A-BS> :split<CR>
 "
 " Remember session (splits)
 "
-nnoremap <C-N> :mksession! .session <bar> :only<cr>
-nnoremap <leader>n :source .session<CR>
+" Replaced with windows.nvim
+" nnoremap <C-N> :mksession! .session <bar> :only<cr>
+" nnoremap <leader>n :source .session<CR>
+nnoremap <C-N> :WindowsMaximize<ENTER>
+
 
 "
 " Split resizing
@@ -148,7 +151,6 @@ nnoremap <leader>ff :Telescope resume<Enter>
 " Terminals
 "
 " nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:only<cr>
 
 
@@ -162,7 +164,7 @@ nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=G
 "
 " Spawn a new terminal with ;t
 "
-nnoremap <leader>t     :FloatermToggle terminal<cr>
+nnoremap <C-t>     :FloatermToggle terminal<cr>
 
 
 "

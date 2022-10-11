@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- map('n', '<leader>p', ':bprev<cr>', options)
 
-options = { noremap = true }
+local options = { noremap = true }
 map('n', '<F2>', "<cmd>Lspsaga rename<cr>", options)
 map('n', '<F3>', ":lua =vim.lsp.buf.format()<cr>", options)
 map('n', 'ga', "<cmd>Lspsaga code_action<cr>", options)

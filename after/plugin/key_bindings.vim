@@ -9,7 +9,7 @@ nnoremap <c-SPACE> :
 " Quick UI Menu
 "
 nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
-noremap <A-f> :call quickui#menu#open()<cr>
+" noremap <A-f> :call quickui#menu#open()<cr>
 noremap <leader><leader> :call quickui#menu#open()<cr>
 
 " 
@@ -143,7 +143,7 @@ endfunction
 "
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
 nnoremap <leader>l :Lines<Enter>
-nnoremap <leader>f :Rg<Enter>
+nnoremap <A-f> :Rg<Enter>
 nnoremap <leader>ff :Telescope resume<Enter>
 
 
@@ -186,8 +186,8 @@ nnoremap <ESC> :set hls! <CR>
 " For exiting terminal mode 
 "
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
-tnoremap <ESC><ESC>  <C-\><C-n> <bar> :FloatermKill <cr>
+tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
+tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 
 
 "
@@ -272,7 +272,8 @@ imap <A-BS> <Delete>
 imap :w <ESC>:w
 imap <C-Z> <ESC>:undo<Return>
 imap <C-D> <ESC>ddi
-imap <C-H> <Left>
+" imap <C-H> <Left>
+inoremap <C-h> <C-o>h
 imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
@@ -303,6 +304,7 @@ nnoremap <S-l> W
 nnoremap <C-home> gg
 nnoremap <C-end> G
 
+nnoremap <A-i> zt
 
 "
 " Save / Close ...

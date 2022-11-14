@@ -9,7 +9,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', PLUGINS)
 
 --  Initial options and defaults
--- Plug 'rstacruz/vim-opinion'           -- vim-opinion - An almost-universal set of defaults that most people can agree on. recommended for use alongside vim-sensible.
 Plug 'airblade/vim-rooter'            -- vim-rooter - changes working dir to the project root
 
 --  Note-taking (Zettelkasten Method)
@@ -25,7 +24,7 @@ Plug 'anuvyklack/animation.nvim'
 Plug 'anuvyklack/windows.nvim'
 
 --  GUI
-Plug 'skywind3000/vim-quickui'      -- Top Menu
+Plug 'pabloasanchez/vim-quickui'      -- Top Menu
 
 --  Bars - WinBar see winbar.vim
 
@@ -72,11 +71,12 @@ Plug 'onsails/lspkind.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 -- Completion
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 Plug 'hrsh7th/cmp-omni'
@@ -89,11 +89,10 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'junegunn/limelight.vim'                         --  limelight, hyperfocusing in vim
 Plug 'junegunn/goyo.vim'                              --  Distraction-free plugins
 
--- Clipboard
--- TODO
+-- Img view
+Plug 'samodostal/image.nvim'                          -- Image view, requires plenary (already imported)
 
 vim.call('plug#end')
-
 
 -- Require configurations
 require('nvim-treesitter-config')
@@ -102,6 +101,7 @@ require('lspsaga-config')
 require('gitsigns-config')
 require('nvim-cmp-config')
 require('windows-config')
+require('image-config')
 
 
 -- Luasnip: Activates friendly-snippets

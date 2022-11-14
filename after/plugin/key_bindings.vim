@@ -9,7 +9,7 @@ nnoremap <c-SPACE> :
 " Quick UI Menu
 "
 nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
-noremap <A-f> :call quickui#menu#open()<cr>
+" noremap <A-f> :call quickui#menu#open()<cr>
 noremap <leader><leader> :call quickui#menu#open()<cr>
 
 " 
@@ -45,6 +45,7 @@ nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
 " nnoremap <Tab> :Telescope buffers<CR>
 nnoremap <leader><TAB> :Telescope buffers<cr>
 map <leader><Tab> :Telescope buffers<CR>
+nnoremap <C-b> :Telescope buffers<CR>
 
 
 "
@@ -57,8 +58,11 @@ nnoremap <A-BS> :split<CR>
 "
 " Remember session (splits)
 "
-nnoremap <C-N> :mksession! .session <bar> :only<cr>
-nnoremap <leader>n :source .session<CR>
+" Replaced with windows.nvim
+" nnoremap <C-N> :mksession! .session <bar> :only<cr>
+" nnoremap <leader>n :source .session<CR>
+nnoremap <C-N> :WindowsMaximize<ENTER>
+
 
 "
 " Split resizing
@@ -139,7 +143,7 @@ endfunction
 "
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
 nnoremap <leader>l :Lines<Enter>
-nnoremap <leader>f :Rg<Enter>
+nnoremap <A-f> :Rg<Enter>
 nnoremap <leader>ff :Telescope resume<Enter>
 
 
@@ -147,7 +151,6 @@ nnoremap <leader>ff :Telescope resume<Enter>
 " Terminals
 "
 " nnoremap <silent><F4> :FloatermNew --autoclose=1 --width=1.0 --height=1.0 ranger<cr>
-nnoremap <leader>r :FloatermNew --autoclose=1 --width=0.7 --height=0.7 ranger<cr>:only<cr>
 nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:only<cr>
 
 
@@ -161,14 +164,15 @@ nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=G
 "
 " Spawn a new terminal with ;t
 "
-nnoremap <leader>t     :FloatermToggle terminal<cr>
+nnoremap <C-t>     :FloatermToggle terminal<cr>
 
 
 "
 " Cycle through terminals
 "
-nmap <leader>[ :CocList -A --normal floaterm<cr>
-nmap <leader>] :CocList -A --normal floaterm<cr>
+" TODO
+" nmap <leader>[ :CocList -A --normal floaterm<cr>
+" nmap <leader>] :CocList -A --normal floaterm<cr>
 
 
 "
@@ -182,8 +186,8 @@ nnoremap <ESC> :set hls! <CR>
 " For exiting terminal mode 
 "
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-tnoremap <leader>t  <C-\><C-n> <bar> :hide <cr>
-tnoremap <ESC><ESC>  <C-\><C-n> <bar> :FloatermKill <cr>
+tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
+tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 
 
 "
@@ -268,7 +272,8 @@ imap <A-BS> <Delete>
 imap :w <ESC>:w
 imap <C-Z> <ESC>:undo<Return>
 imap <C-D> <ESC>ddi
-imap <C-H> <Left>
+" imap <C-H> <Left>
+inoremap <C-h> <C-o>h
 imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
@@ -299,6 +304,7 @@ nnoremap <S-l> W
 nnoremap <C-home> gg
 nnoremap <C-end> G
 
+nnoremap <A-i> zt
 
 "
 " Save / Close ...
@@ -324,7 +330,8 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 "
 " coc-yank
 "
-nmap <leader>p :CocList -A --normal yank<CR>
+" TODO
+" nmap <leader>p :CocList -A --normal yank<CR>
 
 
 "
@@ -354,15 +361,6 @@ nnoremap <silent><C-\> :Goyo<ENTER>
 nnoremap <A-\> :Limelight<ENTER>
 nnoremap <C-A-\> :Limelight!<ENTER>
 
-"
-" TODO C-backspace CocList location
-"
-
-"
-" CoC
-" See lsp.vim for coc keybindings
-"
-
 
 "
 " JS Debugger
@@ -373,5 +371,5 @@ nnoremap <F6> :NodeInspectRun<cr>
 nnoremap <F7> :NodeInspectStop<cr>
 nnoremap <F8> :NodeInspectStepOver<cr>
 nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
-" nnoremap <F7> :NodeInspectStepInto<cr>
+" nnoremap <F10> :NodeInspectStepInto<cr>
 

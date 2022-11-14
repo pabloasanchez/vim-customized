@@ -66,24 +66,27 @@ call quickui#menu#install("&Options", [
 			\ ['Set &Spell %{&spell? "Off":"On"}', 'set spell!'],
 			\ ['Set &Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
 			\ ['Set &Wrap %{&wrap? "Off":"On"}', 'set wrap!'],
-			\ ['Toggle &AutoPairs', 'CocList outline'],
+			\ ['Toggle &AutoPairs', 'call AutoPairsToggle()'],
 			\ ])
 
 
 call quickui#menu#install("&Code", [
-			\ ["&Format code\t:Format", 'Format', 'Format code'],
+			\ ["Symbol &Rename\tF2", 'Lspsaga rename', 'Rename symbol under cursor'],
+			\ ["Symbols &Outline\tgo", 'SymbolsOutline', 'Outline'],
+			\ ["&Line Diagnostics\tgl", 'Lspsaga show_line_diagnostics', 'Diagnostics'],
 			\ ["--",''],
-			\ ["&Definition \t;gd", '<Plug>(coc-definition)', 'Definition under cursor'],
-			\ ["&Type Definition\t;gt", '<Plug>(coc-type-definition)', 'Type definition under cursor'],
-			\ ["&Implementation\t;gi", '<Plug>(coc-implementation)', 'Implementation under cursor'],
-			\ ["&References\t;gr", '<Plug>(coc-references)', 'References under cursor'],
-			\ ['--',''],
-			\ ['&QuickFix', 'QuickFix'],
-			\ ['--',''],
-			\ ["Symbol Rename\tF2", '<Plug>(coc-rename)', 'Rename symbol under cursor'],
-			\ ['Dia&gnostics', 'CocList diagnostics'],
-			\ ['&Outline/tgo', 'CocList outline'],
-			\ ['&Symbols', 'CocList symbols'],
+			\ ["&Format code\tF3", 'lua =vim.lsp.buf.format()', 'Format code'],
+			\ ["--",''],
+			\ ["Code &Action\tga", 'Lspsaga code_action', 'Code Action'],
+			\ ["&Definition\tgd", 'Lspsaga lsp_finder', 'Definition under cursor'],
+			\ ["LS&P Finder\tgf", 'Lspsaga lsp_finder', 'LSP finder'],
+			\ ["&Hover Documentation\tgh", 'Lspsaga hover_doc', 'Documentation'],
+			\ ["&Implementation\tgi", 'lua =vim.lsp.buf.implementation()', 'Implementation under cursor'],
+			\ ["&References\tgr", 'Telescope lsp_references', 'References under cursor'],
+      \ ["Pre&view Definition\tgv", 'Lspsaga preview_definition', ''],
+			\ ["--",''],
+      \ ["Telescope References\tgr", ''],
+      \ ["Telescope Symbols\tgs", ''],
 			\ ])
 
 

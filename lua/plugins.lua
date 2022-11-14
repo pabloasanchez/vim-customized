@@ -56,7 +56,8 @@ Plug 'lewis6991/gitsigns.nvim'                                --  Super fast git
 Plug 'voldikss/vim-floaterm'                          --  floaterm - Floating Terminal for vim
 
 --  Start screen
-Plug 'mhinz/vim-startify'                             --  vim-startify - This plugin provides a start screen for Vim and Neovim.
+-- Plug 'mhinz/vim-startify'                             --  vim-startify - This plugin provides a start screen for Vim and Neovim.
+Plug 'goolord/alpha-nvim'
 
 --  Color schemes and icons
 Plug 'ryanoasis/vim-devicons'
@@ -95,13 +96,14 @@ Plug 'samodostal/image.nvim'                          -- Image view, requires pl
 vim.call('plug#end')
 
 -- Require configurations
-require('nvim-treesitter-config')
-require('nvim-lsp-installer-config')
-require('lspsaga-config')
-require('gitsigns-config')
-require('nvim-cmp-config')
-require('windows-config')
-require('image-config')
+require('config/alpha-nvim')
+require('config/nvim-treesitter')
+require('config/nvim-lsp-installer')
+require('config/lspsaga')
+require('config/gitsigns')
+require('config/nvim-cmp')
+require('config/windows')
+require('config/image')
 
 
 -- Luasnip: Activates friendly-snippets

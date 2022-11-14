@@ -28,14 +28,15 @@ My custom Vim configuration
 * lazygit
 * [chafa](https://github.com/hpjansson/chafa)
 
-### CoC Required Plugins
-* coc-yank
-* coc-prettier (for JS development)
-* coc-lists 
-* coc-floaterm 
-* coc-tsserver (for JS development)
-* coc-json 
-* coc-flow (for JS development)
+## Changes (TODO)
+* ~~Replace fzf with Telescope~~
+* vim-quickui: Menu, context menus, etc.
+* <SPACE> brings up command history and other relevant lists (commands, history)
+* Smart splits (focus)
+* Native LSP instead of CoC
+
+### Nice to have (TODO)
+* https://github.com/mg979/vim-visual-multi
 
 ## Features
 * `<SPACE>` to bring up the command history

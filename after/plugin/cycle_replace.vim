@@ -20,7 +20,7 @@
 " nnoremap <C-L> :execute ":call CycleReplace(expand('<cword>'), ['true', 'false', 'undefined', 'null'])" <CR> 
 
 " Multiple lists:
-nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [ 
+nnoremap <C-A-L> :execute ":call CycleReplaceMany(expand('<cword>'), [ 
       \ ['let', 'const', 'var'], 
       \ ['true', 'false'],
       \ ['undefined', 'null'],
@@ -36,6 +36,8 @@ nnoremap <C-L> :execute ":call CycleReplaceMany(expand('<cword>'), [
       \ ['left', 'right', 'center'],
       \ ['top', 'bottom'],
       \ ['light', 'dark'],
+      \ ['extends', 'implements'],
+      \ ['class', 'interace', 'abstract'],
       \ ])"<cr><cr>
 
 " <C-L> is the key mapping

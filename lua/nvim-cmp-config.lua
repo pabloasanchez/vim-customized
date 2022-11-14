@@ -23,9 +23,9 @@ cmp.setup({
   mapping = {
     -- ... Your other mappings ...
     ["<C-Space>"] = cmp.mapping.complete(),
-    -- ["<Esc>"] = cmp.mapping.abort(),
     ["<C-e>"] = cmp.mapping.close(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    -- ["<Esc>"] = cmp.mapping.abort(),
     ["<Esc>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then

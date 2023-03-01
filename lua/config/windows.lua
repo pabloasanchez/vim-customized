@@ -3,7 +3,7 @@ vim.o.winminwidth = 10
 vim.o.equalalways = false
 require('windows').setup({
   autowidth = { --		       |windows.autowidth|
-    enable = true,
+    enable = false,
     winwidth = 3, --		        |windows.winwidth|
     filetype = { --	      |windows.autowidth.filetype|
       help = 2,
@@ -15,7 +15,7 @@ require('windows').setup({
   },
   animation = {
     enable = true,
-    duration = 200,
+    duration = 100,
     fps = 30,
     easing = "in_out_sine"
   }

@@ -8,7 +8,7 @@ vim.opt_global.wrap = false
 vim.opt_global.cursorline = true
 vim.opt_global.mousefocus = true
 
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 -- vim.opt.cindent = true
 -- vim.opt.cinoptions = 'l1,j1'
 vim.opt.clipboard = vim.opt.clipboard + { 'unnamedplus' }

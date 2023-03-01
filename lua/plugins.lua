@@ -19,9 +19,9 @@ vim.g.zettelkasten = HOME .. '/notes/zk/'
 Plug 'vimlab/split-term.vim'        -- Better terminal splits
 Plug 'simeji/winresizer'            -- Resize splits with hjkl, using :WinResizerStartResize
 Plug 'mhinz/vim-sayonara'           -- Closes buffers
-Plug 'anuvyklack/middleclass'
-Plug 'anuvyklack/animation.nvim'
-Plug 'anuvyklack/windows.nvim'
+-- Plug 'anuvyklack/middleclass'
+-- Plug 'anuvyklack/animation.nvim'
+-- Plug 'anuvyklack/windows.nvim'
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
@@ -47,6 +47,7 @@ Plug 'tpope/vim-commentary'                                   --  commentary.vim
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
 Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
 Plug 'jiangmiao/auto-pairs'                                   --  Insert or delete brackets, parens, quotes in pair
+Plug 'mattn/emmet-vim'                                        -- Emmet
 
 --  Gutter
 Plug 'kshenoy/vim-signature'                                  --  vim-signature - Place, toggle, display marks
@@ -102,8 +103,9 @@ require('config/nvim-lsp-installer')
 require('config/lspsaga')
 require('config/gitsigns')
 require('config/nvim-cmp')
-require('config/windows')
+-- require('config/windows')
 require('config/image')
+require('config/emmet')
 
 
 -- Luasnip: Activates friendly-snippets

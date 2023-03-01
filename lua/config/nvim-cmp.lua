@@ -23,10 +23,8 @@ cmp.setup({
   mapping = {
     -- ... Your other mappings ...
     ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     -- ["<Esc>"] = cmp.mapping.abort(),
-    ["<Esc>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -66,15 +64,15 @@ cmp.setup({
     { name = 'path' },
     -- { name = 'calc' },
     -- { name = 'digraphs' },
-    { name = 'omni' },
+    -- { name = 'omni' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim-lsp-document-symbol' },
-    { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'nvim-lsp-document-symbol' },
+    -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
-    { name = 'buffer' },
+    -- { name = 'buffer' },
   })
 })
 
@@ -106,7 +104,7 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-    { name = 'cmdline' }
+    -- { name = 'cmdline' }
   })
 })
 

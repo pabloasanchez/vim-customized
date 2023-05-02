@@ -57,11 +57,11 @@ nnoremap <A-BS> :split<CR>
 
 "
 " Remember session (splits)
-"
+nnoremap <C-N> :mksession! .session <bar> :only<cr>
+nnoremap <leader>n :source .session<CR>
+" --- or ---
 " Replaced with windows.nvim
-" nnoremap <C-N> :mksession! .session <bar> :only<cr>
-" nnoremap <leader>n :source .session<CR>
-nnoremap <C-N> :WindowsMaximize<ENTER>
+" nnoremap <C-N> :WindowsMaximize<ENTER>
 
 
 "

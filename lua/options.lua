@@ -24,6 +24,7 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.matchtime = 5
 vim.opt.mouse = 'a'
+vim.opt.virtualedit = 'all'
 vim.opt.number = true
 vim.opt.ruler = true
 vim.opt.shiftwidth = 2

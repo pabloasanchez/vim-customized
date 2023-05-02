@@ -25,6 +25,12 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     -- ["<Esc>"] = cmp.mapping.abort(),
+    -- ["<Esc>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false },
+    -- ["<Esc>"] = cmp.mapping.close() -- cmp.mapping.confirm({ select = false }),
+    ["<Esc>"] = cmp.mapping(function(fallback)
+      cmp.abort()
+      fallback()
+    end, { "i", "s" }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -100,7 +106,36 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
+  mapping = {
+    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<Esc>'] = cmp.mapping({
+      c = function()
+        if cmp.visible() then
+          cmp.close()
+        else
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-c>', true, true, true), 'n', true)
+        end
+      end
+    }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip and luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip and luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  },
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
@@ -127,8 +162,8 @@ require('lspconfig')['serve_d'].setup { capabilities = capabilities }
 require('lspconfig')['jsonls'].setup { capabilities = capabilities }
 
 -- require('lspconfig')['nimls'].setup { capabilities = capabilities }
-require('lspconfig')['jdtls'].setup { capabilities = capabilities }
+-- require('lspconfig')['jdtls'].setup { capabilities = capabilities }
 require('lspconfig')['html'].setup { capabilities = capabilities }
-require('lspconfig')['sumneko_lua'].setup { capabilities = capabilities }
--- require('lspconfig')['pyright'].setup { capabilities = capabilities }
+-- require('lspconfig')['sumneko_lua'].setup { capabilities = capabilities }
+require('lspconfig')['pyright'].setup { capabilities = capabilities }
 

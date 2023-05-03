@@ -3,10 +3,6 @@ local ui = vim.ui
 
 -- 'Save As' prompt
 function saveAs()
-    -- Old way...
-    -- fn.inputsave()
-    -- local name = fn.input("Save as: ", "", "file")
-    -- fn.inputrestore() 
     ui.input({ prompt = "Save file as: " }, function(input)
         if input then
            fn.execute(":saveas " .. input)

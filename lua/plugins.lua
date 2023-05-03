@@ -35,6 +35,7 @@ Plug 'tpope/vim-surround'                                     --  Surroundings y
 Plug 'tpope/vim-repeat'                                       --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
+Plug 'nacro90/numb.nvim'                                      -- numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
 -- Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
 -- Plug 'mattn/emmet-vim'                                        -- Emmet
 
@@ -86,10 +87,8 @@ vim.call('plug#end')
 require('config/alpha-nvim')
 require('config/nvim-treesitter')
 require('config/nvim-lsp-installer')
--- require('config/lspsaga')
 require('config/gitsigns')
--- require('config/nvim-cmp')
--- require('config/windows')
+require('config/numb')
 -- require('config/image')
 -- require('config/emmet')
 

@@ -1,7 +1,5 @@
 local map = vim.api.nvim_set_keymap
--- local map = vim.api.nvim_buf_set_keymap
-
--- map('n', '<leader>p', ':bprev<cr>', options)
+-- local map = vim.api.nvim_buf_set_keymap  -- Use this for buffer level
 
 local options = { noremap = true }
 map('n', '<F2>', "<cmd>Lspsaga rename<cr>", options)

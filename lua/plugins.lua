@@ -18,6 +18,8 @@ Plug 'mhinz/vim-sayonara'           -- Closes buffers
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
+Plug 'MunifTanjim/nui.nvim'
+Plug 'folke/noice.nvim'
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
@@ -36,8 +38,12 @@ Plug 'tpope/vim-repeat'                                       --  repeat.vim - r
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
 Plug 'nacro90/numb.nvim'                                      -- numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
+Plug 'folke/noice.nvim'
 -- Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
 -- Plug 'mattn/emmet-vim'                                        -- Emmet
+
+-- Clipboard and registers
+Plug 'AckslD/nvim-neoclip.lua'
 
 --  Gutter
 Plug 'kshenoy/vim-signature'                                  --  vim-signature - Place, toggle, display marks
@@ -89,6 +95,8 @@ require('config/nvim-treesitter')
 require('config/nvim-lsp-installer')
 require('config/gitsigns')
 require('config/numb')
+require('config/noice')
+require('config/neoclip')
 -- require('config/image')
 -- require('config/emmet')
 

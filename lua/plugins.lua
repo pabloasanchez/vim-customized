@@ -67,6 +67,10 @@ Plug 'neovim/nvim-lspconfig'
 -- Plug 'simrat39/symbols-outline.nvim'
 -- Plug 'dnlhc/glance.nvim'
 
+--  IDE
+Plug 'echasnovski/mini.nvim'
+Plug 'echasnovski/mini.completion'
+
 -- Completion
 -- Plug 'hrsh7th/cmp-nvim-lsp'
 -- Plug 'hrsh7th/cmp-buffer'
@@ -98,6 +102,7 @@ require('config/gitsigns')
 require('config/numb')
 require('config/neoclip')
 require('config/mason')
+require('config/mini')
 -- require('config/glance')
 -- require('config/image')
 -- require('config/emmet')

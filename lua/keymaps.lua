@@ -4,6 +4,7 @@ local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 map('n', '<F2>', "<cmd>Lspsaga rename<cr>", options)
 map('n', '<F3>', ":lua =vim.lsp.buf.format()<cr>", options)
+map('n', '<C-h>', ":Recent <cr>", options)
 map('n', 'ga', "<cmd>Lspsaga code_action<cr>", options)
 map('x', 'ga', ":<c-u>Lspsaga range_code_action<cr>", options)
 map('n', 'gb', "SymbolsOutline", options)

@@ -18,9 +18,14 @@ function clipboard()
   fn.execute(":Telescope neoclip")
 end
 
+function recent()
+  fn.execute(":Telescope oldfiles")
+end
+
 vim.api.nvim_create_user_command("SaveAs", saveAs, {})
 vim.api.nvim_create_user_command("New", new, {})
 vim.api.nvim_create_user_command("Clipboard", clipboard, {})
+vim.api.nvim_create_user_command("Recent", recent, {})
 
 
 

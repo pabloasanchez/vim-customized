@@ -82,7 +82,6 @@ nnoremap <A-w> :Sayonara!<cr>
 " nnoremap <A-p> :GitFiles<Enter>
 nnoremap <A-p> :Files<Enter>
 nnoremap <C-p> :Telescope find_files<Enter>
-nnoremap <C-h> :Telescope oldfiles<cr>
 nnoremap <SPACE> :Telescope command_history<cr>
 nnoremap <leader>h :Telescope oldfiles<cr>
 nnoremap <leader>b :Telescope buffers<cr>

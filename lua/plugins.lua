@@ -18,8 +18,8 @@ Plug 'mhinz/vim-sayonara'           -- Closes buffers
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
-Plug 'MunifTanjim/nui.nvim'
-Plug 'folke/noice.nvim'
+-- Plug 'MunifTanjim/nui.nvim'
+-- Plug 'stevearc/dressing.nvim'
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
@@ -38,7 +38,6 @@ Plug 'tpope/vim-repeat'                                       --  repeat.vim - r
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
 Plug 'nacro90/numb.nvim'                                      -- numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
-Plug 'folke/noice.nvim'
 -- Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
 -- Plug 'mattn/emmet-vim'                                        -- Emmet
 
@@ -61,9 +60,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 
 --  LSP
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+-- Plug 'williamboman/nvim-lsp-installer'
 -- Plug 'simrat39/symbols-outline.nvim'
+-- Plug 'dnlhc/glance.nvim'
 
 -- Completion
 -- Plug 'hrsh7th/cmp-nvim-lsp'
@@ -92,13 +94,16 @@ vim.call('plug#end')
 -- Require configurations
 require('config/alpha-nvim')
 require('config/nvim-treesitter')
-require('config/nvim-lsp-installer')
 require('config/gitsigns')
 require('config/numb')
-require('config/noice')
 require('config/neoclip')
+require('config/mason')
+-- require('config/glance')
 -- require('config/image')
 -- require('config/emmet')
+
+-- Optionless
+-- require("my_plugin").setup()
 
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()

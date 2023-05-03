@@ -45,10 +45,6 @@ vim.opt.undodir = HOME .. '/.vim/undo'
 -- vim.opt.wildmode = 'longest:full,full'
 
 -- Global namespace, plugins & global options
-vim.g.goyo_width = '75%'
-vim.g.goyo_height = '100%'
-vim.g.goyo_linenr = 1
-
 vim.g.floaterm_opener = 'edit'
 
 vim.cmd('syntax on')

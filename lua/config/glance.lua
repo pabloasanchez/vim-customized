@@ -3,7 +3,7 @@ local glance = require('glance')
 local actions = glance.actions
 
 glance.setup({
-  height = 18, -- Height of the window
+  height = 10, -- Height of the window
   zindex = 45,
 
   -- By default glance will open preview "embedded" within your active window
@@ -28,8 +28,8 @@ glance.setup({
     bottom_char = '―',
   },
   list = {
-    position = 'right', -- Position of the list window 'left'|'right'
-    width = 0.33, -- 33% width relative to the active window, min 0.1, max 0.5
+    position = 'left', -- Position of the list window 'left'|'right'
+    width = 0.5, -- 33% width relative to the active window, min 0.1, max 0.5
   },
   theme = { -- This feature might not work properly in nvim-0.7.2
     enable = false, -- Will generate colors for the plugin based on your current colorscheme

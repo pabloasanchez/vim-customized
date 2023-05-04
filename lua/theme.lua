@@ -1,4 +1,5 @@
 vim.api.nvim_create_user_command("UserHighlights", [[
+   hi NormalFloat ctermbg=16 
    hi TabLine ctermbg=black ctermfg=234
    hi TabLine ctermbg=black ctermfg=darkblue
    hi TabLine ctermbg=black ctermfg=234

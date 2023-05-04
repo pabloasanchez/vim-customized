@@ -58,19 +58,39 @@ function lspImplementation()
   vim.lsp.buf.implementation() 
 end
 
+function findInFiles()
+  fn.execute(":Rg") --fzf Lines
+end
+
 function findInBuffers()
   fn.execute(":Lines") --fzf Lines
 end
 
 function findInBuffer()
-  fn.execute(":Telescope current_buffer_fuzzy_find") --fzf Lines
+  fn.execute(":Telescope current_buffer_fuzzy_find") 
 end
 
 function findResume()
-  fn.execute(":Telescope resume") --fzf Lines
+  fn.execute(":Telescope resume") 
 end
 
-function Back()
+function git()
+  fn.execute(":FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit")
+end
+
+function terminal()
+  fn.execute(":FloatermToggle terminal")
+end
+
+function removeFromLine(opts)
+  fn.execute(":s/" .. opts.args .. "/")
+end
+
+function replaceInLine(opts)
+   fn.execute(":s/" .. opts.fargs[1] .. "/" .. opts.fargs[2])
+end
+
+function back()
   -- fn.execute(":exe \"normal \<c-w>\<c-w>\"") --fzf Lines
 end
 
@@ -89,7 +109,11 @@ vim.api.nvim_create_user_command("FormatCode", lspFormat, {})
 vim.api.nvim_create_user_command("Implementation", lspImplementation, {})
 vim.api.nvim_create_user_command("CodeAction", lspCodeAction, {})
 vim.api.nvim_create_user_command("FindInBuffers", findInBuffers, {})
+vim.api.nvim_create_user_command("FindInFiles", findInFiles, {})
 vim.api.nvim_create_user_command("FindInBuffer", findInBuffer, {})
 vim.api.nvim_create_user_command("FindResume", findResume, {})
+vim.api.nvim_create_user_command("Git", git, {})
+vim.api.nvim_create_user_command("Remove", removeFromLine, { nargs = 1 })
+vim.api.nvim_create_user_command("Replace", replaceInLine, { nargs = '*' })
 
 

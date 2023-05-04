@@ -4,8 +4,10 @@ local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 map('n', '<F2>', ":Rename <ENTER>", options)
 map('n', '<F3>', ":FormatCode <ENTER>", options)
+map('n', '<A-f>', ":FindInFiles <ENTER>", options)
 map('n', '<C-f>', ":FindInBuffer <ENTER>", options)
 map('n', '<C-A-f>', ":FindResume <ENTER>", options)
+map('n', '<C-g>', ":Git <ENTER>", options)
 map('n', '<C-h>', ":Recent <ENTER>", options)
 map('n', '<C-i>', ":FindInBuffers <ENTER>", options)
 -- map('x', 'ga', ":<c-u>Lspsaga range_code_action<cr>", options)

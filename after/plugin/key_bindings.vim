@@ -107,8 +107,8 @@ endfunction
 " nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
 " nnoremap <leader>l :Lines<Enter>
 " nnoremap <C-i> :Lines<Enter>
-nnoremap <A-f> :Rg<Enter>
-nnoremap <leader>ff :Telescope resume<Enter>
+" nnoremap <A-f> :Rg<Enter>
+" nnoremap <leader>ff :Telescope resume<Enter>
 
 
 "
@@ -121,8 +121,8 @@ nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:on
 "
 " Lazygit
 "
-nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
-nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+" nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+" nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 
 
 "

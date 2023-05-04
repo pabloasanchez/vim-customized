@@ -19,8 +19,9 @@ Plug 'mhinz/vim-sayonara'           -- Closes buffers
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
 Plug 'jinzhongjia/LspUI.nvim'
--- Plug 'MunifTanjim/nui.nvim'
--- Plug 'stevearc/dressing.nvim'
+Plug "SmiteshP/nvim-navic"
+Plug "MunifTanjim/nui.nvim"
+Plug "SmiteshP/nvim-navbuddy"
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
@@ -68,13 +69,12 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
--- Plug 'williamboman/nvim-lsp-installer'
--- Plug 'simrat39/symbols-outline.nvim'
 Plug 'dnlhc/glance.nvim'
 
---  IDE
--- Plug 'echasnovski/mini.nvim'
--- Plug 'echasnovski/mini.completion'
+-- Completion
+Plug ('ms-jpq/coq_nvim', {['branch'] = 'coq'})
+Plug ('ms-jpq/coq.artifacts', {['branch'] = 'artifacts'})
+Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
 
 -- Snips
 -- Plug 'L3MON4D3/LuaSnip'
@@ -108,19 +108,3 @@ require("LspUI").setup()
 
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

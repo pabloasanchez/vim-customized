@@ -58,6 +58,10 @@ function lspReferences()
   fn.execute(":Glance references")
 end
 
+function lspOutline()
+  fn.execute(":Navbuddy")
+end
+
 function lspFormat()
   vim.lsp.buf.format() 
 end
@@ -68,6 +72,14 @@ end
 
 function lspLineDiagnostics()
   vim.diagnostic.open_float(nil, {focus=false})
+end
+
+function lspSymbols()
+  fn.execute(":Telescope lsp_document_symbols") 
+end
+
+function lspTypeDefs()
+  fn.execute(":Glance type_definitions") 
 end
 
 function findInFiles()
@@ -130,5 +142,8 @@ vim.api.nvim_create_user_command("Remove", removeFromLine, { nargs = 1 })
 vim.api.nvim_create_user_command("Replace", replaceInLine, { nargs = '*' })
 vim.api.nvim_create_user_command("Definitions", lspDefinitions, {})
 vim.api.nvim_create_user_command("References", lspReferences, {})
+vim.api.nvim_create_user_command("Outline", lspOutline, {})
+vim.api.nvim_create_user_command("Symbols", lspSymbols, {})
+vim.api.nvim_create_user_command("TypeDefs", lspTypeDefs, {})
 
 

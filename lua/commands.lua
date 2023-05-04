@@ -106,6 +106,10 @@ function git()
   fn.execute(":FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit")
 end
 
+function marks()
+  fn.execute(":Telescope marks")
+end
+
 function terminal()
   fn.execute(":FloatermToggle terminal")
 end
@@ -148,6 +152,7 @@ vim.api.nvim_create_user_command("FindInFiles", findInFiles, {})
 vim.api.nvim_create_user_command("FindInBuffer", findInBuffer, {})
 vim.api.nvim_create_user_command("FindResume", findResume, {})
 vim.api.nvim_create_user_command("Git", git, {})
+vim.api.nvim_create_user_command("Marks", marks, {})
 vim.api.nvim_create_user_command("Remove", removeFromLine, { nargs = 1 })
 vim.api.nvim_create_user_command("Replace", replaceInLine, { nargs = '*' })
 vim.api.nvim_create_user_command("Definitions", lspDefinitions, {})

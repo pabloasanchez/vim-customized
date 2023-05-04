@@ -70,7 +70,7 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 -- Plug 'williamboman/nvim-lsp-installer'
 -- Plug 'simrat39/symbols-outline.nvim'
--- Plug 'dnlhc/glance.nvim'
+Plug 'dnlhc/glance.nvim'
 
 --  IDE
 -- Plug 'echasnovski/mini.nvim'
@@ -103,7 +103,7 @@ require('config/neoclip')
 require('config/mason')
 require('config/coq')
 require('config/telescope')
--- -- require('config/glance')
+require('config/glance')
 -- require('config/image')
 -- require('config/emmet')
 

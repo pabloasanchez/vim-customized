@@ -38,6 +38,10 @@ function lspCodeAction()
   fn.execute(":LspUI code_action")
 end
 
+function lspDefinitions()
+  fn.execute(":Glance definitions")
+end
+
 function lspDiagNext()
   fn.execute(":LspUI diagnostic next")
 end
@@ -50,12 +54,20 @@ function lspPeek()
   fn.execute(":LspUI peek_definition")
 end
 
+function lspReferences()
+  fn.execute(":Glance references")
+end
+
 function lspFormat()
   vim.lsp.buf.format() 
 end
 
 function lspImplementation()
   vim.lsp.buf.implementation() 
+end
+
+function lspLineDiagnostics()
+  vim.diagnostic.open_float(nil, {focus=false})
 end
 
 function findInFiles()
@@ -104,6 +116,7 @@ vim.api.nvim_create_user_command("Hover", lspHover, {})
 vim.api.nvim_create_user_command("Rename", lspRename, {})
 vim.api.nvim_create_user_command("LSPDiagNext", lspDiagNext, {})
 vim.api.nvim_create_user_command("LSPDiagPrev", lspDiagPrev, {})
+vim.api.nvim_create_user_command("LSPLineDiag", lspLineDiagnostics, {})
 vim.api.nvim_create_user_command("Peek", lspPeek, {})
 vim.api.nvim_create_user_command("FormatCode", lspFormat, {})
 vim.api.nvim_create_user_command("Implementation", lspImplementation, {})
@@ -115,5 +128,7 @@ vim.api.nvim_create_user_command("FindResume", findResume, {})
 vim.api.nvim_create_user_command("Git", git, {})
 vim.api.nvim_create_user_command("Remove", removeFromLine, { nargs = 1 })
 vim.api.nvim_create_user_command("Replace", replaceInLine, { nargs = '*' })
+vim.api.nvim_create_user_command("Definitions", lspDefinitions, {})
+vim.api.nvim_create_user_command("References", lspReferences, {})
 
 

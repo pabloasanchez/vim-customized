@@ -83,7 +83,11 @@ function lspTypeDefs()
 end
 
 function findInFiles()
-  fn.execute(":Rg") --fzf Lines
+  ui.input({ prompt = "Find in files: " }, function(input)
+    if input then
+      fn.execute(":Ag " .. input)
+    end
+  end)
 end
 
 function findInBuffers()
@@ -118,11 +122,17 @@ function back()
   -- fn.execute(":exe \"normal \<c-w>\<c-w>\"") --fzf Lines
 end
 
+function glyph()
+  fn.execute(":Telescope glyph") 
+end
+
 vim.api.nvim_create_user_command("New", new, {})
 vim.api.nvim_create_user_command("SaveAs", saveAs, {})
 vim.api.nvim_create_user_command("Clipboard", clipboard, {})
 vim.api.nvim_create_user_command("Recent", recent, {})
 vim.api.nvim_create_user_command("Wrap", wrap, {})
+
+vim.api.nvim_create_user_command("Glyph", glyph, {})
 
 vim.api.nvim_create_user_command("Hover", lspHover, {})
 vim.api.nvim_create_user_command("Rename", lspRename, {})

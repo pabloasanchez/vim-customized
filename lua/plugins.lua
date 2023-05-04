@@ -36,6 +36,8 @@ Plug 'nvim-lua/plenary.nvim'                                                --  
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kkharji/sqlite.lua'                                     -- Required by telescope-smart-history
 Plug 'nvim-telescope/telescope-smart-history.nvim'
+Plug 'ghassan0/telescope-glyph.nvim'
+Plug 'kelly-lin/telescope-ag'
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively

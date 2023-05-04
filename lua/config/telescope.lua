@@ -9,8 +9,13 @@ require('telescope').setup {
 			i = {
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result
 				["<C-j>"] = actions.move_selection_next, -- move to next result
+				["<ESC>"] = actions.close, -- move to next result
+				["<C-q>"] = actions.close, -- move to next result
 			},
 		},
+
+    layout_strategy='vertical',
+    layout_config={ width = 0.5 },
 
     history = {
       path = '~/.local/share/nvim/databases/telescope_history.sqlite3',

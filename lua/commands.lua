@@ -7,7 +7,7 @@ function new()
 end
 
 function clipboard()
-  fn.execute(":Telescope neoclip")
+  fn.execute(":Telescope neoclip theme=cursor")
 end
 
 function recent()

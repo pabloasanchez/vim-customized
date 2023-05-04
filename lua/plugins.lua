@@ -76,11 +76,6 @@ Plug 'dnlhc/glance.nvim'
 -- Plug 'echasnovski/mini.nvim'
 -- Plug 'echasnovski/mini.completion'
 
--- Completion
-Plug ('ms-jpq/coq_nvim', {['branch'] = 'coq'})
-Plug ('ms-jpq/coq.artifacts', {['branch'] = 'artifacts'})
-Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
-
 -- Snips
 -- Plug 'L3MON4D3/LuaSnip'
 -- Plug 'rafamadriz/friendly-snippets'

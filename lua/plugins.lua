@@ -18,6 +18,7 @@ Plug 'mhinz/vim-sayonara'           -- Closes buffers
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
+Plug 'jinzhongjia/LspUI.nvim'
 -- Plug 'MunifTanjim/nui.nvim'
 -- Plug 'stevearc/dressing.nvim'
 
@@ -29,7 +30,11 @@ Plug ('junegunn/fzf', {dir = '~/.fzf', ['do'] = './install --all' })        --  
 Plug 'junegunn/fzf.vim'                                                     --  fzf - Multi use Fuzzy Finder
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope
+
+--  Telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'kkharji/sqlite.lua'                                     -- Required by telescope-smart-history
+Plug 'nvim-telescope/telescope-smart-history.nvim'
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
@@ -68,19 +73,13 @@ Plug 'neovim/nvim-lspconfig'
 -- Plug 'dnlhc/glance.nvim'
 
 --  IDE
-Plug 'echasnovski/mini.nvim'
-Plug 'echasnovski/mini.completion'
+-- Plug 'echasnovski/mini.nvim'
+-- Plug 'echasnovski/mini.completion'
 
 -- Completion
--- Plug 'hrsh7th/cmp-nvim-lsp'
--- Plug 'hrsh7th/cmp-buffer'
--- Plug 'hrsh7th/cmp-path'
--- Plug 'hrsh7th/cmp-cmdline'
--- Plug 'hrsh7th/nvim-cmp'
--- Plug 'saadparwaiz1/cmp_luasnip'
--- Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
--- Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
--- Plug 'hrsh7th/cmp-omni'
+Plug ('ms-jpq/coq_nvim', {['branch'] = 'coq'})
+Plug ('ms-jpq/coq.artifacts', {['branch'] = 'artifacts'})
+Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
 
 -- Snips
 -- Plug 'L3MON4D3/LuaSnip'
@@ -102,13 +101,31 @@ require('config/gitsigns')
 require('config/numb')
 require('config/neoclip')
 require('config/mason')
-require('config/mini')
--- require('config/glance')
+require('config/coq')
+require('config/telescope')
+-- -- require('config/glance')
 -- require('config/image')
 -- require('config/emmet')
 
 -- Optionless
 -- require("my_plugin").setup()
+require("LspUI").setup()
 
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

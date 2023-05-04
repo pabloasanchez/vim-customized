@@ -80,11 +80,11 @@ nnoremap <A-w> :Sayonara!<cr>
 " Ctrl+P and Command History
 "
 " nnoremap <A-p> :GitFiles<Enter>
-nnoremap <A-p> :Files<Enter>
+" nnoremap <A-p> :Files<Enter>
 nnoremap <C-p> :Telescope find_files<Enter>
 nnoremap <SPACE> :Telescope command_history<cr>
-nnoremap <leader>h :Telescope oldfiles<cr>
-nnoremap <leader>b :Telescope buffers<cr>
+" nnoremap <leader>h :Telescope oldfiles<cr>
+" nnoremap <leader>b :Telescope buffers<cr>
 
 function! s:next_visible_buffer(forward)
   let operation = "bnext"
@@ -104,8 +104,9 @@ endfunction
 "
 " CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
 "
-nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
-nnoremap <leader>l :Lines<Enter>
+" nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
+" nnoremap <leader>l :Lines<Enter>
+" nnoremap <C-i> :Lines<Enter>
 nnoremap <A-f> :Rg<Enter>
 nnoremap <leader>ff :Telescope resume<Enter>
 

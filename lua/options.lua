@@ -46,5 +46,6 @@ vim.opt.undodir = HOME .. '/.vim/undo'
 
 -- Global namespace, plugins & global options
 vim.g.floaterm_opener = 'edit'
+vim.g.python3_host_prog= '/usr/bin/python3.9'
 
 vim.cmd('syntax on')

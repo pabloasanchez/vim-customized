@@ -83,6 +83,7 @@ Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
 -- Plug 'rafamadriz/friendly-snippets'
 
 --  Distraction free
+Plug 'folke/zen-mode.nvim'
 -- Plug 'junegunn/limelight.vim'                         --  limelight, hyperfocusing in vim
 -- Plug 'junegunn/goyo.vim'                              --  Distraction-free plugins
 
@@ -101,12 +102,13 @@ require('config/mason')
 require('config/coq')
 require('config/telescope')
 require('config/glance')
+require('config/zen-mode')
 -- require('config/image')
 -- require('config/emmet')
 
 -- Optionless
 -- require("my_plugin").setup()
-require("LspUI").setup()
+require('LspUI').setup()
 
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()

@@ -6,9 +6,9 @@ fn['quickui#menu#reset']()
 
 fn['quickui#menu#install']("&File", { 
     { "&New File", "New", "Create an empty buffer in same window" },
-    { "&Open...", 'FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger', 'Open a file with Ranger' },
-    { "&Close", 'confirm bd', 'Close current buffer' },
-    { "Close All", 'confirm %bd', 'Close current buffer' },
+    { "&Open...", 'Files', 'Open a file with Ranger' },
+    { "&Close", 'Close', 'Close current buffer' },
+    { "Close All", 'CloseAll', 'Close current buffer' },
     { "--", '' },
     { "&Recent Files", 'Startify', 'Recent files'},
     { "--", '' },

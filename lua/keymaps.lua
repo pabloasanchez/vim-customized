@@ -2,6 +2,8 @@ local map = vim.api.nvim_set_keymap
 -- local map = vim.api.nvim_buf_set_keymap  -- Use this for buffer level
 
 local options = { noremap = true }
+map('n', '\\', ":LiveGrep <ENTER>", options)
+map('n', '<C-\\>', ":Zen <ENTER>", options)
 map('n', '<F2>', ":Rename <ENTER>", options)
 map('n', '<F3>', ":FormatCode <ENTER>", options)
 map('n', '<A-f>', ":FindInFiles <ENTER>", options)

@@ -295,9 +295,9 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 " 
 " Goyo
 "
-nnoremap <silent><C-\> :Goyo<ENTER>
-nnoremap <A-\> :Limelight<ENTER>
-nnoremap <C-A-\> :Limelight!<ENTER>
+" nnoremap <silent><C-\> :Goyo<ENTER>
+" nnoremap <A-\> :Limelight<ENTER>
+" nnoremap <C-A-\> :Limelight!<ENTER>
 
 
 "

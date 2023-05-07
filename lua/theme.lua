@@ -28,16 +28,30 @@ vim.api.nvim_create_user_command("UserHighlights", [[
    hi WinBarNC ctermbg=black ctermfg=234 cterm=bold
    hi NodeInspectBreakpoint ctermfg=130 ctermbg=red
    hi NodeInspectSign ctermfg=red ctermbg=0 cterm=bold
-   
+
+
    let g:limelight_paragraph_span = 4
    let g:limelight_conceal_ctermfg = 'gray'
    let g:limelight_conceal_ctermfg = 240
    let g:limelight_conceal_guifg = 'DarkGray'
    let g:limelight_conceal_guifg = '#777777' ]], {})
 
-vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg=0, bold=true, guibg=lightgrey })
+function insert()
+  vim.cmd "hi LineNr ctermfg=red"
+  -- vim.api.nvim_set_hl(0, "LineNr", { ctermfg = "red" })
+end
+
+function normal()
+  vim.cmd "hi LineNr ctermbg=black ctermfg=235"
+  -- vim.api.nvim_set_hl(0, "LineNr", { ctermfg = normalBackground })
+end
+
+vim.api.nvim_create_user_command("UserHighlightsInsert", insert, {})
+vim.api.nvim_create_user_command("UserHighlightsNormal", normal, {})
+
 -- legacy for older neovim versions
 -- vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 vim.cmd "colorscheme one"
 vim.cmd "UserHighlights"
+

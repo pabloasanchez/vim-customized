@@ -16,50 +16,37 @@ api.nvim_create_autocmd( "BufReadPost", {
 -- show cursor line only in active window
 local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
 
--- legacy goyo
--- api.nvim_create_autocmd(
---   { "User", "GoyoEnter" },
---   { pattern = "*", command = "CustomHighlights" }
--- )
-
--- api.nvim_create_autocmd(
---   { "User", "GoyoLeave" },
---   { pattern = "*", command = "CustomHighlights" }
--- )
---
-
--- -- legacy 
--- api.nvim_create_autocmd(
---   { "InsertLeave", "WinEnter" },
---   { pattern = "*", command = "set cursorline", group = cursorGrp }
--- )
-
--- api.nvim_create_autocmd(
---   { "InsertEnter", "WinLeave" },
---   { pattern = "*", command = "set nocursorline", group = cursorGrp }
--- )
-
--- api.nvim_create_autocmd( "TermEnter", { 
---   pattern = "term://*",
---   command = ":Limelight!"
--- })
-
--- api.nvim_create_autocmd( "TermEnter", { 
---   pattern = "term://*",
---   command = "setlocal nonumber norelativenumber"
--- })
-
--- api.nvim_create_autocmd( "BufAdd", { 
---   pattern = "*",
---   command = "set numberwidth=1"
--- })
-
-api.nvim_create_autocmd( "WinNew", { 
+api.nvim_create_autocmd( "InsertEnter", { 
   pattern = "*",
-  command = "UserHighlights",
+  command = "UserHighlightsInsert"
 })
 
-api.nvim_create_autocmd("ColorScheme", {
+api.nvim_create_autocmd( "InsertLeave", { 
+  pattern = "*",
+  command = "UserHighlightsNormal"
+})
+
+api.nvim_create_autocmd( { "BufAdd", "WinNew", "WinEnter", "BufReadPre" }, { 
+  pattern = "*",
+  command = "lua if #vim.api.nvim_tabpage_list_wins(0) == 1 and vim.bo.ft ~= 'alpha' then require('zen-mode.view').open() end"
+})
+
+-- api.nvim_create_autocmd( { "BufLeave", "WinLeave", }, { 
+--   pattern = "*",
+--   command = "lua if #vim.api.nvim_tabpage_list_wins(0) ~= 1 and vim.fn.expand('%') then require('zen-mode.view').close() end"
+-- })
+
+-- api.nvim_create_autocmd( { "BufAdd", "WinEnter"  }, { 
+--   pattern = "*",
+--   command = "lua require("zen-mode.view").close()",
+-- })
+
+-- api.nvim_create_autocmd( { "VimEnter" }, { 
+--   pattern = "*",
+--   command = "lua if vim.bo.filetype ~= alpha then vim.api.nvim_command('ArrangeBuffers') end",
+-- })
+
+api.nvim_create_autocmd({ "WinNew", "ColorScheme" }, {
   pattern = "*",
   command = "UserHighlights",
 })

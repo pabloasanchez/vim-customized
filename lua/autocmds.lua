@@ -26,7 +26,7 @@ api.nvim_create_autocmd( "InsertLeave", {
   command = "UserHighlightsNormal"
 })
 
-api.nvim_create_autocmd( { "BufAdd", "WinNew", "WinEnter", "BufReadPre" }, { 
+api.nvim_create_autocmd( { "BufAdd", "WinNew", "WinEnter", "BufReadPre", "BufNew" }, { 
   pattern = "*",
   command = "lua if #vim.api.nvim_tabpage_list_wins(0) == 1 and vim.bo.ft ~= 'alpha' then require('zen-mode.view').open() end"
 })

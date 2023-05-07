@@ -57,5 +57,8 @@ function lspTypeDefs()
 end
 
 return {
-  lspHover, lspRename, lspCodeAction, lspDefinitions, lspDiagNext, lspDiagPrev, lspPeek, lspReferences, lspOutline, lspFormat, lspImplementation, lspLineDiagnostics, lspSymbols, lspTypeDefs 
+  lspHover, lspRename, lspCodeAction, lspDefinitions, 
+  lspDiagNext, lspDiagPrev, lspPeek, lspReferences, 
+  lspOutline, lspFormat, lspImplementation, lspLineDiagnostics, 
+  lspSymbols, lspTypeDefs 
 }

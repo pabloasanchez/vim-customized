@@ -13,7 +13,7 @@ function saveAs()
 end
 
 function close()
-  fn.execute(':confirm bd')
+  fn.execute(':Sayonara!')
 end
 
 function closeAll()
@@ -24,16 +24,12 @@ function clipboard()
   fn.execute(':Telescope neoclip theme=cursor')
 end
 
-function recent()
-  fn.execute(':Telescope oldfiles')
+function hide()
+  fn.execute(':hide')
 end
 
 function back()
   -- fn.execute(':exe \'normal \<c-w>\<c-w>\'') --fzf Lines
-end
-
-function git()
-  fn.execute(':FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit')
 end
 
 function glyph()
@@ -42,6 +38,30 @@ end
 
 function help()
    fn.execute(':Telescope help_tags')
+end
+
+function options()
+   fn.execute(':Telescope vim_options')
+end
+
+function menu()
+   fn.execute(':call quickui#menu#open()')
+end
+
+function spelling()
+   fn.execute(':Telescope spell_suggest')
+end
+
+function toggleSpelling()
+   fn.execute(':set spell!')
+end
+
+function toggleCursorLine()
+   fn.execute(':set cursorline!')
+end
+
+function quit()
+   fn.execute(':confirm qa')
 end
 
 function removeFromLine(opts)
@@ -78,4 +98,11 @@ function wrap()
   fn.execute(':set wrap!')
 end
 
-return { closeAll, close, files, zen, new, clipboard, recent, wrap, saveAs, back, glyph, git, help, removeFromLine, replaceInLine, terminal, arrangeBuffers }
+return { 
+  hide, quit, closeAll, 
+  close, files, zen, new, 
+  clipboard, wrap, saveAs, 
+  back, glyph, help, menu, 
+  removeFromLine, replaceInLine, terminal, 
+  arrangeBuffers, options, spelling, toggleSpelling
+}

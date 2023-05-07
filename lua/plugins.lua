@@ -30,7 +30,8 @@ Plug 'eliba2/vim-node-inspect'
 Plug ('junegunn/fzf', {dir = '~/.fzf', ['do'] = './install --all' })        --  fzf - Multi use Fuzzy Finder
 Plug 'junegunn/fzf.vim'                                                     --  fzf - Multi use Fuzzy Finder
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
-Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope
+Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope and spectre
+Plug 'nvim-pack/nvim-spectre'
 
 --  Telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -84,11 +85,6 @@ Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
 
 --  Distraction free
 Plug 'folke/zen-mode.nvim'
--- Plug 'junegunn/limelight.vim'                         --  limelight, hyperfocusing in vim
--- Plug 'junegunn/goyo.vim'                              --  Distraction-free plugins
-
--- Img view
--- Plug 'samodostal/image.nvim'                          -- Image view, requires plenary (already imported)
 
 vim.call('plug#end')
 
@@ -103,12 +99,11 @@ require('config/coq')
 require('config/telescope')
 require('config/glance')
 require('config/zen-mode')
--- require('config/image')
 -- require('config/emmet')
 
--- Optionless
--- require("my_plugin").setup()
+-- Optionless -  require("my_plugin").setup()
 require('LspUI').setup()
+require('spectre').setup()
 
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()

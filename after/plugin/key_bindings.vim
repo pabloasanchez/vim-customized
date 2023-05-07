@@ -1,14 +1,14 @@
 "
 " Faster :
 "
-nnoremap <leader><SPACE> :
-nnoremap <c-SPACE> :
+" nnoremap <leader><SPACE> :
+" nnoremap <c-SPACE> :
 
 
 "
 " Quick UI Menu
 "
-nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
+" nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
 " noremap <A-f> :call quickui#menu#open()<cr>
 noremap <leader><leader> :call quickui#menu#open()<cr>
 
@@ -54,8 +54,9 @@ nnoremap <A-BS> :split<CR>
 
 "
 " Remember session (splits)
-nnoremap <C-N> :mksession! .session <bar> :only<cr>
-nnoremap <leader>n :source .session<CR>
+" nnoremap <C-N> :mksession! .session <bar> :only<cr>
+" nnoremap <C-N> :mksession! .session <bar> :Zen<cr>
+" nnoremap <leader>n :source .session<CR>
 " --- or ---
 " Replaced with windows.nvim
 " nnoremap <C-N> :WindowsMaximize<ENTER>
@@ -72,8 +73,8 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 "
 " nnoremap <A-w> :confirm bd<cr>
 " nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
-nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :Sayonara!<cr>
+" nnoremap <C-W> :hide<cr>
+" nnoremap <A-w> :Sayonara!<cr>
 
 
 "

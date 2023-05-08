@@ -1,14 +1,14 @@
 "
 " Faster :
 "
-nnoremap <leader><SPACE> :
-nnoremap <c-SPACE> :
+" nnoremap <leader><SPACE> :
+" nnoremap <c-SPACE> :
 
 
 "
 " Quick UI Menu
 "
-nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
+" nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
 " noremap <A-f> :call quickui#menu#open()<cr>
 noremap <leader><leader> :call quickui#menu#open()<cr>
 
@@ -38,11 +38,8 @@ nnoremap <C-A> :norm 0ggVG<Enter>
 " Move between buffers with Tab
 "
 nnoremap <A-Tab> :wincmd w<CR>
-" nnoremap <leader><TAB> :Lines<CR>
-" map <leader><TAB> :Lines<CR>
-nnoremap <Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <S-Tab> :call <SID>next_visible_buffer(0)<CR>
-" nnoremap <Tab> :Telescope buffers<CR>
+nnoremap <Tab> :call <SID>next_visible_buffer(0)<CR>
+nnoremap <S-Tab> :call <SID>next_visible_buffer(1)<CR>
 nnoremap <leader><TAB> :Telescope buffers<cr>
 map <leader><Tab> :Telescope buffers<CR>
 nnoremap <C-b> :Telescope buffers<CR>
@@ -57,8 +54,9 @@ nnoremap <A-BS> :split<CR>
 
 "
 " Remember session (splits)
-nnoremap <C-N> :mksession! .session <bar> :only<cr>
-nnoremap <leader>n :source .session<CR>
+" nnoremap <C-N> :mksession! .session <bar> :only<cr>
+" nnoremap <C-N> :mksession! .session <bar> :Zen<cr>
+" nnoremap <leader>n :source .session<CR>
 " --- or ---
 " Replaced with windows.nvim
 " nnoremap <C-N> :WindowsMaximize<ENTER>
@@ -73,55 +71,21 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 "
 " Close and hide buffers
 "
-" nnoremap <A-w> :call DeleteCurBufferNotCloseWindow()<cr>
 " nnoremap <A-w> :confirm bd<cr>
 " nnoremap <A-w> :bp<BAR>confirm<BAR>bd<CR> 
-nnoremap <C-W> :hide<cr>
-nnoremap <A-w> :Sayonara!<cr>
+" nnoremap <C-W> :hide<cr>
+" nnoremap <A-w> :Sayonara!<cr>
 
-func! DeleteCurBufferNotCloseWindow() abort
-    if &modified
-        echohl ErrorMsg
-        echom "E89: no write since last change"
-        echohl None
-    elseif winnr('$') == 1
-        bd
-    else  " multiple window
-        let oldbuf = bufnr('%')
-        let oldwin = winnr()
-        while 1   " all windows that display oldbuf will remain open
-            if buflisted(bufnr('#'))
-                b#
-            else
-                bn
-                let curbuf = bufnr('%')
-                if curbuf == oldbuf
-                    enew    " oldbuf is the only buffer, create one
-                endif
-            endif
-            let win = bufwinnr(oldbuf)
-            if win == -1
-                break
-            else        " there are other window that display oldbuf
-                exec win 'wincmd w'
-            endif
-        endwhile
-        " delete oldbuf and restore window to oldwin
-        exec oldbuf 'bd'
-        exec oldwin 'wincmd w'
-    endif
-endfunc
 
 "
 " Ctrl+P and Command History
 "
-nnoremap <A-p> :Files<Enter>
-" nnoremap <C-p> :GitFiles<Enter>
+" nnoremap <A-p> :GitFiles<Enter>
+" nnoremap <A-p> :Files<Enter>
 nnoremap <C-p> :Telescope find_files<Enter>
-nnoremap <C-h> :Telescope oldfiles<cr>
 nnoremap <SPACE> :Telescope command_history<cr>
-nnoremap <leader>h :Telescope oldfiles<cr>
-nnoremap <leader>b :Telescope buffers<cr>
+" nnoremap <leader>h :Telescope oldfiles<cr>
+" nnoremap <leader>b :Telescope buffers<cr>
 
 function! s:next_visible_buffer(forward)
   let operation = "bnext"
@@ -141,10 +105,11 @@ endfunction
 "
 " CTRL + F - Find lines in buffer, lines in all buffers, lines in ripgrep
 "
-nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
-nnoremap <leader>l :Lines<Enter>
-nnoremap <A-f> :Rg<Enter>
-nnoremap <leader>ff :Telescope resume<Enter>
+" nnoremap <C-f> :Telescope current_buffer_fuzzy_find<Enter>
+" nnoremap <leader>l :Lines<Enter>
+" nnoremap <C-i> :Lines<Enter>
+" nnoremap <A-f> :Rg<Enter>
+" nnoremap <leader>ff :Telescope resume<Enter>
 
 
 "
@@ -157,8 +122,8 @@ nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:on
 "
 " Lazygit
 "
-nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
-nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+" nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
+" nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
 
 
 "
@@ -188,6 +153,7 @@ nnoremap <ESC> :set hls! <CR>
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
 tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
+tnoremap <C-q>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 
 
 "
@@ -327,39 +293,12 @@ nmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <F10> <Plug>(textmanip-toggle-mode)
 
 
-"
-" coc-yank
-"
-" TODO
-" nmap <leader>p :CocList -A --normal yank<CR>
-
-
-"
-" Vem-tabine move through tabs
-"
-nmap <C-left> <Plug>vem_prev_buffer-
-nmap <C-right> <Plug>vem_next_buffer-
-nmap <A-h>     <Plug>vem_prev_buffer-
-nmap <A-l>     <Plug>vem_next_buffer-
-nmap <C-S-left> <Plug>vem_move_buffer_left-
-nmap <C-S-right> <Plug>vem_move_buffer_right-
-
-
-"
-" Regular buffers
-"
-" nmap <C-left> :bnext<CR>
-" nmap <C-right> :bprev<CR>
-" nmap <A-h>     :bnext<CR>
-" nmap <A-l>     :bprev<CR>
-
-
 " 
 " Goyo
 "
-nnoremap <silent><C-\> :Goyo<ENTER>
-nnoremap <A-\> :Limelight<ENTER>
-nnoremap <C-A-\> :Limelight!<ENTER>
+" nnoremap <silent><C-\> :Goyo<ENTER>
+" nnoremap <A-\> :Limelight<ENTER>
+" nnoremap <C-A-\> :Limelight!<ENTER>
 
 
 "

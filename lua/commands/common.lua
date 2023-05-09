@@ -83,7 +83,8 @@ function arrangeBuffers()
 end
 
 function zen() 
-  fn.execute(':ZenMode')
+  fn.execute(':only')
+  fn.execute(':NoNeckPain')
 end
 
 function terminal()

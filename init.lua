@@ -11,4 +11,5 @@ require('commands')
 require('theme')
 require('gui')
 require('autocmds')
+require('statusline')
 

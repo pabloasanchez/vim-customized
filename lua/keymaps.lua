@@ -4,7 +4,8 @@ local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 map('n', '\\', ":LiveGrep <ENTER>", options)
 map('n', '<C-\\>', ":Zen <ENTER>", options)
-map('n', '<A-\\>', ":Zen <ENTER>", options)
+map('n', '<A-\\>', ":only <ENTER>", options)
+-- map('n', '<C-n>', ":only <ENTER>", options)
 map('n', '<F2>', ":Rename <ENTER>", options)
 map('n', '<F3>', ":FormatCode <ENTER>", options)
 map('n', '<A-SPACE>', ":", options)

@@ -85,7 +85,8 @@ Plug 'echasnovski/mini.completion'
 -- Plug 'rafamadriz/friendly-snippets'
 
 --  Distraction free
-Plug 'folke/zen-mode.nvim'
+-- Plug 'folke/zen-mode.nvim'
+Plug ('shortcuts/no-neck-pain.nvim', { ['tag'] = '*' })
 
 vim.call('plug#end')
 
@@ -100,13 +101,13 @@ require('config/coq')
 require('config/mason')
 require('config/neoclip')
 require('config/glance')
-require('config/zen-mode')
+-- require('config/zen-mode')
 require('config/mini')
 -- require('config/emmet')
 
 -- Optionless -  require("my_plugin").setup()
 require('LspUI').setup()
 require('spectre').setup()
-
+require('no-neck-pain').setup()
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()

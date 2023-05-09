@@ -108,6 +108,6 @@ require('config/mini')
 -- Optionless -  require("my_plugin").setup()
 require('LspUI').setup()
 require('spectre').setup()
-require('no-neck-pain').setup({ disableOnLastBuffer = false })
+require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })
 -- Luasnip: Activates friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()

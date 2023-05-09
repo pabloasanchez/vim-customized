@@ -75,9 +75,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'dnlhc/glance.nvim'
 
 -- Completion
-Plug ('ms-jpq/coq_nvim', {['branch'] = 'coq'})
-Plug ('ms-jpq/coq.artifacts', {['branch'] = 'artifacts'})
-Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
+-- Plug ('ms-jpq/coq_nvim', {['branch'] = 'coq'})
+-- Plug ('ms-jpq/coq.artifacts', {['branch'] = 'artifacts'})
+-- Plug ('ms-jpq/coq.thirdparty', {['branch'] = '3p'})
+Plug 'echasnovski/mini.completion'
 
 -- Snips
 -- Plug 'L3MON4D3/LuaSnip'
@@ -89,16 +90,18 @@ Plug 'folke/zen-mode.nvim'
 vim.call('plug#end')
 
 -- Require configurations
+require('config/rooter')
 require('config/alpha-nvim')
-require('config/nvim-treesitter')
 require('config/gitsigns')
 require('config/numb')
-require('config/neoclip')
-require('config/mason')
-require('config/coq')
 require('config/telescope')
+require('config/nvim-treesitter')
+require('config/coq')
+require('config/mason')
+require('config/neoclip')
 require('config/glance')
 require('config/zen-mode')
+require('config/mini')
 -- require('config/emmet')
 
 -- Optionless -  require("my_plugin").setup()

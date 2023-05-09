@@ -26,24 +26,9 @@ api.nvim_create_autocmd( "InsertLeave", {
   command = "UserHighlightsNormal"
 })
 
-api.nvim_create_autocmd( { "BufAdd", "WinNew", "WinEnter", "BufReadPre", "BufNew" }, { 
-  pattern = "*",
-  command = "lua if #vim.api.nvim_tabpage_list_wins(0) == 1 and vim.bo.ft ~= 'alpha' then require('zen-mode.view').open() end"
-})
-
--- api.nvim_create_autocmd( { "BufLeave", "WinLeave", }, { 
+-- api.nvim_create_autocmd( { "BufAdd", "WinNew", "WinEnter", "BufReadPre", "BufNew" }, { 
 --   pattern = "*",
---   command = "lua if #vim.api.nvim_tabpage_list_wins(0) ~= 1 and vim.fn.expand('%') then require('zen-mode.view').close() end"
--- })
-
--- api.nvim_create_autocmd( { "BufAdd", "WinEnter"  }, { 
---   pattern = "*",
---   command = "lua require("zen-mode.view").close()",
--- })
-
--- api.nvim_create_autocmd( { "VimEnter" }, { 
---   pattern = "*",
---   command = "lua if vim.bo.filetype ~= alpha then vim.api.nvim_command('ArrangeBuffers') end",
+--   command = "lua if #vim.api.nvim_tabpage_list_wins(0) == 1 and vim.bo.ft ~= 'alpha' then require('zen-mode.view').open() end"
 -- })
 
 api.nvim_create_autocmd({ "WinNew", "ColorScheme" }, {

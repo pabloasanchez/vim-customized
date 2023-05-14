@@ -244,6 +244,7 @@ imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
 imap <C-V> <C-O>h<C-O>p
+imap <C-e> <ESC>:Emmet<ENTER>
 
 
 "

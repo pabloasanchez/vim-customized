@@ -100,6 +100,10 @@ function zen()
   fn.execute(':NoNeckPain')
 end
 
+function emmet() 
+  fn.execute(':.!emmet')
+end
+
 function terminal()
   fn.execute(':FloatermToggle terminal')
 end

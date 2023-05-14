@@ -20,6 +20,7 @@ vim.api.nvim_create_user_command('Git', git, {})
 vim.api.nvim_create_user_command('Help', help, {})
 vim.api.nvim_create_user_command('Options', options, {})
 vim.api.nvim_create_user_command('Menu', menu, {})
+vim.api.nvim_create_user_command('Emmet', emmet, {})
 
 vim.api.nvim_create_user_command('Hover', lspHover, {})
 vim.api.nvim_create_user_command('Rename', lspRename, {})

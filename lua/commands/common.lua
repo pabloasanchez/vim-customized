@@ -13,7 +13,8 @@ function saveAs()
 end
 
 function close()
-  fn.execute(':Sayonara!')
+  -- fn.execute(':confirm bd')
+  fn.execute(':Sayonara')
 end
 
 function closeAll()

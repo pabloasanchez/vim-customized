@@ -1,4 +1,6 @@
 local fn = vim.fn
+local ui = vim.ui
+
 function findInFiles()
   ui.input({ prompt = 'Find in files: ' }, function(input)
     if input then

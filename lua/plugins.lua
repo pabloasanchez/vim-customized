@@ -12,15 +12,15 @@ vim.call('plug#begin', PLUGINS)
 Plug 'airblade/vim-rooter'            -- vim-rooter - changes working dir to the project root
 
 --  Window splits
-Plug 'vimlab/split-term.vim'        -- Better Terminal splits
 Plug 'simeji/winresizer'            -- Resize splits with hjkl, using :WinResizerStartResize
 Plug 'mhinz/vim-sayonara'           -- Closes buffers
+Plug 'vimlab/split-term.vim'        -- Better Terminal splits
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
 Plug 'jinzhongjia/LspUI.nvim'
-Plug "SmiteshP/nvim-navic"
-Plug "MunifTanjim/nui.nvim"
+Plug "SmiteshP/nvim-navic"          -- navbuddy dependency (crumbs)
+Plug "MunifTanjim/nui.nvim"         -- navbuddy dependency (ui)
 Plug "SmiteshP/nvim-navbuddy"
 
 --  Language-specific
@@ -31,24 +31,25 @@ Plug ('junegunn/fzf', {dir = '~/.fzf', ['do'] = './install --all' })        --  
 Plug 'junegunn/fzf.vim'                                                     --  fzf - Multi use Fuzzy Finder
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope and spectre
-Plug 'nvim-pack/nvim-spectre'
+Plug 'nvim-pack/nvim-spectre'                                               --  A search panel for neovim.
 
 --  Telescope
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'kkharji/sqlite.lua'                                     -- Required by telescope-smart-history
-Plug 'nvim-telescope/telescope-smart-history.nvim'
 Plug 'ghassan0/telescope-glyph.nvim'
 Plug 'kelly-lin/telescope-ag'
+Plug 'kkharji/sqlite.lua'                                     -- Required by telescope-all-recent
+Plug 'prochri/telescope-all-recent.nvim'
+-- Plug 'nvim-telescope/telescope-smart-history.nvim'
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
-Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
+-- TODO Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
 Plug 'tpope/vim-repeat'                                       --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
-Plug 'nacro90/numb.nvim'                                      -- numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
--- Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
--- Plug 'mattn/emmet-vim'                                        -- Emmet
+Plug 'nacro90/numb.nvim'                                      --  numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
+Plug 'alvan/vim-closetag'                                     --  Automatically closes x/html tags
+-- Plug 'aca/emmet-ls'                                        --  Emmet
 
 -- Clipboard and registers
 Plug 'AckslD/nvim-neoclip.lua'
@@ -69,8 +70,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 
 --  LSP
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
+-- Plug 'williamboman/mason.nvim'
+-- Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'dnlhc/glance.nvim'
 
@@ -81,8 +82,9 @@ Plug 'dnlhc/glance.nvim'
 Plug 'echasnovski/mini.completion'
 
 -- Snips
+Plug('L3MON4D3/LuaSnip', {['tag'] = 'v1.2.*', ['do'] = 'make install_jsregexp'})
 -- Plug 'L3MON4D3/LuaSnip'
--- Plug 'rafamadriz/friendly-snippets'
+Plug 'rafamadriz/friendly-snippets'
 
 --  Distraction free
 -- Plug 'folke/zen-mode.nvim'
@@ -97,12 +99,14 @@ require('config/gitsigns')
 require('config/numb')
 require('config/telescope')
 require('config/nvim-treesitter')
-require('config/coq')
-require('config/mason')
 require('config/neoclip')
 require('config/glance')
--- require('config/zen-mode')
+require('config/lspconfig')
+require('config/luasnip')
 require('config/mini')
+-- require('config/coq')
+-- require('config/mason')
+-- require('config/zen-mode')
 -- require('config/emmet')
 
 -- Optionless -  require("my_plugin").setup()
@@ -110,4 +114,5 @@ require('LspUI').setup()
 require('spectre').setup()
 require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })
 -- Luasnip: Activates friendly-snippets
--- require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
+-- " follow latest release and install jsregexp.

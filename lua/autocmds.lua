@@ -41,8 +41,8 @@ api.nvim_create_autocmd({ "WinNew", "ColorScheme" }, {
   command = "UserHighlights",
 })
 
-api.nvim_create_autocmd({ "BufRead", "VimEnter" }, {
-  pattern = "*",
-  command = "let &l:modifiable = !&readonly",
-})
+-- api.nvim_create_autocmd({ "BufRead", "VimEnter" }, {
+--   pattern = "*",
+--   command = "let &l:modifiable = !&readonly",
+-- })
 

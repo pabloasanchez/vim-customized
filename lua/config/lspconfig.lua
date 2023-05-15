@@ -1,23 +1,25 @@
 -- Setup language servers.
 local configs = require('lspconfig/configs')
 local lspconfig = require('lspconfig')
+local completion = require('cmp_nvim_lsp')
 
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.luau_lsp.setup{}
+-- For completion, enables omnifunc
+-- vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 --Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = completion.default_capabilities()
 
-lspconfig.cssls.setup {
-  capabilities = capabilities,
-}
+lspconfig.cssls.setup { capabilities = capabilities }
+lspconfig.pyright.setup { capabilities = capabilities }
+lspconfig.tsserver.setup { capabilities = capabilities }
+lspconfig.luau_lsp.setup { capabilities = capabilities }
 
 lspconfig.html.setup {
   capabilities = capabilities,
   init_options = {
-    configurationSection = { "html", "css", "javascript" },
+    configurationSection = { 'html', 'css', 'javascript' },
     embeddedLanguages = {
       css = true,
       javascript = true
@@ -29,12 +31,12 @@ lspconfig.html.setup {
 -- lspconfig.emmet_ls.setup({
 --     -- on_attach = on_attach,
 --     capabilities = capabilities,
---     filetypes = { "css", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+--     filetypes = { 'css', 'html', 'javascript', 'javascriptreact', 'less', 'sass', 'scss', 'svelte', 'pug', 'typescriptreact', 'vue' },
 --     init_options = {
 --       html = {
 --         options = {
 --           -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
---           ["bem.enabled"] = true,
+--           ['bem.enabled'] = true,
 --         },
 --       },
 --     }

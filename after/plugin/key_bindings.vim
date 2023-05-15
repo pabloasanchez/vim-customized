@@ -40,8 +40,8 @@ nnoremap <C-A> :norm 0ggVG<Enter>
 nnoremap <A-Tab> :wincmd w<CR>
 nnoremap <Tab> :call <SID>next_visible_buffer(0)<CR>
 nnoremap <S-Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <leader><TAB> :Telescope buffers<cr>
-map <leader><Tab> :Telescope buffers<CR>
+" nnoremap <leader><TAB> :Telescope buffers<cr>
+" map <leader><Tab> :Telescope buffers<CR>
 nnoremap <C-b> :Telescope buffers<CR>
 
 

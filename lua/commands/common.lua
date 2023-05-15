@@ -13,8 +13,7 @@ function saveAs()
 end
 
 function close()
-  -- fn.execute(':confirm bd')
-  fn.execute(':Sayonara')
+  fn.execute(':BD') -- vim-bufkill
 end
 
 function closeAll()

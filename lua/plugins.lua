@@ -13,7 +13,8 @@ Plug 'airblade/vim-rooter'            -- vim-rooter - changes working dir to the
 
 --  Window splits
 Plug 'simeji/winresizer'            -- Resize splits with hjkl, using :WinResizerStartResize
-Plug 'mhinz/vim-sayonara'           -- Closes buffers
+-- Plug 'mhinz/vim-sayonara'           -- Closes buffers
+Plug 'qpkorr/vim-bufkill'           -- Closes buffers
 Plug 'vimlab/split-term.vim'        -- Better Terminal splits
 
 --  GUI
@@ -32,6 +33,7 @@ Plug 'junegunn/fzf.vim'                                                     --  
 Plug 'rhysd/clever-f.vim'                                                   --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience 
 Plug 'nvim-lua/plenary.nvim'                                                --  Required by Telescope and spectre
 Plug 'nvim-pack/nvim-spectre'                                               --  A search panel for neovim.
+Plug 'rlane/pounce.nvim'                                                    --  Fuzzy jump search
 
 --  Telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -43,7 +45,7 @@ Plug 'prochri/telescope-all-recent.nvim'
 
 --  Edit tools
 Plug 't9md/vim-textmanip'                                     --  t9md/vim-textmanip - Move/duplicate text intuitively
--- TODO Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
+Plug 'tpope/vim-surround'                                     --  Surroundings yss, ysiw, cs' ds', S
 Plug 'tpope/vim-repeat'                                       --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'                                   --  commentary.vim - comment stuff out      
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
@@ -104,6 +106,8 @@ require('config/glance')
 require('config/lspconfig')
 require('config/luasnip')
 require('config/mini')
+require('config/pounce')
+-- require('config/mini')
 -- require('config/coq')
 -- require('config/mason')
 -- require('config/zen-mode')

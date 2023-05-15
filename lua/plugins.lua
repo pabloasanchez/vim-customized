@@ -102,6 +102,7 @@ require('config/glance')
 require('config/luasnip')
 require('config/nvim-cmp')
 require('config/lspconfig')
+require('config/lspui')
 
 -- Optionless -  require("my_plugin").setup()
 require('LspUI').setup()

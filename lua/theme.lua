@@ -43,6 +43,7 @@ vim.api.nvim_create_user_command("UserHighlightsNormal", normal, {})
 -- legacy for older neovim versions
 -- vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
-vim.cmd "colorscheme one"
+-- vim.cmd "colorscheme one"
+vim.cmd "colorscheme orbital"
 vim.cmd "UserHighlights"
 

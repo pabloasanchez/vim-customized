@@ -26,7 +26,8 @@
 * Resizable splits
 * Close buffers without affecting splits
 * Top-Menu UI
-* LSP Support: Mason, LSPConfig, Glance, LspUI
+* LSP Support: LSPConfig, nvim-cmp, Glance, LspUI
+* TreeSitter and Snippets
 * Telescope
 * Line peeking
 * Clipboard
@@ -35,7 +36,7 @@
 * Start page
 * Colorschemes and dev icons
 * Nice keymaps
-* Node Debugger (outdated, will update to Mason's)
+* Node Debugger (outdated, might update to Mason's)
 * Clean configuration
 
 ## Notes
@@ -43,6 +44,7 @@
 * Tested on OSX and Linux
 
 ## Todo
+* Mason
 * Debuggers
 
 ## Plugins

@@ -23,4 +23,6 @@ o.statusline = o.statusline .. "%m "
 o.statusline = o.statusline .. "%{&fileencoding?&fileencoding:&encoding} "
 -- o.statusline = o.statusline .. "%#Pmenu#"
 o.statusline = o.statusline .. "%p%% "
+
 o.statusline = o.statusline .. "%l:%c"
+vim.opt.laststatus = 3

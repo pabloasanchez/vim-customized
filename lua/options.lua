@@ -14,7 +14,8 @@ vim.opt_global.mousefocus = true
 -- vim.opt.cinoptions = 'l1,j1'
 vim.opt.clipboard = vim.opt.clipboard + { 'unnamedplus' }
 vim.opt.compatible = false
--- vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }  -- required by nvim-cmp
+-- vim.opt.completeopt = { 'longest', 'menu', 'menuone', 'noselect', 'preview' }  -- required by nvim-cmp
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'preview' }  -- required by nvim-cmp
 vim.opt.expandtab = true
 vim.opt.gdefault = true   -- set wildmode=longest:full,full
 vim.opt.hidden = true

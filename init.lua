@@ -12,4 +12,5 @@ require('theme')
 require('gui')
 require('autocmds')
 require('statusline')
+require('winbar')
 

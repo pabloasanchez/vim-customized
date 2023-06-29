@@ -74,7 +74,7 @@ Plug 'dnlhc/glance.nvim'
 
 -- Snips
 Plug('L3MON4D3/LuaSnip', {['tag'] = 'v1.2.*', ['do'] = 'make install_jsregexp'})
-Plug 'rafamadriz/friendly-snippets'
+-- Plug 'rafamadriz/friendly-snippets'
 
 -- Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -108,5 +108,5 @@ require('config/lspui')
 require('LspUI').setup()
 require('spectre').setup()
 require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })
-require('luasnip.loaders.from_vscode').lazy_load()     --   Luasnip: Activates friendly-snippets
+--require('luasnip.loaders.from_vscode').lazy_load()     --   Luasnip: Activates friendly-snippets
 

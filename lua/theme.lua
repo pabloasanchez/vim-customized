@@ -16,6 +16,7 @@ vim.api.nvim_create_user_command("UserHighlights", [[
    hi WinBarNC ctermfg=234 cterm=bold
    hi NodeInspectBreakpoint ctermfg=130 ctermbg=red
    hi NodeInspectSign ctermfg=red ctermbg=0 cterm=bold
+   hi Visual ctermfg=173 ctermbg=235 cterm=bold
  ]], {})
 
 -- TODO

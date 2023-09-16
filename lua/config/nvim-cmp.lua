@@ -19,35 +19,35 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = {
-    ['<C-Space>'] = cmp.mapping.complete(),                                                                                
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only c irm explicitly selected items.                                                                                           
-    -- ['<Esc>'] = cmp.mapping.abort(),                                                                                    
-    -- ['<Esc>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false },                          
-    -- ['<Esc>'] = cmp.mapping.close() -- cmp.mapping.confirm({ select = false }),                                         
-    ['<Esc>'] = cmp.mapping(function(fallback)                                                                             
-      cmp.abort()                                                                                                          
-      fallback()                                                                                                           
-    end, { 'i', 's' }),                                                                                                    
-    ['<Tab>'] = cmp.mapping(function(fallback)                                                                             
-      if cmp.visible() then                                                                                                
-        cmp.select_next_item()                                                                                             
-      elseif luasnip and luasnip.expand_or_jumpable() then                                                                 
-        luasnip.expand_or_jump()                                                                                           
-      else                                                                                                                 
-        fallback()                                                                                                         
-      end                                                                                                                  
-    end, { 'i', 's' }),                                                                                                    
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only c irm explicitly selected items.
+    -- ['<Esc>'] = cmp.mapping.abort(),
+    -- ['<Esc>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false },
+    -- ['<Esc>'] = cmp.mapping.close() -- cmp.mapping.confirm({ select = false }),
+    ['<Esc>'] = cmp.mapping(function(fallback)
+      cmp.abort()
+      fallback()
+    end, { 'i', 's' }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip and luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
 
-    ['<S-Tab>'] = cmp.mapping(function(fallback)                                                                           
-      if cmp.visible() then                                                                                                
-        cmp.select_prev_item()                                                                                             
-      elseif luasnip and luasnip.jumpable(-1) then                                                                         
-        luasnip.jump(-1)                                                                                                   
-      else                                                                                                                 
-        fallback()                                                                                                         
-      end                                                                                                                  
-    end, { 'i', 's' }),                                                                                                    
-  }, 
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip and luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
 
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -75,8 +75,8 @@ cmp.setup.filetype('gitcommit', {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(':', {
 --   mapping = cmp.mapping.preset.cmdline(),
---   -- sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }}) 
---   sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }}) 
+--   -- sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }})
+--   sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }})
 -- })
 
 

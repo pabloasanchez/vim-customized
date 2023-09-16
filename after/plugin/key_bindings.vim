@@ -278,6 +278,7 @@ nnoremap <A-i> zt
 "
 map <C-s> :w<CR>
 imap <C-s> :w<CR>
+xmap <C-s> :w<CR>
 
 
 "

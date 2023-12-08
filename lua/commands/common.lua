@@ -101,6 +101,8 @@ end
 
 function emmet() 
   fn.execute(':.!emmet')
+  fn.execute(':norm `[v`]')
+  fn.execute(':norm =')
 end
 
 function terminal()

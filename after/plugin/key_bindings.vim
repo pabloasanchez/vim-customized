@@ -28,10 +28,9 @@ vnoremap p "0p
 
 
 " 
-" Ctrl+A and Yode
+" Ctrl+A - selects all
 "
 nnoremap <C-A> :norm 0ggVG<Enter>
-" vnoremap <A-Enter> :'<,'>YodeCreateSeditorFloating<Enter>
 
 
 "
@@ -40,16 +39,14 @@ nnoremap <C-A> :norm 0ggVG<Enter>
 nnoremap <A-Tab> :wincmd w<CR>
 nnoremap <Tab> :call <SID>next_visible_buffer(0)<CR>
 nnoremap <S-Tab> :call <SID>next_visible_buffer(1)<CR>
-" nnoremap <leader><TAB> :Telescope buffers<cr>
-" map <leader><Tab> :Telescope buffers<CR>
 nnoremap <C-b> :Telescope buffers<CR>
 
 
 "
 " vsplit shortcut
 "
-nnoremap <A-Enter> :vsplit<CR>
-nnoremap <A-BS> :split<CR>
+" nnoremap <A-Enter> :vsplit<CR>
+" nnoremap <A-BS> :split<CR>
 
 
 "
@@ -65,7 +62,7 @@ nnoremap <A-BS> :split<CR>
 "
 " Split resizing
 "
-nnoremap <A-r> :WinResizerStartResize<ENTER>
+" nnoremap <A-r> :WinResizerStartResize<ENTER>
 
 
 "
@@ -82,8 +79,8 @@ nnoremap <A-r> :WinResizerStartResize<ENTER>
 "
 " nnoremap <A-p> :GitFiles<Enter>
 " nnoremap <A-p> :Files<Enter>
-nnoremap <C-p> :Telescope find_files<Enter>
-nnoremap <SPACE> :Telescope command_history<cr>
+" nnoremap <C-p> :Telescope find_files<Enter>
+" nnoremap <SPACE> :Telescope command_history<cr>
 " nnoremap <leader>h :Telescope oldfiles<cr>
 " nnoremap <leader>b :Telescope buffers<cr>
 
@@ -120,16 +117,9 @@ nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:on
 
 
 "
-" Lazygit
-"
-" nnoremap <C-g>     :FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
-" nnoremap <leader>g :FloatermNew --autoclose=2 --width=1.0 --height=1.0 --title=Git --disposable lazygit<cr>
-
-
-"
 " Spawn a new terminal with ;t
 "
-nnoremap <C-t>     :FloatermToggle terminal<cr>
+" nnoremap <C-t>     :FloatermToggle terminal<cr>
 
 
 "
@@ -172,7 +162,7 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 "
 " Marks
 "
-nnoremap <leader>m :Marks<cr>
+" nnoremap <leader>m :Marks<cr>
 
 
 "
@@ -244,7 +234,7 @@ imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
 imap <C-V> <C-O>h<C-O>p
-imap <C-e> <ESC>:Emmet<ENTER>
+" imap <C-e> <ESC>:Emmet<ENTER>
 
 
 "

@@ -45,14 +45,14 @@ Plug 'kkharji/sqlite.lua'         -- Required by telescope-all-recent
 Plug 'prochri/telescope-all-recent.nvim'
 
 --  Edit tools
-Plug 't9md/vim-textmanip'         --  t9md/vim-textmanip - Move/duplicate text intuitively
-Plug 'tpope/vim-surround'         --  Surroundings yss, ysiw, cs' ds', S
-Plug 'tpope/vim-repeat'           --  repeat.vim - remaps . in a way that plugins can tap into it
-Plug 'tpope/vim-commentary'       --  commentary.vim - comment stuff out
--- Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})   --  treesitter - syntax highlight parsers. We recommend updating the parsers on update
--- Plug 'nacro90/numb.nvim'       --  numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
-Plug 'alvan/vim-closetag'         --  Automatically closes x/html tags
-
+-- Plug 't9md/vim-textmanip'             --  t9md/vim-textmanip - Move/duplicate text intuitively
+Plug 'booperlv/nvim-gomove'
+Plug 'tpope/vim-surround'             --  Surroundings yss, ysiw, cs' ds', S
+Plug 'tpope/vim-repeat'               --  repeat.vim - remaps . in a way that plugins can tap into it
+Plug 'tpope/vim-commentary'           --  commentary.vim - comment stuff out
+Plug 'alvan/vim-closetag'             --  Automatically closes x/html tags
+Plug 'chrisgrieser/nvim-puppeteer'   --  Automatically converts to fstrings in diff langs
+Plug 'tenxsoydev/karen-yank.nvim'
 -- Clipboard and registers
 Plug 'AckslD/nvim-neoclip.lua'
 
@@ -98,17 +98,15 @@ vim.call('plug#end')
 require('config/oil')
 require('config/rooter')
 require('config/alpha-nvim')
--- require('config/gitsigns')
--- require('config/numb')
 require('config/neoclip')
 require('config/pounce')
 require('config/telescope')
--- require('config/nvim-treesitter')
 require('config/glance')
 require('config/luasnip')
 require('config/nvim-cmp')
 require('config/lspconfig')
 require('config/lspui')
+require('config/gomove')
 
 -- Optionless -  require("my_plugin").setup()
 require('spectre').setup()

@@ -10,7 +10,7 @@
 "
 " nnoremap <A-SPACE> :call quickui#menu#open()<RETURN>
 " noremap <A-f> :call quickui#menu#open()<cr>
-noremap <leader><leader> :call quickui#menu#open()<cr>
+" noremap <leader><leader> :call quickui#menu#open()<cr>
 
 " 
 " Command line remaps (hjkl instead of arrows)
@@ -24,13 +24,13 @@ cnoremap <C-l> <Right>
 "
 " Better visual yank/paste
 "
-vnoremap p "0p
+" vnoremap p "0p
 
 
 " 
 " Ctrl+A - selects all
 "
-nnoremap <C-A> :norm 0ggVG<Enter>
+" nnoremap <C-A> :norm 0ggVG<Enter>
 
 
 "
@@ -134,14 +134,14 @@ nnoremap <C-l> :FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger<cr>:on
 " Hide locationlist, terminals and other buffers and clears search matches
 "
 " nnoremap <ESC> :lclose<bar>:set hls!<bar>:hide<cr>
-nnoremap <ESC> :set hls! <CR>
+" nnoremap <ESC> :set hls! <CR>
 
 
 "
 " For exiting terminal mode 
 "
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
-tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
+" tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
 tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 tnoremap <C-q>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 
@@ -169,41 +169,41 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 " VSCode style mappings for duplicating current line up or down
 " C-S is compatible with Mac
 "
-xmap <C-S-down> <Plug>(textmanip-duplicate-down)
-xmap <C-S-j> <Plug>(textmanip-duplicate-down)
-nmap <C-S-down> <Plug>(textmanip-duplicate-down)
-nmap <C-S-j> <Plug>(textmanip-duplicate-down)
+" xmap <C-S-down> <Plug>(textmanip-duplicate-down)
+" xmap <C-S-j> <Plug>(textmanip-duplicate-down)
+" nmap <C-S-down> <Plug>(textmanip-duplicate-down)
+" nmap <C-S-j> <Plug>(textmanip-duplicate-down)
 
-xmap <C-S-up> <Plug>(textmanip-duplicate-up)
-xmap <C-S-k> <Plug>(textmanip-duplicate-up)
-nmap <C-S-up> <Plug>(textmanip-duplicate-up)
-nmap <C-S-k> <Plug>(textmanip-duplicate-up)
+" xmap <C-S-up> <Plug>(textmanip-duplicate-up)
+" xmap <C-S-k> <Plug>(textmanip-duplicate-up)
+" nmap <C-S-up> <Plug>(textmanip-duplicate-up)
+" nmap <C-S-k> <Plug>(textmanip-duplicate-up)
 
-xmap <C-A-down> <Plug>(textmanip-duplicate-down)
-xmap <C-A-j> <Plug>(textmanip-duplicate-down)
-nmap <C-A-down> <Plug>(textmanip-duplicate-down)
-nmap <C-A-j> <Plug>(textmanip-duplicate-down)
+" xmap <C-A-down> <Plug>(textmanip-duplicate-down)
+" xmap <C-A-j> <Plug>(textmanip-duplicate-down)
+" nmap <C-A-down> <Plug>(textmanip-duplicate-down)
+" nmap <C-A-j> <Plug>(textmanip-duplicate-down)
 
-xmap <C-A-up> <Plug>(textmanip-duplicate-up)
-xmap <C-A-k> <Plug>(textmanip-duplicate-up)
-nmap <C-A-up> <Plug>(textmanip-duplicate-up)
-nmap <C-A-k> <Plug>(textmanip-duplicate-up)
+" xmap <C-A-up> <Plug>(textmanip-duplicate-up)
+" xmap <C-A-k> <Plug>(textmanip-duplicate-up)
+" nmap <C-A-up> <Plug>(textmanip-duplicate-up)
+" nmap <C-A-k> <Plug>(textmanip-duplicate-up)
 
-nmap <C-j> <Plug>(textmanip-move-down)
-nmap <C-k> <Plug>(textmanip-move-up)
+" nmap <C-j> <Plug>(textmanip-move-down)
+" nmap <C-k> <Plug>(textmanip-move-up)
 
-xmap <C-j> <Plug>(textmanip-move-down)
-xmap <C-k> <Plug>(textmanip-move-up)
-xmap <C-h> <Plug>(textmanip-move-left)
-xmap <C-l> <Plug>(textmanip-move-right)
+" xmap <C-j> <Plug>(textmanip-move-down)
+" xmap <C-k> <Plug>(textmanip-move-up)
+" xmap <C-h> <Plug>(textmanip-move-left)
+" xmap <C-l> <Plug>(textmanip-move-right)
 
-nmap <C-down> <Plug>(textmanip-move-down)
-nmap <C-up> <Plug>(textmanip-move-up)
+" nmap <C-down> <Plug>(textmanip-move-down)
+" nmap <C-up> <Plug>(textmanip-move-up)
 
-xmap <C-down> <Plug>(textmanip-move-down)
-xmap <C-up> <Plug>(textmanip-move-up)
-xmap <C-left> <Plug>(textmanip-move-left)
-xmap <C-right> <Plug>(textmanip-move-right)
+" xmap <C-down> <Plug>(textmanip-move-down)
+" xmap <C-up> <Plug>(textmanip-move-up)
+" xmap <C-left> <Plug>(textmanip-move-left)
+" xmap <C-right> <Plug>(textmanip-move-right)
 
 "
 " VSCode style delete line
@@ -213,12 +213,12 @@ nnoremap <C-D> dd
 "
 " VSCode style move and duplicate in insert mode
 "
-imap <C-down> <ESC><Plug>(textmanip-move-down)i
-imap <C-up> <ESC><Plug>(textmanip-move-up)i
-imap <C-S-down> <ESC><Plug>(textmanip-duplicate-up)i
-imap <C-A-j> <ESC><Plug>(textmanip-duplicate-up)i
-imap <C-S-up> <ESC><Plug>(textmanip-duplicate-up)i
-imap <C-A-k> <ESC><Plug>(textmanip-duplicate-up)i
+" imap <C-down> <ESC><Plug>(textmanip-move-down)i
+" imap <C-up> <ESC><Plug>(textmanip-move-up)i
+" imap <C-S-down> <ESC><Plug>(textmanip-duplicate-up)i
+" imap <C-A-j> <ESC><Plug>(textmanip-duplicate-up)i
+" imap <C-S-up> <ESC><Plug>(textmanip-duplicate-up)i
+" imap <C-A-k> <ESC><Plug>(textmanip-duplicate-up)i
 
 
 "
@@ -281,8 +281,8 @@ map <C-q> :confirm qa<CR>
 " Textmanip
 "
 " toggle insert/replace with <F10>
-nmap <F10> <Plug>(textmanip-toggle-mode)
-xmap <F10> <Plug>(textmanip-toggle-mode)
+" nmap <F10> <Plug>(textmanip-toggle-mode)
+" xmap <F10> <Plug>(textmanip-toggle-mode)
 
 
 " 

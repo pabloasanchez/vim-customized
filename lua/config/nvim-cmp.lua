@@ -19,7 +19,7 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = {
-    ['<C-Space>'] = cmp.mapping.complete(),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only c irm explicitly selected items.
     -- ['<Esc>'] = cmp.mapping.abort(),
     -- ['<Esc>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false },
@@ -49,12 +49,20 @@ cmp.setup({
     end, { 'i', 's' }),
   },
 
-  sources = cmp.config.sources({
+sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
-  }, {
-      { name = 'buffer' },
-    })
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
+    }
+  } 
+  -- {{ name = 'buffer' } })  -- Second level completions
+  )
 })
 
 -- Set configuration for specific filetype.

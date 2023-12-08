@@ -21,7 +21,6 @@ cmp.setup({
   mapping = {
     -- ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only c irm explicitly selected items.
-    -- ['<Esc>'] = cmp.mapping.abort(),
     -- ['<Esc>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false },
     -- ['<Esc>'] = cmp.mapping.close() -- cmp.mapping.confirm({ select = false }),
     ['<Esc>'] = cmp.mapping(function(fallback)

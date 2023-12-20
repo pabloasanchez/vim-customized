@@ -4,7 +4,7 @@ require('gomove').setup {
   -- whether or not to map default key bindings, (true/false)
   map_defaults = false,
   -- whether or not to reindent lines moved vertically (true/false)
-  reindent = false,
+  reindent = true,
   -- whether or not to undojoin same direction moves (true/false)
   undojoin = true,
   -- whether to not to move past end column when moving blocks horizontally, (true/false)
@@ -21,7 +21,15 @@ map( 'n', '<C-k>', '<Plug>GoNSMUp', {} )
 map( 'n', '<C-A-j>', '<Plug>GoNSDDown', {} )
 map( 'n', '<C-A-k>', '<Plug>GoNSDUp', {} )
 
-map( 'x', '<C-h>', '<Plug>GoVMBlockLeft', {} )
-map( 'x', '<C-j>', '<Plug>GoVMBlockDown', {} )
-map( 'x', '<C-k>', '<Plug>GoVMBlockUp', {} )
-map( 'x', '<C-l>', '<Plug>GoVMBlockRight', {} )
+map( 'x', '<C-A-j>', '<Plug>GoVSDDown', {} )
+map( 'x', '<C-A-k>', '<Plug>GoVSDUp', {} )
+
+map( 'x', '<C-j>', '<Plug>GoVSMDown', {} )
+map( 'x', '<C-k>', '<Plug>GoVSMUp', {} )
+
+-- map( 'x', '<C-h>', '<Plug>GoVMBlockLeft', {} )
+-- map( 'x', '<C-j>', '<Plug>GoVMBlockDown', {} )
+
+-- map( 'x', '<C-k>', '<Plug>GoVMBlockUp', {} )
+-- map( 'x', '<C-l>', '<Plug>GoVMBlockRight', {} )
+

@@ -89,10 +89,10 @@ require('oil').setup({
   -- Configuration for the floating window in oil.open_float
   float = {
     -- Padding around the floating window
-    padding = 2,
+    padding = 4,
     max_width = 0,
     max_height = 0,
-    border = 'solid',
+    border = 'single',
     win_options = {
       winblend = 0,
     },
@@ -120,7 +120,7 @@ require('oil').setup({
     min_height = { 5, 0.1 },
     -- optionally define an integer/float for the exact height of the preview window
     height = nil,
-    border = 'solid',
+    border = 'single',
     win_options = {
       winblend = 0,
     },
@@ -133,7 +133,7 @@ require('oil').setup({
     max_height = { 10, 0.9 },
     min_height = { 5, 0.1 },
     height = nil,
-    border = 'solid',
+    border = 'single',
     minimized_border = 'none',
     win_options = {
       winblend = 0,

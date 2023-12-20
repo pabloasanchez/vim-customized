@@ -13,7 +13,7 @@ function saveAs()
 end
 
 function close()
-  fn.execute(':BD') -- vim-bufkill
+  fn.execute(':confirm BD') -- vim-bufkill
 end
 
 function closeAll()
@@ -94,6 +94,26 @@ function arrangeBuffers()
   end
 end
 
+function nextVisibleBuffer() 
+  vim.cmd [[
+  let operation = "bnext"
+  execute operation
+  " if (len(win_findbuf(bufnr('%'))) > 1)
+  "   execute operation
+  " endif
+  ]]
+end
+
+function prevVisibleBuffer() 
+  vim.cmd [[
+  let operation = "bprev"
+  execute operation
+  " if (len(win_findbuf(bufnr('%'))) > 1)
+  "   execute operation
+  " endif
+  ]]
+end
+
 function zen() 
   fn.execute(':only')
   fn.execute(':NoNeckPain')
@@ -123,5 +143,5 @@ return {
   clipboard, wrap, saveAs, 
   back, glyph, help, menu, 
   removeFromLine, replaceInLine, terminal, 
-  arrangeBuffers, options, spelling, toggleSpelling
+  arrangeBuffers, nextVisibleBuffer, prevVisibleBuffer, options, spelling, toggleSpelling
 }

@@ -9,7 +9,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', PLUGINS)
 
 --  Initial options and defaults
-Plug 'airblade/vim-rooter'            -- vim-rooter - changes working dir to the project root
+Plug 'airblade/vim-rooter'          -- vim-rooter - changes working dir to the project root
 
 -- File management
 Plug 'stevearc/oil.nvim'            -- File mgmt using a buffer
@@ -51,9 +51,9 @@ Plug 'tpope/vim-surround'             --  Surroundings yss, ysiw, cs' ds', S
 Plug 'tpope/vim-repeat'               --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'           --  commentary.vim - comment stuff out
 Plug 'alvan/vim-closetag'             --  Automatically closes x/html tags
--- Plug 'chrisgrieser/nvim-puppeteer'   --  Automatically converts to fstrings in diff langs
 Plug 'numToStr/Comment.nvim'
 Plug 'tenxsoydev/karen-yank.nvim'
+
 -- Clipboard and registers
 Plug 'AckslD/nvim-neoclip.lua'
 

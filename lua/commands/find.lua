@@ -81,12 +81,8 @@ function searchHistory()
   fn.execute(':Telescope search_history')
 end
 
-function git()
-  fn.execute(':FloatermNew --autoclose=1 --width=1.0 --height=1.0 --title=Git --disposable lazygit')
-end
-
 return { 
-  git, keymaps, highlights, colorschemes, 
+  keymaps, highlights, colorschemes, 
   searchHistory, commandHistory, commands, 
   autocommands, buffers, recent, 
   findFiles, findInFiles, findInBuffers, 

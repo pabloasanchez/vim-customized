@@ -1,9 +1,10 @@
 local fn = vim.fn
 local ui = vim.ui
 
-local common = require('commands/common')
-local common = require('commands/lsp')
-local common = require('commands/find')
+require('commands/common')
+require('commands/lsp')
+require('commands/find')
+require('commands/git')
 
 -- Wrappers
 
@@ -17,6 +18,8 @@ vim.api.nvim_create_user_command('Recent', recent, {})
 vim.api.nvim_create_user_command('Wrap', wrap, {})
 vim.api.nvim_create_user_command('Glyph', glyph, {})
 vim.api.nvim_create_user_command('Git', git, {})
+vim.api.nvim_create_user_command('Tig', tig, {})
+vim.api.nvim_create_user_command('Blame', blame, {})
 vim.api.nvim_create_user_command('Help', help, {})
 vim.api.nvim_create_user_command('Options', options, {})
 vim.api.nvim_create_user_command('Menu', menu, {})

@@ -8,10 +8,10 @@ local completion = require('cmp_nvim_lsp')
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
 local capabilities = completion.default_capabilities()
 
-lspconfig.cssls.setup { on_attach = on_attach , capabilities = capabilities }
-lspconfig.pyright.setup { on_attach = on_attach , capabilities = capabilities }
-lspconfig.tsserver.setup { on_attach = on_attach , capabilities = capabilities }
-lspconfig.luau_lsp.setup { on_attach = on_attach , capabilities = capabilities }
+lspconfig.cssls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.pyright.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.lua_ls.setup { on_attach = on_attach, capabilities = capabilities }
 
 lspconfig.html.setup {
   on_attach = on_attach,
@@ -26,3 +26,5 @@ lspconfig.html.setup {
   }
 }
 
+-- Other LSP configs
+vim.diagnostic.config({ virtual_text = false, underline = true, signs = false, })

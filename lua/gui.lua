@@ -59,6 +59,7 @@ fn['quickui#menu#install']("&Code", {
   { "&Definitions", "Definitions", "Definitions under cursor"},
   { "&Type Definitions", "TypeDefs", "Type definitions"},
   { "--",''},
+  { "Dia&gnostics Toggle", "LSPDiagToggle", "Diagnostics toggle"},
   { "&Line Diagnostics", "LSPLineDiag", "Diagnostics"},
   { "&Next Diagnostic", "LSPDiagNext", ""},
   { "&Prev Diagnostic", "LSPDiagPrev", ""},

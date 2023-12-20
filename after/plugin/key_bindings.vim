@@ -36,10 +36,10 @@ cnoremap <C-l> <Right>
 "
 " Move between buffers with Tab
 "
-nnoremap <A-Tab> :wincmd w<CR>
-nnoremap <Tab> :call <SID>next_visible_buffer(0)<CR>
-nnoremap <S-Tab> :call <SID>next_visible_buffer(1)<CR>
-nnoremap <C-b> :Telescope buffers<CR>
+" nnoremap <A-Tab> :wincmd w<CR>
+" nnoremap <Tab> :call <SID>next_visible_buffer(0)<CR>
+" nnoremap <S-Tab> :call <SID>next_visible_buffer(1)<CR>
+" nnoremap <C-b> :Telescope buffers<CR>
 
 
 "
@@ -84,19 +84,19 @@ nnoremap <C-b> :Telescope buffers<CR>
 " nnoremap <leader>h :Telescope oldfiles<cr>
 " nnoremap <leader>b :Telescope buffers<cr>
 
-function! s:next_visible_buffer(forward)
-  let operation = "bnext"
-
-  if (a:forward == 0)
-    let operation = "bprev"
-  endif
-
-  execute operation
-
-  if (len(win_findbuf(bufnr('%'))) > 1)
-    execute operation
-  endif
-endfunction
+" function! s:next_visible_buffer(forward)
+"   let operation = "bnext"
+"
+"   if (a:forward == 0)
+"     let operation = "bprev"
+"   endif
+"
+"   execute operation
+"
+"   if (len(win_findbuf(bufnr('%'))) > 1)
+"     execute operation
+"   endif
+" endfunction
 
 
 "
@@ -208,7 +208,7 @@ tnoremap <leader>] <C-\><C-n> <bar> :FloatermNext <cr>
 "
 " VSCode style delete line
 "
-nnoremap <C-D> dd
+" nnoremap <C-D> dd
 
 "
 " VSCode style move and duplicate in insert mode

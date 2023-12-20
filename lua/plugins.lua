@@ -22,9 +22,10 @@ Plug 'vimlab/split-term.vim'        -- Better Terminal splits
 --  GUI
 Plug 'pabloasanchez/vim-quickui'      -- Top Menu
 Plug 'jinzhongjia/LspUI.nvim'
-Plug "SmiteshP/nvim-navic"          -- navbuddy dependency (crumbs)
-Plug "MunifTanjim/nui.nvim"         -- navbuddy dependency (ui)
-Plug "SmiteshP/nvim-navbuddy"
+Plug 'SmiteshP/nvim-navic'          -- navbuddy dependency (crumbs)
+Plug 'MunifTanjim/nui.nvim'         -- navbuddy dependency (ui)
+Plug 'SmiteshP/nvim-navbuddy'       -- navbuddy - LSP Outline in a floating window
+Plug 'folke/trouble.nvim'           -- Error messages / diagnostics
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
@@ -69,7 +70,8 @@ Plug 'goolord/alpha-nvim'
 
 --  Color schemes and icons
 Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
+-- Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 
 --  LSP
@@ -113,8 +115,9 @@ require('config/navbuddy')
 require('config/lspconfig')
 require('config/lspui')
 require('config/gomove')
+require('config/trouble')
 
--- Optionless -  require("my_plugin").setup()
+-- Optionless -  require('my_plugin').setup()
 require('Comment').setup()
 require('spectre').setup()
 require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })

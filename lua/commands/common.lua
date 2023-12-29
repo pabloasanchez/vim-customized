@@ -45,35 +45,35 @@ function back()
 end
 
 function glyph()
-  fn.execute(':Telescope glyph') 
+  fn.execute(':Telescope glyph')
 end
 
 function help()
-   fn.execute(':Telescope help_tags')
+  fn.execute(':Telescope help_tags')
 end
 
 function options()
-   fn.execute(':Telescope vim_options')
+  fn.execute(':Telescope vim_options')
 end
 
 function menu()
-   fn.execute(':call quickui#menu#open()')
+  fn.execute(':call quickui#menu#open()')
 end
 
 function spelling()
-   fn.execute(':Telescope spell_suggest')
+  fn.execute(':Telescope spell_suggest')
 end
 
 function toggleSpelling()
-   fn.execute(':set spell!')
+  fn.execute(':set spell!')
 end
 
 function toggleCursorLine()
-   fn.execute(':set cursorline!')
+  fn.execute(':set cursorline!')
 end
 
 function quit()
-   fn.execute(':confirm qa')
+  fn.execute(':confirm qa')
 end
 
 function removeFromLine(opts)
@@ -81,10 +81,10 @@ function removeFromLine(opts)
 end
 
 function replaceInLine(opts)
-   fn.execute(':s/' .. opts.fargs[1] .. '/' .. opts.fargs[2])
+  fn.execute(':s/' .. opts.fargs[1] .. '/' .. opts.fargs[2])
 end
 
-function arrangeBuffers() 
+function arrangeBuffers()
   -- local buf = vim.api.nvim_win_get_buf(0)
   local wins = vim.api.nvim_tabpage_list_wins(0)
   local listed = vim.bo[0].buflisted
@@ -94,7 +94,7 @@ function arrangeBuffers()
   end
 end
 
-function nextVisibleBuffer() 
+function nextVisibleBuffer()
   vim.cmd [[
   let operation = "bnext"
   execute operation
@@ -104,7 +104,7 @@ function nextVisibleBuffer()
   ]]
 end
 
-function prevVisibleBuffer() 
+function prevVisibleBuffer()
   vim.cmd [[
   let operation = "bprev"
   execute operation
@@ -114,12 +114,30 @@ function prevVisibleBuffer()
   ]]
 end
 
-function zen() 
+function zen()
   fn.execute(':only')
   fn.execute(':NoNeckPain')
 end
 
-function emmet() 
+function saveSession(opts)
+  local dir = string.gsub(vim.fn.getcwd(), "/", "_")
+  if (opts.fargs[1] == nil) then
+    fn.execute(':mksession! /tmp/.nvim.session.' .. dir)
+  else
+    fn.execute(':mksession! /tmp/.nvim.session.' .. dir .. opts.fargs[1])
+  end
+end
+
+function restoreSession(opts)
+  local dir = string.gsub(vim.fn.getcwd(), "/", "_")
+  if (opts.fargs[1] == nil) then
+    fn.execute(':source /tmp/.nvim.session.' .. dir)
+  else
+    fn.execute(':source /tmp/.nvim.session.' .. dir .. opts.fargs[1])
+  end
+end
+
+function emmet()
   fn.execute(':.!emmet')
   fn.execute(':norm `[v`]')
   fn.execute(':norm =')
@@ -137,11 +155,12 @@ function wrap()
   fn.execute(':set wrap!')
 end
 
-return { 
-  hide, quit, closeAll, 
-  close, files, zen, new, 
-  clipboard, wrap, saveAs, 
-  back, glyph, help, menu, 
-  removeFromLine, replaceInLine, terminal, 
-  arrangeBuffers, nextVisibleBuffer, prevVisibleBuffer, options, spelling, toggleSpelling
+return {
+  hide, quit, closeAll,
+  close, files, zen, new,
+  clipboard, wrap, saveAs,
+  back, glyph, help, menu,
+  removeFromLine, replaceInLine, terminal,
+  arrangeBuffers, nextVisibleBuffer, prevVisibleBuffer, options, spelling, toggleSpelling,
+  saveSession, restoreSession
 }

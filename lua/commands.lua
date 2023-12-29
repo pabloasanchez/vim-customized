@@ -25,6 +25,9 @@ vim.api.nvim_create_user_command('Options', options, {})
 vim.api.nvim_create_user_command('Menu', menu, {})
 vim.api.nvim_create_user_command('Emmet', emmet, {})
 
+vim.api.nvim_create_user_command('SaveSession', saveSession, { nargs = '*' })
+vim.api.nvim_create_user_command('RestoreSession', restoreSession, { nargs = '*' })
+
 vim.api.nvim_create_user_command('Hover', lspHover, {})
 vim.api.nvim_create_user_command('Rename', lspRename, {})
 vim.api.nvim_create_user_command('LSPDiagNext', lspDiagNext, {})

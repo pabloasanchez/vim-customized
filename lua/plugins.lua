@@ -96,7 +96,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
 --  Distraction free
-Plug ('shortcuts/no-neck-pain.nvim', { ['tag'] = '*' })
+Plug ('Snikimonkd/yazmp')
+-- Plug ('shortcuts/no-neck-pain.nvim', { ['tag'] = '*' })
 
 vim.call('plug#end')
 
@@ -120,6 +121,6 @@ require('config/trouble')
 -- Optionless -  require('my_plugin').setup()
 require('Comment').setup()
 require('spectre').setup()
-require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })
+-- require('no-neck-pain').setup({ disableOnLastBuffer = false, width = 130 })
 require('luasnip.loaders.from_vscode').lazy_load()     --   Luasnip: Activates friendly-snippets
 

@@ -25,19 +25,20 @@ function clipboard()
 end
 
 function hide()
-  vim.cmd [[
-        let [i, n; empty] = [1, bufnr('$')]
-    while i <= n
-        if bufexists(i) && bufname(i) == ''
-            call add(empty, i)
-        endif
-        let i += 1
-    endwhile
-    if len(empty) > 0
-        exe 'bwipeout' join(empty)
-    endif
-  ]]
+  -- vim.cmd [[
+  --       let [i, n; empty] = [1, bufnr('$')]
+  --   while i <= n
+  --       if bufexists(i) && bufname(i) == ''
+  --           call add(empty, i)
+  --       endif
+  --       let i += 1
+  --   endwhile
+  --   if len(empty) > 0
+  --       exe 'bwipeout' join(empty)
+  --   endif
+  -- ]]
   fn.execute(':silent! hide')
+  fn.execute(':silent! FloatermHide')
 end
 
 function back()
@@ -89,8 +90,8 @@ function arrangeBuffers()
   local wins = vim.api.nvim_tabpage_list_wins(0)
   local listed = vim.bo[0].buflisted
   if #wins == 1 then
-    require("zen-mode.view").open()
-    -- fn.execute(':ZenMode')
+    -- require("zen-mode.view").open()
+    fn.execute(':Zenmode')
   end
 end
 
@@ -116,7 +117,8 @@ end
 
 function zen()
   fn.execute(':only')
-  fn.execute(':NoNeckPain')
+  fn.execute(':Zenmode')
+  -- fn.execute(':NoNeckPain')
 end
 
 function saveSession(opts)
@@ -131,9 +133,9 @@ end
 function restoreSession(opts)
   local dir = string.gsub(vim.fn.getcwd(), "/", "_")
   if (opts.fargs[1] == nil) then
-    fn.execute(':source /tmp/.nvim.session.' .. dir)
+    fn.execute(':!source /tmp/.nvim.session.' .. dir)
   else
-    fn.execute(':source /tmp/.nvim.session.' .. dir .. opts.fargs[1])
+    fn.execute(':!source /tmp/.nvim.session.' .. dir .. opts.fargs[1])
   end
 end
 

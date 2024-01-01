@@ -28,7 +28,7 @@ vim.opt.matchtime = 5
 vim.opt.mouse = 'a'
 --vim.opt.virtualedit = 'block'   -- virtualedit setting basically allows block selections to operate across lines regardless of the underlying text.
 vim.opt.number = true
--- vim.opt.numberwidth = 1
+vim.opt.numberwidth = 6
 vim.opt.ruler = true
 vim.opt.shiftwidth = 2    -- use with cindent, will automatically indent
 vim.opt.showcmd = true
@@ -42,8 +42,10 @@ vim.opt.splitright = true
 vim.opt.tabstop = 2
 vim.opt.undofile = true
 vim.opt.undodir = HOME .. '/.vim/undo'
--- vim.opt.wildmenu = true
--- vim.opt.wildmode = 'longest:full,full'
+vim.opt.foldcolumn = '1'
+vim.opt.statuscolumn = "%=%l%s%C  "
+vim.opt.textwidth = 100
+-- vim.fn.execute(':set fo+=a') --autoformat   -- TODO make this a toggable command
 
 -- Global namespace, plugins & global options
 vim.g.floaterm_opener = 'edit'
@@ -51,3 +53,5 @@ vim.g.python3_host_prog = '/usr/bin/python3.10'
 vim.g.python_recommended_style = 0
 
 vim.cmd('syntax on')
+
+

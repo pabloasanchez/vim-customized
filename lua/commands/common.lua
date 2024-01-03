@@ -116,9 +116,25 @@ function prevVisibleBuffer()
 end
 
 function zen()
+  if (vim.g.zenmode == 0) then
+    print("Saving session...")
+    fn.execute(':SaveSession')
+  end
+
   fn.execute(':only')
   fn.execute(':Zenmode')
-  -- fn.execute(':NoNeckPain')
+
+  if (vim.g.zenmode == 0) then
+    print("Restoring session...")
+    fn.execute(':RestoreSession')
+  end
+
+  -- print(vim.g.zenmode)
+end
+
+function split()
+  fn.execute(':ZenmodeClose')
+  fn.execute(':vsplit')
 end
 
 function saveSession(opts)
@@ -164,5 +180,6 @@ return {
   back, glyph, help, menu,
   removeFromLine, replaceInLine, terminal,
   arrangeBuffers, nextVisibleBuffer, prevVisibleBuffer, options, spelling, toggleSpelling,
-  saveSession, restoreSession
+  saveSession, restoreSession,
+  split
 }

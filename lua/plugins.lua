@@ -96,7 +96,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
 --  Distraction free
-Plug ('Snikimonkd/yazmp')
+Plug ('pabloasanchez/yazmp')
 -- Plug ('shortcuts/no-neck-pain.nvim', { ['tag'] = '*' })
 
 vim.call('plug#end')

@@ -50,8 +50,11 @@ map('n', 'gt', ":TypeDefs <ENTER>", options)
 map('n', 'gx', ":CodeAction <ENTER>", options)
 map('n', 'gw', ":LSPDiagWindow <ENTER>", options)
 
-map('n', '´', ":norm vi' <ENTER>", options)
-map('n', '¨', ':norm vi" <ENTER>', options)
+map('n', '´', ":norm vi'h <ENTER>", options)
+map('n', '¨', ':norm vi"h <ENTER>', options)
+map('n', ')', ':norm vi)h <ENTER>', options)
+map('n', '(', ':norm vi(h <ENTER>', options)
+
 map('n', ';s', ":SaveSession <ENTER>", options)
 map('n', ';r', ":RestoreSession <ENTER>", options)
 

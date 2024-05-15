@@ -143,7 +143,8 @@ cnoremap <C-l> <Right>
 " tnoremap <F12> <C-\><C-n> <bar> :hide <cr>
 " tnoremap <leader>t  <C-\><C-n> <BAR> :hide <ENTER>
 " tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
-tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <ENTER>
+" tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <ENTER>
+tnoremap <ESC><ESC>  <C-\><C-n> <BAR> :hide <BAR> :FloatermHide terminal <ENTER>
 tnoremap <C-q>  <C-\><C-n> <BAR> :hide <BAR> :FloatermKill <ENTER>
 
 

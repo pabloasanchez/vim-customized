@@ -2,7 +2,7 @@
 --  Nvim options
 -- 
 
-vim.g.mapleader = ';'     -- let g:mapleader=";"
+vim.g.mapleader = '_'     -- let g:mapleader=";"
 
 vim.opt_global.wrap = false
 vim.opt_global.cursorcolumn = true

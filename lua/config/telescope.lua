@@ -27,5 +27,6 @@ require('telescope').setup {
 -- require('telescope').load_extension('smart_history')
 require('telescope').load_extension('glyph')
 require('telescope').load_extension('ag')
+-- require('telescope').load_extension('bookmarks')
 
 require'telescope-all-recent'.setup({})

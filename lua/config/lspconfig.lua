@@ -8,6 +8,7 @@ local completion = require('cmp_nvim_lsp')
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
 local capabilities = completion.default_capabilities()
 
+lspconfig.clangd.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.cssls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.pyright.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.tsserver.setup { on_attach = on_attach, capabilities = capabilities }

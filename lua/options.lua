@@ -44,7 +44,7 @@ vim.opt.undofile = true
 vim.opt.undodir = HOME .. '/.vim/undo'
 vim.opt.foldcolumn = '1'
 vim.opt.statuscolumn = "%=%l%s%C  "
-vim.opt.textwidth = 100
+-- vim.opt.textwidth = 100
 -- vim.fn.execute(':set fo+=a') --autoformat   -- TODO make this a toggable command
 
 -- Global namespace, plugins & global options

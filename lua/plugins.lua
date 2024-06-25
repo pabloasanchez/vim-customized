@@ -15,7 +15,6 @@ Plug 'airblade/vim-rooter' -- vim-rooter - changes working dir to the project ro
 Plug 'neovim/nvim-lspconfig'
 Plug 'dnlhc/glance.nvim'
 
-
 -- File management
 Plug 'stevearc/oil.nvim' -- File mgmt using a buffer
 
@@ -80,10 +79,10 @@ Plug 'voldikss/vim-floaterm' --  floaterm - Floating Terminal for vim
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'pabloasanchez/quiet-code.vim'
 
 --  Start screen
 Plug 'goolord/alpha-nvim'
-
 
 -- Snips
 Plug 'rafamadriz/friendly-snippets'

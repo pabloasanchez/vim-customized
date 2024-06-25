@@ -26,10 +26,11 @@ api.nvim_create_autocmd( "InsertLeave", {
   command = "UserHighlightsNormal"
 })
 
-api.nvim_create_autocmd({ "WinNew", "ColorScheme" }, {
-  pattern = "*",
-  command = "UserHighlights",
-})
+-- Uncomment if quiet-code theme is not installed
+-- api.nvim_create_autocmd({ "WinNew", "ColorScheme" }, {
+--   pattern = "*",
+--   command = "UserHighlights",
+-- })
 
 -- Zen mode (NNP) Autocommands to attempt to automatically enter Zen mode
 

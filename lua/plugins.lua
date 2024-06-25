@@ -61,16 +61,13 @@ Plug 'tpope/vim-surround'       --  Surroundings yss, ysiw, cs' ds', S
 Plug 'tpope/vim-repeat'         --  repeat.vim - remaps . in a way that plugins can tap into it
 Plug 'tpope/vim-commentary'     --  commentary.vim - comment stuff out
 Plug 'alvan/vim-closetag'       --  Automatically closes x/html tags
--- Plug 'numToStr/Comment.nvim'
 
 -- Clipboard and registers
--- Plug 'tenxsoydev/karen-yank.nvim'
 Plug 'AckslD/nvim-neoclip.lua'
 
 --  Gutter
 Plug 'kshenoy/vim-signature'        --  vim-signature - Place, toggle, display marks
 Plug 'airblade/vim-gitgutter'
--- Plug 'lewis6991/gitsigns.nvim'    --  Super fast git decorations implemented purely in lua/teal.
 
 --  Terminal
 Plug 'voldikss/vim-floaterm' --  floaterm - Floating Terminal for vim
@@ -124,6 +121,5 @@ require('config/trouble')
 require('config/arena')
 
 -- Optionless -  require('my_plugin').setup()
--- require('Comment').setup()
 -- require('spectre').setup()
 require('luasnip.loaders.from_vscode').lazy_load() --   Luasnip: Activates friendly-snippets

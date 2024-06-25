@@ -1,15 +1,17 @@
 local fn = vim.fn
 
 function lspHover()
-  fn.execute(':LspUI hover')
+  -- fn.execute(':LspUI hover')
+  fn.execute(':Lspsaga hover_doc')
 end
 
 function lspRename()
-  fn.execute(':LspUI rename')
+  -- fn.execute(':LspUI rename')
+  fn.execute(':Lspsaga rename')
 end
 
 function lspCodeAction()
-  fn.execute(':LspUI code_action')
+  fn.execute(':Lspsaga code_action')
 end
 
 function lspDefinitions()
@@ -17,11 +19,13 @@ function lspDefinitions()
 end
 
 function lspDiagNext()
-  fn.execute(':LspUI diagnostic next')
+  -- fn.execute(':LspUI diagnostic next')
+  fn.execute(':Lspsaga diagnostic_jump_next')
 end
 
 function lspDiagPrev()
-  fn.execute(':LspUI diagnostic prev')
+  -- fn.execute(':LspUI diagnostic prev')
+  fn.execute(':Lspsaga diagnostic_jump_prev')
 end
 
 function lspDiagToggle()
@@ -35,7 +39,7 @@ function lspDiagWindow()
 end
 
 function lspPeek()
-  fn.execute(':LspUI peek_definition')
+  fn.execute(':Lspsaga peek_definition')
 end
 
 function lspReferences()
@@ -44,6 +48,10 @@ end
 
 function lspOutline()
   fn.execute(':silent! Navbuddy')
+  -- local success, error = pcall(fn.execute(':Navbuddy'))
+  -- if not success then
+  --   fn.execute(':Lspsaga outline')
+  -- end
 end
 
 function lspFormat()

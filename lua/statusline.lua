@@ -14,8 +14,9 @@ vim.opt.laststatus = 3
 
 o.statusline = ""
 o.statusline = o.statusline .. "%="
--- o.statusline = o.statusline .. "%#PmenuSel#"         -- Coloring, place before each concat or use format() above
+o.statusline = o.statusline .. "%#StatusLineInsert#"         -- Coloring, place before each concat or use format() above
 o.statusline = o.statusline .. "%{mode(1)==#'i'?' ﱣ ':''}"
+o.statusline = o.statusline .. "%#StatusLine#"         -- Coloring, place before each concat or use format() above
 o.statusline = o.statusline .. "%m "
 o.statusline = o.statusline .. "%{&fileencoding?&fileencoding:&encoding} "
 o.statusline = o.statusline .. "%p%% "

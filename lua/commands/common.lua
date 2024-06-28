@@ -166,7 +166,7 @@ function terminal()
 end
 
 function files()
-  fn.execute(':FloatermNew --autoclose=1 --width=0.8 --height=0.8 ranger')
+  fn.execute(':FloatermNew --autoclose=1 --width=0.8 --height=0.8 --title=Files --disposable ranger')
 end
 
 function wrap()

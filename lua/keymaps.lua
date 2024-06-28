@@ -1,6 +1,10 @@
 local map = vim.api.nvim_set_keymap
 -- local map = vim.api.nvim_buf_set_keymap  -- Use this for buffer level
 
+-- Unset some default mappings
+vim.keymap.del({ 'n' }, '<C-W>d')
+vim.keymap.del({ 'n' }, '<C-W><C-D>')
+
 local options = { noremap = true }
 map('n', '\\', ":LiveGrep <ENTER>", options)
 map('n', '<C-?>', ":LSPDiagWindow <ENTER>", options)
@@ -14,7 +18,7 @@ map('n', '<A-SPACE>', ":", options)
 map('n', '<C-SPACE>', ":Menu <ENTER>", options)
 map('n', '<A-ENTER>', ":Split<ENTER>", options)
 map('n', '<A-BS>', ":split <ENTER>", options)
-map('n', '<TAB>',   ":BufferNext <ENTER>", options)
+map('n', '<TAB>', ":BufferNext <ENTER>", options)
 map('n', '<S-TAB>', ":BufferPrev <ENTER>", options)
 map('n', '<A-TAB>', ":wincmd W <ENTER>", options)
 map('n', '<A-r>', ":WinResizerStartResize <ENTER>", options)
@@ -105,4 +109,3 @@ map('v', '<', "<gv", options)
 map('v', '>', ">gv", options)
 
 map('x', 'gx', ":CodeAction <ENTER>", options)
-

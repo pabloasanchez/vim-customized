@@ -74,6 +74,7 @@ function toggleCursorLine()
 end
 
 function quit()
+  fn.execute(':SaveSession')
   fn.execute(':confirm qa')
 end
 
@@ -149,9 +150,9 @@ end
 function restoreSession(opts)
   local dir = string.gsub(vim.fn.getcwd(), "/", "_")
   if (opts.fargs[1] == nil) then
-    fn.execute(':source /tmp/.nvim.session.' .. dir)
+    fn.execute(':silent! source /tmp/.nvim.session.' .. dir)
   else
-    fn.execute(':source /tmp/.nvim.session.' .. dir .. opts.fargs[1])
+    fn.execute(':silent! source /tmp/.nvim.session.' .. dir .. opts.fargs[1])
   end
 end
 

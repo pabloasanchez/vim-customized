@@ -33,6 +33,7 @@ dashboard.section.buttons.val = {
   button("e", "  New file", ":enew <BAR> Zen <ENTER>"),
   -- button("f", "  Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
   button("r", "  Recent", ":Recent <ENTER>"),
+  button("l", "  Last Session", ":RestoreSession <ENTER>"),
   button("s", "  Settings", ":e ~/.vim"),
   button("q", "  Quit NVIM", ":qa <ENTER>"),
 }

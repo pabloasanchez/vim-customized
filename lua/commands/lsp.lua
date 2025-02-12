@@ -31,11 +31,11 @@ end
 function lspDiagToggle()
   local config = vim.diagnostic.config
   local vt = config().virtual_text
-  config({ virtual_text = not vt, underline = not vt, signs = not vt })
+  config({ virtual_text = false, underline = not vt, signs = not vt })
 end
 
 function lspDiagWindow()
-  fn.execute(':TroubleToggle')
+  vim.diagnostic.open_float()
 end
 
 function lspPeek()

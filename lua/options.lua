@@ -52,6 +52,10 @@ vim.g.floaterm_opener = 'edit'
 vim.g.python3_host_prog = '/usr/bin/python3.10'
 vim.g.python_recommended_style = 0
 
+-- vim.opt.iskeyword:remove("_")
+
+vim.diagnostic.config({ virtual_text = false })
+
 vim.cmd('syntax on')
 
 

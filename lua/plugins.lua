@@ -34,7 +34,7 @@ Plug 'nvimdev/lspsaga.nvim'
 Plug 'SmiteshP/nvim-navic'       -- navbuddy dependency (crumbs)
 Plug 'MunifTanjim/nui.nvim'      -- navbuddy dependency (ui)
 Plug 'SmiteshP/nvim-navbuddy'    -- navbuddy - LSP Outline in a floating window
-Plug 'folke/trouble.nvim'        -- Error messages / diagnostics
+-- Plug 'folke/trouble.nvim'        -- Error messages / diagnostics
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
@@ -117,7 +117,7 @@ require('config/lspconfig')
 -- require('config/lspui')
 require('config/lspsaga')
 require('config/gomove')
-require('config/trouble')
+-- require('config/trouble')
 require('config/arena')
 
 -- Optionless -  require('my_plugin').setup()

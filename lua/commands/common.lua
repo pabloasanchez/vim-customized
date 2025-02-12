@@ -117,7 +117,7 @@ function prevVisibleBuffer()
 end
 
 function zen()
-  if (vim.g.zenmode == 0) then
+  if (vim.g.zenmode == 0 or vim.g.zenmode == nil) then
     print("Saving session...")
     fn.execute(':SaveSession')
   end

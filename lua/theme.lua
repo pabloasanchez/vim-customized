@@ -17,3 +17,8 @@ vim.cmd "colorscheme quiet-code"
 
 vim.cmd "hi FloatermBorder guibg=black guifg=#333333"
 vim.cmd "hi TelescopeBorder guibg=black guifg=#333333"
+vim.cmd "hi TelescopeBorder guibg=black guifg=#333333"
+vim.cmd "hi BlinkCmpScrollBarGutter guibg=black guifg=black"
+vim.cmd "hi BlinkCmpScrollBarThumb guibg=black guifg=#333333"
+
+

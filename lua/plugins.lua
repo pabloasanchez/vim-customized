@@ -24,16 +24,16 @@ Plug 'vimlab/split-term.vim' -- Better Terminal splits
 
 -- Buffers
 Plug 'dzfrias/arena.nvim'   -- Switch buffers
-Plug 'qpkorr/vim-bufkill'    -- Closes buffers
-Plug 'ojroques/nvim-bufdel'  -- Buffer Deletion
+Plug 'qpkorr/vim-bufkill'   -- Closes buffers
+Plug 'ojroques/nvim-bufdel' -- Buffer Deletion
 
 --  GUI
 Plug 'pabloasanchez/vim-quickui' -- Top Menu
 -- Plug 'jinzhongjia/LspUI.nvim'
 Plug 'nvimdev/lspsaga.nvim'
-Plug 'SmiteshP/nvim-navic'       -- navbuddy dependency (crumbs)
-Plug 'MunifTanjim/nui.nvim'      -- navbuddy dependency (ui)
-Plug 'SmiteshP/nvim-navbuddy'    -- navbuddy - LSP Outline in a floating window
+Plug 'SmiteshP/nvim-navic'    -- navbuddy dependency (crumbs)
+Plug 'MunifTanjim/nui.nvim'   -- navbuddy dependency (ui)
+Plug 'SmiteshP/nvim-navbuddy' -- navbuddy - LSP Outline in a floating window
 -- Plug 'folke/trouble.nvim'        -- Error messages / diagnostics
 
 --  Language-specific
@@ -44,29 +44,28 @@ Plug('junegunn/fzf', { dir = '~/.fzf', ['do'] = './install --all' }) --  fzf - M
 Plug 'junegunn/fzf.vim'                                              --  fzf - Multi use Fuzzy Finder
 Plug 'rhysd/clever-f.vim'                                            --  clever-f - clever-f.vim extends f, F, t and T mappings for more convenience
 Plug 'nvim-lua/plenary.nvim'                                         --  Required by Telescope and spectre
--- Plug 'nvim-pack/nvim-spectre'                                        --  A search panel for neovim.
 Plug 'rlane/pounce.nvim'                                             --  Fuzzy jump search
 
 --  Telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ghassan0/telescope-glyph.nvim'
 Plug 'kelly-lin/telescope-ag'
-Plug 'kkharji/sqlite.lua'     -- Required by telescope-all-recent
+Plug 'kkharji/sqlite.lua' -- Required by telescope-all-recent
 Plug 'prochri/telescope-all-recent.nvim'
 
 --  Edit tools
 -- Plug 't9md/vim-textmanip'             --  t9md/vim-textmanip - Move/duplicate text intuitively
 Plug 'booperlv/nvim-gomove'
-Plug 'tpope/vim-surround'       --  Surroundings yss, ysiw, cs' ds', S
-Plug 'tpope/vim-repeat'         --  repeat.vim - remaps . in a way that plugins can tap into it
-Plug 'tpope/vim-commentary'     --  commentary.vim - comment stuff out
-Plug 'alvan/vim-closetag'       --  Automatically closes x/html tags
+Plug 'tpope/vim-surround'   --  Surroundings yss, ysiw, cs' ds', S
+Plug 'tpope/vim-repeat'     --  repeat.vim - remaps . in a way that plugins can tap into it
+Plug 'tpope/vim-commentary' --  commentary.vim - comment stuff out
+Plug 'alvan/vim-closetag'   --  Automatically closes x/html tags
 
 -- Clipboard and registers
 Plug 'AckslD/nvim-neoclip.lua'
 
 --  Gutter
-Plug 'kshenoy/vim-signature'        --  vim-signature - Place, toggle, display marks
+Plug 'kshenoy/vim-signature' --  vim-signature - Place, toggle, display marks
 Plug 'airblade/vim-gitgutter'
 
 --  Terminal
@@ -82,16 +81,11 @@ Plug 'pabloasanchez/quiet-code.vim'
 Plug 'goolord/alpha-nvim'
 
 -- Snips
-Plug 'rafamadriz/friendly-snippets'
+-- Plug 'rafamadriz/friendly-snippets'
 Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.1.1', ['do'] = 'make install_jsregexp' })
 
--- Completion 
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
--- Plug 'hrsh7th/cmp-path'
--- Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp' -- Main plugin
-Plug 'saadparwaiz1/cmp_luasnip'  -- Luasnip integration
+-- Completion
+Plug 'saghen/blink.cmp'
 
 -- TS Manager
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
@@ -110,9 +104,9 @@ require('config/pounce')
 require('config/telescope')
 require('config/glance')
 require('config/luasnip')
-require('config/nvim-cmp')
 require('config/nvim-treesitter')
 require('config/navbuddy')
+require('config/blink')
 require('config/lspconfig')
 -- require('config/lspui')
 require('config/lspsaga')
@@ -122,4 +116,4 @@ require('config/arena')
 
 -- Optionless -  require('my_plugin').setup()
 -- require('spectre').setup()
-require('luasnip.loaders.from_vscode').lazy_load() --   Luasnip: Activates friendly-snippets
+-- require('luasnip.loaders.from_vscode').lazy_load() --   Luasnip: Activates friendly-snippets

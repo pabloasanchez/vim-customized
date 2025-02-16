@@ -21,31 +21,28 @@
 * [chafa](https://github.com/hpjansson/chafa) (optional for splash animation)
 
 ## Features
+* Clean configuration in Lua
+* Quick command history (<SPACE>)
 * Working dir aware
-* Easy to remember user commands (Rename, Replace, Clipboard, References...)
-* Resizable splits
+* Easy to remember user commands (e.g., :Rename, :Replace, :Clipboard, :References...)
+* Resizable splits (Alt+R)
 * Close buffers without affecting splits
 * Top-Menu UI
-* LSP Support: LSPConfig, nvim-cmp, Glance, LspUI
+* LSP Support: LSPConfig, Glance, LspUI, Blink
 * TreeSitter and Snippets
 * Telescope
-* Line peeking
 * Clipboard
 * Winbar
 * Floating terminal
 * Start page
 * Colorschemes and dev icons
 * Nice keymaps
-* Node Debugger (outdated, might update to Mason's)
-* Clean configuration
+* Sessions
+* Zen mode
 
 ## Notes
-* Battle-tested for Javascript development
-* Tested on OSX and Linux
-
-## Todo
-* Mason
-* Debuggers
+* Battle-tested for Javascript and C development
+* Works best in Linux
 
 ## Plugins
 * See plugins.lua

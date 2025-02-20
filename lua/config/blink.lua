@@ -18,16 +18,42 @@ require('blink.cmp').setup({
     list = { selection = { preselect = false, auto_insert = true } },
     -- or set either per mode via a function
     -- list = { selection = { preselect = function(ctx) return ctx.mode ~= 'cmdline' end } }
+
+    menu = {
+      auto_show = true,
+      draw = { -- nvim-cmp style menu
+        columns = {
+          { "label",     "label_description", gap = 1 },
+          { "kind_icon", "kind" }
+        },
+      }
+    },
+
+    -- Show documentation when selecting a completion item
+    documentation = { auto_show = true, auto_show_delay_ms = 500 },
+
+    -- Display a preview of the selected item on the current line
+    ghost_text = { enabled = true },
+
   },
 
   keymap = {
     -- set to 'none' to disable the 'default' preset
-    preset = 'enter',
+    preset = 'none',
 
-    ['<S-Tab>'] = { 'select_prev', 'fallback' },
+    -- You can add a fallback to any option
+    -- ['<C-e>'] = { 'hide', 'fallback' }
+
+    -- ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation', 'fallback' },
+    ['<CR>'] = { 'accept', 'fallback' },
+
     ['<Tab>'] = { 'select_next', 'fallback' },
+    ['<S-Tab>'] = { 'select_prev', 'fallback' },
     ['<C-k>'] = { 'select_prev', 'fallback' },
     ['<C-j>'] = { 'select_next', 'fallback' },
+    ['<C-h>'] = { 'snippet_backward', 'fallback' },
+    ['<C-l>'] = { 'snippet_forward', 'fallback' },
+
 
     -- disable a keymap from the preset
     ['<C-e>'] = {},
@@ -64,3 +90,22 @@ require('blink.cmp').setup({
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 })
+
+-- Temp monkey patch to avoid forced <Tab>/<S-Tab> from native mapping
+-- See: https://github.com/neovim/neovim/issues/30198#issuecomment-2326075321
+if vim.fn.has('nvim-0.11') == 1 then
+  -- Ensure that forced and not configurable `<Tab>` and `<S-Tab>`
+  -- buffer-local mappings don't override already present ones
+  local expand_orig = vim.snippet.expand
+  vim.snippet.expand = function(...)
+    local tab_map = vim.fn.maparg('<Tab>', 'i', false, true)
+    local stab_map = vim.fn.maparg('<S-Tab>', 'i', false, true)
+    expand_orig(...)
+    vim.schedule(function()
+      tab_map.buffer, stab_map.buffer = 1, 1
+      -- Override temporarily forced buffer-local mappings
+      vim.fn.mapset('i', false, tab_map)
+      vim.fn.mapset('i', false, stab_map)
+    end)
+  end
+end

@@ -47,7 +47,7 @@ Plug 'nvim-lua/plenary.nvim'                                         --  Require
 Plug 'rlane/pounce.nvim'                                             --  Fuzzy jump search
 
 --  Telescope
-Plug 'nvim-telescope/telescope.nvim'
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
 Plug 'ghassan0/telescope-glyph.nvim'
 Plug 'kelly-lin/telescope-ag'
 Plug 'kkharji/sqlite.lua' -- Required by telescope-all-recent
@@ -82,7 +82,7 @@ Plug 'goolord/alpha-nvim'
 
 -- Snips
 -- Plug 'rafamadriz/friendly-snippets'
-Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.1.1', ['do'] = 'make install_jsregexp' })
+-- Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.1.1', ['do'] = 'make install_jsregexp' })
 
 -- Completion
 Plug 'saghen/blink.cmp'
@@ -103,7 +103,7 @@ require('config/neoclip')
 require('config/pounce')
 require('config/telescope')
 require('config/glance')
-require('config/luasnip')
+-- require('config/luasnip')
 require('config/nvim-treesitter')
 require('config/navbuddy')
 require('config/blink')

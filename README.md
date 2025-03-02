@@ -22,7 +22,7 @@
 
 ## Features
 * Clean configuration in Lua
-* Quick command history (<SPACE>)
+* Quick command history (<<SPACE>>)
 * Working dir aware
 * Easy to remember user commands (e.g., :Rename, :Replace, :Clipboard, :References...)
 * Resizable splits (Alt+R)

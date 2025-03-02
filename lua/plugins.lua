@@ -80,6 +80,9 @@ Plug 'pabloasanchez/quiet-code.vim'
 --  Start screen
 Plug 'goolord/alpha-nvim'
 
+-- Quickfix
+Plug 'stevearc/quicker.nvim'
+
 -- Snips
 -- Plug 'rafamadriz/friendly-snippets'
 -- Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.1.1', ['do'] = 'make install_jsregexp' })
@@ -113,7 +116,9 @@ require('config/lspsaga')
 require('config/gomove')
 -- require('config/trouble')
 require('config/arena')
+require('config/quicker')
 
 -- Optionless -  require('my_plugin').setup()
+require('quicker').setup()
 -- require('spectre').setup()
 -- require('luasnip.loaders.from_vscode').lazy_load() --   Luasnip: Activates friendly-snippets

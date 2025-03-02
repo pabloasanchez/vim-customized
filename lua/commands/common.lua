@@ -174,6 +174,19 @@ function wrap()
   fn.execute(':set wrap!')
 end
 
+function showQuickFix()
+  fn.execute(':copen')
+end
+
+function hideQuickFix()
+  fn.execute(':cclose')
+end
+
+function toggleQuickFix()
+  local q = require('quicker')
+  q.toggle({ focus = true, min_height = 6 })
+end
+
 return {
   hide, quit, closeAll,
   close, files, zen, new,
@@ -182,5 +195,6 @@ return {
   removeFromLine, replaceInLine, terminal,
   arrangeBuffers, nextVisibleBuffer, prevVisibleBuffer, options, spelling, toggleSpelling,
   saveSession, restoreSession,
-  split
+  split,
+  showQuickFix, hideQuickFix, toggleQuickFix,
 }

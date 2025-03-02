@@ -92,7 +92,7 @@ function arrangeBuffers()
   local listed = vim.bo[0].buflisted
   if #wins == 1 then
     -- require("zen-mode.view").open()
-    fn.execute(':Zenmode')
+    fn.execute(':Zenmode 20')
   end
 end
 
@@ -123,7 +123,7 @@ function zen()
   end
 
   fn.execute(':only')
-  fn.execute(':Zenmode')
+  fn.execute(':Zenmode 20')
 
   if (vim.g.zenmode == 0) then
     print("Restoring session...")

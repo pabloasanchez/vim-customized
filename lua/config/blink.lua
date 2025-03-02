@@ -89,6 +89,14 @@ require('blink.cmp').setup({
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
+
+  fuzzy = { 
+    implementation = 'prefer_rust',
+    prebuilt_binaries = {  
+      force_version = '*' 
+    } 
+  }
+
 })
 
 -- Temp monkey patch to avoid forced <Tab>/<S-Tab> from native mapping

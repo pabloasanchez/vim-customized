@@ -74,6 +74,7 @@ map('n', ';k', ":norm ko<ENTER>", options)
 map('n', ';l', ":norm $<ENTER>", options)
 
 map('n', ';q', ":QuickFixToggle <ENTER>", options)
+map('n', ';w', ":QuickFix <ENTER>", options)
 
 map('n', ';<TAB>', ":ArenaToggle <ENTER>", options)
 map('n', ';;', ":norm _<ENTER>", options)

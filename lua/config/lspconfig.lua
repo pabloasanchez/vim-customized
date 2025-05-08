@@ -14,6 +14,7 @@ lspconfig.cssls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.pyright.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.ts_ls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.lua_ls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
 
 lspconfig.html.setup {
   on_attach = on_attach,

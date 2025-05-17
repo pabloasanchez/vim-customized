@@ -35,6 +35,7 @@ dashboard.section.buttons.val = {
   button("r", "  Recent", ":Recent <ENTER>"),
   button("l", "  Last Session", ":RestoreSession <ENTER>"),
   button("s", "  Settings", ":e ~/.vim"),
+  button("t", "  Terminal", ":term <ENTER>"),
   button("q", "  Quit NVIM", ":qa <ENTER>"),
 }
 

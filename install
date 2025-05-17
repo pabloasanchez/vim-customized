@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+mv ~/.vimrc ~/.vimrc~
+mv ~/.vim ~/.vim~
+mv ~/.config/nvim ~/.config/nvim~
+
+cd ~
+git clone https://github.com/pabloasanchez/vim-customized
+mv vim-customized .vim
+
+cd ~/.vim
+make link
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+
+

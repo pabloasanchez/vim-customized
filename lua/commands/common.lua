@@ -157,9 +157,11 @@ function restoreSession(opts)
 end
 
 function emmet()
-  fn.execute(':.!emmet')
-  fn.execute(':norm `[v`]')
-  fn.execute(':norm =')
+  -- Straight from terminal, superseeded with nvim-emmet
+  -- fn.execute(':.!emmet')
+  -- fn.execute(':norm `[v`]')
+  -- fn.execute(':norm =')
+  require('nvim-emmet').wrap_with_abbreviation()
 end
 
 function terminal()

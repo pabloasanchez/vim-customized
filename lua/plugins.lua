@@ -38,6 +38,7 @@ Plug 'SmiteshP/nvim-navbuddy' -- navbuddy - LSP Outline in a floating window
 
 --  Language-specific
 Plug 'eliba2/vim-node-inspect'
+Plug 'olrtg/nvim-emmet'
 
 --  Search
 Plug('junegunn/fzf', { dir = '~/.fzf', ['do'] = './install --all' }) --  fzf - Multi use Fuzzy Finder

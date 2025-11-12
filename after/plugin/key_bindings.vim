@@ -31,7 +31,6 @@ imap <C-L> <Right>
 imap <C-V> <C-O>h<C-O>p
 " imap <C-e> <ESC>:Emmet<ENTER>
 
-
 " Scrolling and movement
 nnoremap <A-up> 4k
 nnoremap <A-down> 4j
@@ -60,16 +59,4 @@ nnoremap <A-i> zt
 map <C-s> :w<CR>
 imap <C-s> :w<CR>
 xmap <C-s> :w<CR>
-
-" Fast quit
-map <C-q> :confirm qa<CR>
-
-" JS Debugger
-nnoremap <F4> :NodeInspectStart<cr>
-nnoremap <F5> :NodeInspectConnect("127.0.0.1:9229")<cr>
-nnoremap <F6> :NodeInspectRun<cr>
-nnoremap <F7> :NodeInspectStop<cr>
-nnoremap <F8> :NodeInspectStepOver<cr>
-nnoremap <F9> :NodeInspectToggleBreakpoint<cr>
-" nnoremap <F10> :NodeInspectStepInto<cr>
 

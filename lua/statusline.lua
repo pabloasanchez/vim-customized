@@ -20,5 +20,5 @@ o.statusline = o.statusline .. "%#StatusLine#"         -- Coloring, place before
 o.statusline = o.statusline .. "%m "
 o.statusline = o.statusline .. "%{&fileencoding?&fileencoding:&encoding} "
 o.statusline = o.statusline .. "%p%% "
-o.statusline = o.statusline .. "%l:%c"
+-- o.statusline = o.statusline .. "%l:%c"
 
